@@ -1,4 +1,4 @@
-package LPOO.ProjectAvoe;
+package lpoo.projectAvoe;
 
 public class Drone {
     private String marca;
@@ -7,6 +7,14 @@ public class Drone {
     private double velocidade;
     private double durabilidadeBat;
     private Encomenda cargaAtual;
+
+    public Encomenda getCargaAtual() {
+        return cargaAtual;
+    }
+
+    public void setCargaAtual(Encomenda cargaAtual) {
+        this.cargaAtual = cargaAtual;
+    }
 
     public String getMarca() {
         return marca;
@@ -50,9 +58,11 @@ public class Drone {
 
     public void escolherPacote(){
         /*
-        Percorrer a lista procurando a próxima entrega da lista em que this.Drone seja capaz de levar superando os requisitos mínimos
+        Percorrer a lista procurando a próxima entrega da mesma em que this.Drone seja capaz de levar superando os requisitos mínimos
         quando encontrada passar para a variável 'cargaAtual' para que ele procure o caminho a ser entregue.
          */
+
+
     }
 
     public void calcularRota(long Latitude, long Longitude){

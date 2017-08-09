@@ -7,7 +7,7 @@ public class Cadastrados {
     private static Usuario[] usuarios = new Usuario[20];
     private static Casa[] imoveis = new Casa[500];
 
-    void administrador() {
+    void administradorPadrao() {
         Usuario administrador = new Usuario();
         administrador.setAdministrador(true);
         administrador.setNome("admin");
@@ -36,7 +36,7 @@ public class Cadastrados {
         return -1;
     }
 
-    public void cadastrarUsuario(String nome, String login, String senha) {
+    public void cadastrarUsuario(String nome, String login, String senha, boolean adm) {
         /*
         Adiciona um novo usuario ao sistema, adicionando-o ao array de usuarios no índice encontrado
         pela função achaIndice.
@@ -44,6 +44,7 @@ public class Cadastrados {
         int i = achaIndice(usuarios);
         if (i != -1) {
             Usuario usuario = new Usuario();
+            usuario.setAdministrador(adm);
             usuario.setNome(nome);
             usuario.setLogin(login);
             usuario.setSenha(senha);

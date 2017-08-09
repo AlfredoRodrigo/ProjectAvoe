@@ -1,7 +1,7 @@
-package LPOO.ProjectAvoe;
+package lpoo.projectAvoe;
 
 public class ListaDinamica {
-    class No{
+    static class No{
         /*
         Objeto 'No', contêm a encomenda e o apontador para o próximo elemento da lista.
         */
@@ -14,14 +14,14 @@ public class ListaDinamica {
         }
     }
 
-    class Lista {
+    static class Lista {
         /*
         A lista de 'Nos', tendo 2 variáveis de referencia 'primeiro' e 'ultimo'.
         Possui uma variável contador 'totalNos' para facilitar a contagem de elementos na lista.
         */
 
-        No primeiro, ultimo;
-        int totalNos;
+        private No primeiro, ultimo; //*
+        private int totalNos;
 
         public Lista() {
         /*
@@ -80,15 +80,14 @@ public class ListaDinamica {
             noAtual = noAnterior = primeiro;
             int contador = 1;
 
-            if (checkIfListaVazia() == false) {
-                while (contador <= getTotalNos() &&
-                        noAtual.encomenda.destinatario != n.encomenda.destinatario) {  // Erro por não possuir a classe encomenda ||
+            if (!checkIfListaVazia()) {
+                while (contador <= getTotalNos() && (noAtual.encomenda.getCodigo() != n.encomenda.getCodigo())) {
                     noAnterior = noAtual;
                     noAtual = noAtual.prox;
                     contador++;
                 }
 
-                if (noAtual.encomenda.destinatario == n.encomenda.destinatario) {  // Erro por não possuir a classe encomenda ||
+                if (noAtual.encomenda.getCodigo() == n.encomenda.getCodigo()) {
                     if (getTotalNos() == 1) {
                         primeiro = ultimo = null;
                     } else {
@@ -110,7 +109,9 @@ public class ListaDinamica {
             */
             No x = primeiro;
             for (int i = 0; i <= totalNos; i++){
-                System.out.println(x.encomenda.destinatario + "\nPeso: " + x.encomenda.peso + "\nPrioridade: " + x.encomenda.prioridade + "\n\n"); // Erro por não possuir a classe encomenda ||
+                System.out.println("Destinatário: " + x.encomenda.getDestinatario() +
+                                   "\nPeso: " + x.encomenda.getPeso() +
+                                   "\nPrioridade: " + x.encomenda.getPrioridade() + "\n\n");
                 x = x.prox;
 
             }

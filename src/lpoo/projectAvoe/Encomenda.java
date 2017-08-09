@@ -1,16 +1,33 @@
 package lpoo.projectAvoe;
 
 public class Encomenda {
-    private int prioridade = 5;
+    private boolean prioridade;
+    private int codigo;
     private double peso, largura, altura, comprimento;
     private long latitude, longitude;
-    private String categoria;
+    private String categoria, destinatario;
 
-    public int getPrioridade() {
+    public String getDestinatario() {
+        return destinatario;
+    }
+
+    public void setDestinatario(String destinatario) {
+        this.destinatario = destinatario;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public boolean getPrioridade() {
         return prioridade;
     }
 
-    public void setPrioridade(int prioridade) {
+    public void setPrioridade(boolean prioridade) {
         this.prioridade = prioridade;
     }
 
