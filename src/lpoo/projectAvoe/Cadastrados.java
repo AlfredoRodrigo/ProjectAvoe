@@ -76,7 +76,7 @@ public class Cadastrados {
         return false;
     }
 
-    public void cadastrarImovel(String proprietario, int numero, long latitude, long longitude) {
+    public void cadastrarImovel(String proprietario, String rua, int numero, long latitude, long longitude) {
         /*
         Adiciona um novo imovel ao sistema, adicionando-o ao array de imoveis no índice encontrado
         pela função achaIndice.
@@ -85,6 +85,7 @@ public class Cadastrados {
         if (i != -1) {
             Casa imovel = new Casa();
             imovel.setProprietario(proprietario);
+            imovel.setRua(rua);
             imovel.setNumero(numero);
             imovel.setLatitude(latitude);
             imovel.setLongitude(longitude);
