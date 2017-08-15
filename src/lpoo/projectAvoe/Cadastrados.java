@@ -3,6 +3,7 @@ package lpoo.projectAvoe;
 public class Cadastrados {
     private int usuariosCadastrados = 0;
     private int imoveisCadastrados = 0;
+    private int qtdAdm = 0;
 
     private static Usuario[] usuarios = new Usuario[20];
     private static Casa[] imoveis = new Casa[500];
@@ -13,7 +14,7 @@ public class Cadastrados {
         administrador.setNome("admin");
         administrador.setLogin("admin");
         administrador.setSenha("admin");
-        usuarios[0] = administrador;
+        usuarios[achaIndice(usuarios)] = administrador;
     }
 
     private static <tipo> int achaIndice(tipo valor[]) {
@@ -45,6 +46,9 @@ public class Cadastrados {
         if (i != -1) {
             Usuario usuario = new Usuario();
             usuario.setAdministrador(adm);
+            if (adm) {
+                qtdAdm++;
+            }
             usuario.setNome(nome);
             usuario.setLogin(login);
             usuario.setSenha(senha);
@@ -65,11 +69,19 @@ public class Cadastrados {
         Return: true caso tenha dado certo e false caso tenha dado errado.
          */
         for (int i = 0; i < 20; i++) {
-            if (usuarios[i].getLogin().equals(login)) {
-                usuarios[i] = null;
-                usuariosCadastrados--;
-                System.out.println("Usuário removido.");
-                return true;
+            if (usuarios[i] != null) {
+                if (usuarios[i].getLogin().equals(login)) {
+                    if (usuarios[i].isAdministrador()) {
+                        qtdAdm--;
+                    }
+                    usuarios[i] = null;
+                    usuariosCadastrados--;
+                    if (qtdAdm == 0) {
+                        administradorPadrao();
+                    }
+                    System.out.println("Usuário removido.");
+                    return true;
+                }
             }
         }
         System.err.println("Usuário não encontrado.");
@@ -107,13 +119,15 @@ public class Cadastrados {
         Return: true caso tenha dado certo e false caso tenha dado errado.
          */
         for (int i = 0; i < 500; i++) {
-            if (imoveis[i].getRua().equals(rua)) {
-                if (imoveis[i].getNumero() == numero) {
-                    if (imoveis[i].getProprietario().equals(proprietario)) {
-                        imoveis[i] = null;
-                        imoveisCadastrados--;
-                        System.out.println("Imóvel removido.");
-                        return true;
+            if (imoveis[i] != null) {
+                if (imoveis[i].getRua().equals(rua)) {
+                    if (imoveis[i].getNumero() == numero) {
+                        if (imoveis[i].getProprietario().equals(proprietario)) {
+                            imoveis[i] = null;
+                            imoveisCadastrados--;
+                            System.out.println("Imóvel removido.");
+                            return true;
+                        }
                     }
                 }
             }

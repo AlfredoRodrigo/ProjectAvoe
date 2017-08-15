@@ -1,12 +1,21 @@
 package lpoo.projectAvoe;
 
 public class Drone {
+    private boolean disponibilidade;
     private String marca;
     private String modelo;
     private double capCarga;
     private double velocidade;
     private double durabilidadeBat;
     private Encomenda cargaAtual;
+
+    public boolean isDisponibilidade() {
+        return disponibilidade;
+    }
+
+    public void setDisponibilidade(boolean disponibilidade) {
+        this.disponibilidade = disponibilidade;
+    }
 
     public Encomenda getCargaAtual() {
         return cargaAtual;
