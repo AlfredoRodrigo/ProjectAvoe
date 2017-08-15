@@ -1,5 +1,7 @@
 package lpoo.projectAvoe;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -209,12 +211,13 @@ public class ProjectAvoe {
 
             if (menu == 13) {
                 while(true) {
-                    String l;
+                    String n, l;
 
-                    System.out.println("Informe o login do usuário: ");
-                    l = inputStr.nextLine();
+                    System.out.println("Informe o nome do usuário: ");
+                    n = inputStr.nextLine();
+                    System.out.println("Agora informe o login: ");
 
-                    cadastro.removerUsuario(l);
+                    cadastro.removerUsuario(n);
 
                     System.out.println("Deseja continuar removendo? 1 - sim, 2 - não: ");
                     opcao = input.nextInt();
