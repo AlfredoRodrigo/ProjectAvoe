@@ -2,7 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7124c025-f533-4167-a882-9c4337544d64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpoo/projectAvoe/ProjectAvoe.java" afterPath="$PROJECT_DIR$/src/lpoo/projectAvoe/ProjectAvoe.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/AbstractLayout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/DimensionInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/GridConstraints.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/GridLayoutManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/HorizontalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/LayoutState.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/Spacer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/SupportCode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/Util.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/com/intellij/uiDesigner/core/VerticalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/AvoeInterface.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Cadastrados.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Cadastrados.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Casa.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Casa.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Dicionario.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Dicionario.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Drone.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Drone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Encomenda.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Encomenda.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Grafo.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Grafo.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ListaDinamica$Lista.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ListaDinamica$Lista.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ListaDinamica$No.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ListaDinamica$No.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ListaDinamica.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ListaDinamica.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ProjectAvoe.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/ProjectAvoe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Teste.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Teste.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Usuario.class" afterPath="$PROJECT_DIR$/out/production/ProjectAvoe/lpoo/projectAvoe/Usuario.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +41,9 @@
       <file leaf-file-name="ProjectAvoe.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/ProjectAvoe.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="217" column="63" lean-forward="false" selection-start-line="217" selection-start-column="63" selection-end-line="217" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,7 +71,7 @@
       <file leaf-file-name="ListaDinamica.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/ListaDinamica.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="868">
+            <state relative-caret-position="1394">
               <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
               <folding />
             </state>
@@ -70,7 +91,7 @@
       <file leaf-file-name="Drone.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/Drone.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="170">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
@@ -132,8 +153,8 @@
         <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/Drone.java" />
         <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/Usuario.java" />
         <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/Cadastrados.java" />
-        <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/ProjectAvoe.java" />
         <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/AvoeInterface.java" />
+        <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/ProjectAvoe.java" />
         <option value="$PROJECT_DIR$/src/lpoo/projectAvoe/AvoeInterface.form" />
       </list>
     </option>
@@ -147,8 +168,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1066" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -168,9 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -203,6 +221,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -210,7 +231,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="494" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="260" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="342" />
   </component>
   <component name="RunDashboard">
@@ -657,19 +678,19 @@
       <workItem from="1502367026441" duration="3876000" />
       <workItem from="1502820669803" duration="334000" />
       <workItem from="1502821937466" duration="4417000" />
+      <workItem from="1502827118608" duration="169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26233000" />
+    <option name="totallyTimeSpent" value="26402000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2949527" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -681,7 +702,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1578125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15739386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -693,6 +714,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2949527" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -756,9 +778,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -788,9 +808,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -821,9 +839,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,7 +966,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/Drone.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="170">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
@@ -975,7 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/ListaDinamica.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="868">
+        <state relative-caret-position="1394">
           <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding />
         </state>
@@ -999,25 +1014,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/ProjectAvoe.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="217" column="63" lean-forward="false" selection-start-line="217" selection-start-column="63" selection-end-line="217" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="220" column="0" lean-forward="false" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/AvoeInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/AvoeInterface.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpoo/projectAvoe/AvoeInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
-        </state>
       </provider>
     </entry>
   </component>
