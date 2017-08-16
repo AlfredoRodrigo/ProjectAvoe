@@ -31,6 +31,7 @@ import javax.swing.JOptionPane;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLayeredPane;
@@ -58,8 +59,8 @@ public class AvoeInterface extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AvoeInterface frame = new AvoeInterface();
-					frame.setVisible(true);
+					AvoeInterface login = new AvoeInterface();
+					login.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -74,6 +75,7 @@ public class AvoeInterface extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(AvoeInterface.class.getResource("/lpoo/projectAvoe/icons/icon2.png")));
 		//		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\Documentos\\Documentos do Usu\u00E1rio\\Acad\u00EAmico\\IFPB\\E.C\\Mat\u00E9rias\\Laborat\u00F3rio de POO\\Documentos\\Programas\\ProjectAvoe\\icons\\icon2.png"));
 		setTitle("ProjectAvoe");
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -84,6 +86,7 @@ public class AvoeInterface extends JFrame {
 		
 		txtLogin = new JTextField();
 		txtLogin.addKeyListener(new KeyAdapter() {
+			@SuppressWarnings("deprecation")
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -95,6 +98,9 @@ public class AvoeInterface extends JFrame {
 		                logado = cadastro.autentica(login, senha);
 		                JOptionPane.showMessageDialog(null, "Bem vindo, " + logado.getNome() + "!");
 		                senha = "";
+		                //this.Dispose();
+		                //this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+		                new menu().show();
 		                //FECHAR APOS AUTENTICACAO
 		            } else {
 		            	JOptionPane.showMessageDialog(null, "Usuario ou senha incorretos!");
@@ -104,13 +110,21 @@ public class AvoeInterface extends JFrame {
 		            }
 				}
 			}
+			boolean flag2 = false;
+			@Override
+			public void keyTyped(KeyEvent e) {
+				if(!flag2) {
+					txtLogin.setText("");
+					flag2 = true;
+				}
+			}
 		});
 		txtLogin.setText("Login");
 		txtLogin.addMouseListener(new MouseAdapter() {
 			boolean flag = false;
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				if (flag == false) {
+				if (!flag) {
 					txtLogin.setText("");
 					flag = true;
 				}
@@ -135,6 +149,7 @@ public class AvoeInterface extends JFrame {
 		                logado = cadastro.autentica(login, senha);
 		                JOptionPane.showMessageDialog(null, "Bem vindo, " + logado.getNome() + "!");
 		                senha = "";
+		                
 		                //FECHAR APOS AUTENTICACAO
 		            } else {
 		            	JOptionPane.showMessageDialog(null, "Usuario ou senha incorretos!");
@@ -165,6 +180,7 @@ public class AvoeInterface extends JFrame {
 	                logado = cadastro.autentica(login, senha);
 	                JOptionPane.showMessageDialog(null, "Bem vindo, " + logado.getNome() + "!");
 	                senha = "";
+	                
 	                //FECHAR APOS AUTENTICACAO
 	            } else {
 	            	JOptionPane.showMessageDialog(null, "Usuario ou senha incorretos!");
