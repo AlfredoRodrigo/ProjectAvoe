@@ -115,9 +115,9 @@ public class AvoeInterface extends JFrame {
 				}
 				if (cadastro.autentica(login, senha) != null) {
 	                logado = cadastro.autentica(login, senha);
-	                //FECHAR APÓS AUTENTICAÇÃO
+	                //FECHAR APOS AUTENTICACAO
 	            } else {
-	            	JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+	            	JOptionPane.showMessageDialog(null, "Usuï¿½rio ou senha incorretos!");
 	            	senha = "";
 	            }
 			}
