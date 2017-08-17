@@ -17,9 +17,10 @@ import java.awt.Canvas;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import java.awt.Toolkit;
+import java.awt.Window;
 import java.awt.Window.Type;
 import java.awt.Label;
-//import com.jgoodies.forms.factories.DefaultComponentFactory;
+import com.jgoodies.forms.factories.DefaultComponentFactory;
 import javax.swing.JFormattedTextField;
 import java.awt.TextField;
 import java.awt.Color;
@@ -50,6 +51,7 @@ public class AvoeInterface extends JFrame {
 
     Usuario logado = null;
     String login, senha = "";
+    static AvoeInterface telaDeLogin;
     
 	/**
 	 * Launch the application.
@@ -59,8 +61,8 @@ public class AvoeInterface extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AvoeInterface login = new AvoeInterface();
-					login.setVisible(true);
+					telaDeLogin = new AvoeInterface();
+					telaDeLogin.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -72,11 +74,7 @@ public class AvoeInterface extends JFrame {
 	 * Create the frame.
 	 */
 	public AvoeInterface() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage(AvoeInterface.class.getResource("/lpoo/projectAvoe/icons/icon2.png")));
-		//		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\Documentos\\Documentos do Usu\u00E1rio\\Acad\u00EAmico\\IFPB\\E.C\\Mat\u00E9rias\\Laborat\u00F3rio de POO\\Documentos\\Programas\\ProjectAvoe\\icons\\icon2.png"));
 		setTitle("ProjectAvoe");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(UIManager.getColor("Button.background"));
@@ -86,7 +84,6 @@ public class AvoeInterface extends JFrame {
 		
 		txtLogin = new JTextField();
 		txtLogin.addKeyListener(new KeyAdapter() {
-			@SuppressWarnings("deprecation")
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -96,12 +93,13 @@ public class AvoeInterface extends JFrame {
 					}
 					if (cadastro.autentica(login, senha) != null) {
 		                logado = cadastro.autentica(login, senha);
-		                JOptionPane.showMessageDialog(null, "Bem vindo, " + logado.getNome() + "!");
 		                senha = "";
 		                //this.Dispose();
 		                //this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
-		                new menu().show();
 		                //FECHAR APOS AUTENTICACAO
+		                Menu menu = new Menu();
+		                menu.show();
+		                telaDeLogin.setVisible(false);
 		            } else {
 		            	JOptionPane.showMessageDialog(null, "Usuario ou senha incorretos!");
 		            	senha = "";
@@ -147,10 +145,12 @@ public class AvoeInterface extends JFrame {
 					}
 					if (cadastro.autentica(login, senha) != null) {
 		                logado = cadastro.autentica(login, senha);
-		                JOptionPane.showMessageDialog(null, "Bem vindo, " + logado.getNome() + "!");
 		                senha = "";
 		                
 		                //FECHAR APOS AUTENTICACAO
+		                Menu menu = new Menu();
+		                menu.show();
+		                telaDeLogin.setVisible(false);
 		            } else {
 		            	JOptionPane.showMessageDialog(null, "Usuario ou senha incorretos!");
 		            	senha = "";
@@ -178,10 +178,12 @@ public class AvoeInterface extends JFrame {
 				}
 				if (cadastro.autentica(login, senha) != null) {
 	                logado = cadastro.autentica(login, senha);
-	                JOptionPane.showMessageDialog(null, "Bem vindo, " + logado.getNome() + "!");
 	                senha = "";
 	                
 	                //FECHAR APOS AUTENTICACAO
+	                Menu menu = new Menu();
+	                menu.show();
+	                telaDeLogin.setVisible(false);
 	            } else {
 	            	JOptionPane.showMessageDialog(null, "Usuario ou senha incorretos!");
 	            	senha = "";
@@ -192,11 +194,6 @@ public class AvoeInterface extends JFrame {
 		});
 		btnEntrar.setBounds(21, 158, 161, 23);
 		contentPane.add(btnEntrar);
-		
-		JLabel lblNewJgoodiesLabel = DefaultComponentFactory.getInstance().createLabel("New JGoodies label");
-		lblNewJgoodiesLabel.setIcon(new ImageIcon(AvoeInterface.class.getResource("/lpoo/projectAvoe/icons/logo-12.png")));
-		lblNewJgoodiesLabel.setBounds(216, 74, 182, 126);
-		contentPane.add(lblNewJgoodiesLabel);
 		
 	}
 }
