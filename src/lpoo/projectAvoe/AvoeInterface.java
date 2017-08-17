@@ -40,7 +40,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class AvoeInterface extends JFrame {
+public class AvoeInterface extends javax.swing.JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtLogin;
