@@ -6,6 +6,7 @@
 package GraficInterface;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 /**
@@ -48,16 +49,17 @@ public class LoginInterface extends javax.swing.JFrame {
         mgn_Entrar = new javax.swing.JLabel();
         ClientLoginName = new javax.swing.JLabel();
 
-        setTitle("Login");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Project Avoe - Login");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setType(java.awt.Window.Type.UTILITY);
-
-        BG_Login.setBackground(new java.awt.Color(255, 255, 0));
+        setLocation(new java.awt.Point(270, 40));
+        setResizable(false);
 
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, BG_Login, org.jdesktop.beansbinding.ELProperty.create("${background}"), BG_Login, org.jdesktop.beansbinding.BeanProperty.create("background"));
         bindingGroup.addBinding(binding);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/iconSup.png"))); // NOI18N
 
         Float.setBackground(new java.awt.Color(153, 153, 153));
@@ -133,28 +135,25 @@ public class LoginInterface extends javax.swing.JFrame {
             FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FloatLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FloatLayout.createSequentialGroup()
-                        .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(UserIcon)
-                            .addComponent(PasswordIcon))
-                        .addGap(18, 18, 18)
-                        .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_entrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Separator2, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE)
-                                .addComponent(PasswordCamp)
-                                .addComponent(Separator)
-                                .addComponent(UserCamp))))
-                    .addComponent(ClientLoginName, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(UserIcon)
+                    .addComponent(PasswordIcon))
+                .addGap(18, 18, 18)
+                .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_entrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Separator2)
+                    .addComponent(PasswordCamp)
+                    .addComponent(Separator)
+                    .addComponent(UserCamp))
+                .addContainerGap(122, Short.MAX_VALUE))
+            .addComponent(ClientLoginName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         FloatLayout.setVerticalGroup(
             FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FloatLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(ClientLoginName, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(FloatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(UserCamp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -176,15 +175,11 @@ public class LoginInterface extends javax.swing.JFrame {
         BG_Login.setLayout(BG_LoginLayout);
         BG_LoginLayout.setHorizontalGroup(
             BG_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BG_LoginLayout.createSequentialGroup()
-                .addGroup(BG_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BG_LoginLayout.createSequentialGroup()
-                        .addGap(370, 370, 370)
-                        .addComponent(jLabel2))
-                    .addGroup(BG_LoginLayout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addComponent(Float, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGap(145, 145, 145)
+                .addComponent(Float, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(145, Short.MAX_VALUE))
         );
         BG_LoginLayout.setVerticalGroup(
             BG_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,9 +189,9 @@ public class LoginInterface extends javax.swing.JFrame {
                         .addGap(80, 80, 80)
                         .addComponent(jLabel2))
                     .addGroup(BG_LoginLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
+                        .addGap(115, 115, 115)
                         .addComponent(Float, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(91, 91, 91))
+                .addGap(100, 100, 100))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
