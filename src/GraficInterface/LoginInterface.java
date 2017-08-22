@@ -56,9 +56,12 @@ public class LoginInterface extends javax.swing.JFrame {
         setLocation(new java.awt.Point(270, 40));
         setResizable(false);
 
+        BG_Login.setBackground(new java.awt.Color(0, 0, 0));
+
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, BG_Login, org.jdesktop.beansbinding.ELProperty.create("${background}"), BG_Login, org.jdesktop.beansbinding.BeanProperty.create("background"));
         bindingGroup.addBinding(binding);
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/iconSup.png"))); // NOI18N
 
@@ -179,7 +182,7 @@ public class LoginInterface extends javax.swing.JFrame {
             .addGroup(BG_LoginLayout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addComponent(Float, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addContainerGap(149, Short.MAX_VALUE))
         );
         BG_LoginLayout.setVerticalGroup(
             BG_LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
