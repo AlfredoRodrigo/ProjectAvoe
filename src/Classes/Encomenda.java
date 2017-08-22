@@ -3,7 +3,7 @@ package Classes;
 public class Encomenda {
     private boolean prioridade;
     private int codigo;
-    private double peso, largura, altura, comprimento;
+    private double peso;
     private long latitude, longitude;
     private String categoria, destinatario;
 
@@ -38,31 +38,7 @@ public class Encomenda {
     public void setPeso(double peso) {
         this.peso = peso;
     }
-
-    public double getLargura() {
-        return largura;
-    }
-
-    public void setLargura(double largura) {
-        this.largura = largura;
-    }
-
-    public double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(double altura) {
-        this.altura = altura;
-    }
-
-    public double getComprimento() {
-        return comprimento;
-    }
-
-    public void setComprimento(double comprimento) {
-        this.comprimento = comprimento;
-    }
-
+    
     public long getLatitude() {
         return latitude;
     }

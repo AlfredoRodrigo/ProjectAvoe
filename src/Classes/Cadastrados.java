@@ -4,10 +4,12 @@ public class Cadastrados {
     private int usuariosCadastrados = 0;
     private int imoveisCadastrados = 0;
     private int qtdAdm = 0;
-
+    
     private static Usuario[] usuarios = new Usuario[20];
     private static Casa[] imoveis = new Casa[500];
-
+    private ListaDinamica.Lista encomendasNormais = new ListaDinamica.Lista();
+    private ListaDinamica.Lista encomendasPrioritarias = new ListaDinamica.Lista();
+    
     public int getQtdAdm() {
         return qtdAdm;
     }
@@ -153,4 +155,31 @@ public class Cadastrados {
         }
         return null;
     }
+    
+    public void cadastraEncomenda(int codigo, double peso, boolean p, long latitude,
+            long longitude, String categoria, String destinatario) {
+        
+        Encomenda encomenda = new Encomenda();
+        encomenda.setCodigo(codigo);
+        encomenda.setPeso(peso);
+        encomenda.setPrioridade(p);
+        encomenda.setLatitude(latitude);
+        encomenda.setLongitude(longitude);
+        encomenda.setCategoria(categoria);
+        encomenda.setDestinatario(destinatario);
+        
+        if (p) {
+            this.encomendasPrioritarias.inserirNoFim(encomenda);
+        }
+        else {
+            this.encomendasNormais.inserirNoFim(encomenda);
+        }
+    }
+
+    public ListaDinamica.Lista getEncomendasNormais() {
+        return encomendasNormais;
+    }
+    
+    
+    
 }

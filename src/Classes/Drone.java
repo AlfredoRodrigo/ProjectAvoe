@@ -2,11 +2,12 @@ package Classes;
 
 public class Drone {
     private boolean disponibilidade;
+    private boolean bateriaCritica = false;
     private String marca;
     private String modelo;
     private double capCarga;
     private double velocidade;
-    private double durabilidadeBat;
+    private double durabilidadeBat = 100;
     private Encomenda cargaAtual;
 
     public boolean isDisponibilidade() {
@@ -17,6 +18,14 @@ public class Drone {
         this.disponibilidade = disponibilidade;
     }
 
+    public boolean isBateriaCritica() {
+        return bateriaCritica;
+    }
+
+    public void setBateriaCritica(boolean bateriaCritica) {
+        this.bateriaCritica = bateriaCritica;
+    }
+    
     public Encomenda getCargaAtual() {
         return cargaAtual;
     }
@@ -70,6 +79,7 @@ public class Drone {
         Percorrer a lista procurando a próxima entrega da mesma em que this.Drone seja capaz de levar superando os requisitos mínimos
         quando encontrada passar para a variável 'cargaAtual' para que ele procure o caminho a ser entregue.
          */
+        
 
 
     }

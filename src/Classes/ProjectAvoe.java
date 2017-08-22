@@ -11,8 +11,22 @@ public class ProjectAvoe {
         int opcao, menu = 0;
 
         Cadastrados cadastro = new Cadastrados();
-        ListaDinamica.Lista encomendas = new ListaDinamica.Lista();
-
+        
+        
+        
+        cadastro.cadastraEncomenda(3020, 10, false, 523023, 523023, "caixa", "eu");
+        cadastro.cadastraEncomenda(3021, 11, false, 523024, 523024, "caixaDePapelão", "tu");
+        cadastro.cadastraEncomenda(3022, 12, false, 523025, 523025, "caixaDeMadeira", "ele");
+        
+//        cadastro.getEncomendas().imprimirLista();
+        cadastro.getEncomendasNormais().excluirNo(3021);
+        cadastro.getEncomendasNormais().excluirNo(3022);
+        cadastro.getEncomendasNormais().excluirNo(3020);
+        cadastro.getEncomendasNormais().excluirNo(3023);
+        cadastro.getEncomendasNormais().excluirNo(30210);
+        cadastro.getEncomendasNormais().excluirNo(30210);
+        cadastro.getEncomendasNormais().imprimirLista();
+        
         Usuario logado = null;
         String login, senha;
 

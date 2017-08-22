@@ -5,13 +5,14 @@ public class ListaDinamica {
         /*
         Objeto 'No', contêm a encomenda e o apontador para o próximo elemento da lista.
         */
-        Encomenda encomenda;                   // Erro por não possuir a classe encomenda.
+        Encomenda encomenda;
         No prox;
 
-        public No(Encomenda encomenda){        // Eroo por não possuir a classe encomenda.
-            encomenda = encomenda;
+        public No(Encomenda encomenda){      
+            this.encomenda = encomenda;
             prox = null;
         }
+        
     }
 
     static class Lista {
@@ -42,35 +43,39 @@ public class ListaDinamica {
             return false;
         }
 
-        public void inserirNoInicio(No n) {
+        public void inserirNoInicio(Encomenda encomenda) {
         /*
         Método para adicionar um novo elemento no inicio da lista.
         */
+            No no = new No(encomenda);
+        
             if (checkIfListaVazia()) {
-                primeiro = ultimo = n;
+                primeiro = ultimo = no;
             } else {
-                n.prox = primeiro;
-                primeiro = n;
+                no.prox = primeiro;
+                primeiro = no;
             }
             totalNos++;
         }
 
-        public void inserirNoFim(No n) {
+        public void inserirNoFim(Encomenda encomenda) {
         /*
         Método para adicionar um novo elemento no final da lista.
         */
             // caso não existam nós inseridos,
             // insere o primeiro nó (n) na lista
+            No no = new No(encomenda);
+            
             if (checkIfListaVazia()) {
-                primeiro = ultimo = n;
+                primeiro = ultimo = no;
             } else {
-                ultimo.prox = n;
-                ultimo = n;
+                ultimo.prox = no;
+                ultimo = no;
             }
             totalNos++;
         }
 
-        public void excluirNo(No n) {
+        public void excluirNo(int codigo) {
         /*
         Excluir No baseado no nome do destinatario da encomenda.
         ### Melhor achar algo mais eficiente para procura, pois um mesmo destinatário pode possuir diversas encomendas.
@@ -81,13 +86,13 @@ public class ListaDinamica {
             int contador = 1;
 
             if (!checkIfListaVazia()) {
-                while (contador <= getTotalNos() && (noAtual.encomenda.getCodigo() != n.encomenda.getCodigo())) {
+                while (contador <= getTotalNos() && (noAtual.encomenda.getCodigo() != codigo) && (noAtual != null)) {
                     noAnterior = noAtual;
                     noAtual = noAtual.prox;
                     contador++;
                 }
 
-                if (noAtual.encomenda.getCodigo() == n.encomenda.getCodigo()) {
+                if (noAtual.encomenda.getCodigo() == codigo) {
                     if (getTotalNos() == 1) {
                         primeiro = ultimo = null;
                     } else {
@@ -107,8 +112,9 @@ public class ListaDinamica {
             Método para imprimir a lista informando o destinatário peso e prioridade(Nessa sequência).
             ### Modificar função dependendo das variáveis de encomenda para especificala ao usuario de forma completa.
             */
-            No x = primeiro;
-            for (int i = 0; i <= totalNos; i++){
+            No x = this.primeiro;
+            
+            while(x != null) {
                 System.out.println("Destinatário: " + x.encomenda.getDestinatario() +
                                    "\nPeso: " + x.encomenda.getPeso() +
                                    "\nPrioridade: " + x.encomenda.getPrioridade() + "\n\n");
