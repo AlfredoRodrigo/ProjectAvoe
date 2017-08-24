@@ -36,7 +36,7 @@ public class ListaDinamica {
             return totalNos;
         }
 
-        public boolean checkIfListaVazia() {
+        public boolean isEmpty() {
             if (getTotalNos() == 0) {
                 return true;
             }
@@ -49,7 +49,7 @@ public class ListaDinamica {
         */
             No no = new No(encomenda);
         
-            if (checkIfListaVazia()) {
+            if (isEmpty()) {
                 primeiro = ultimo = no;
             } else {
                 no.prox = primeiro;
@@ -66,7 +66,7 @@ public class ListaDinamica {
             // insere o primeiro nó (n) na lista
             No no = new No(encomenda);
             
-            if (checkIfListaVazia()) {
+            if (isEmpty()) {
                 primeiro = ultimo = no;
             } else {
                 ultimo.prox = no;
@@ -85,7 +85,7 @@ public class ListaDinamica {
             noAtual = noAnterior = primeiro;
             int contador = 1;
 
-            if (!checkIfListaVazia()) {
+            if (!isEmpty()) {
                 while (contador <= getTotalNos() && (noAtual.encomenda.getCodigo() != codigo) && (noAtual != null)) {
                     noAnterior = noAtual;
                     noAtual = noAtual.prox;

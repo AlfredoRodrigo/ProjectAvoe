@@ -3,6 +3,7 @@ package Classes;
 public class Drone {
     private boolean disponibilidade;
     private boolean bateriaCritica = false;
+    private boolean categoria = false;
     private String marca;
     private String modelo;
     private double capCarga;
@@ -74,20 +75,38 @@ public class Drone {
         this.durabilidadeBat = durabilidadeBat;
     }
 
-    public void escolherPacote(){
-        /*
-        Percorrer a lista procurando a próxima entrega da mesma em que this.Drone seja capaz de levar superando os requisitos mínimos
-        quando encontrada passar para a variável 'cargaAtual' para que ele procure o caminho a ser entregue.
-         */
-        
-
-
+    public boolean isCategoria() {
+        return categoria;
     }
 
-    public void calcularRota(long Latitude, long Longitude){
-        /*
-        Usar a Latitude e Longitude do sistema para gerar uma rota de entrega
-        --- A entrega ainda está a ser definida ---
-         */
+    public void setCategoria(boolean categoria) {
+        this.categoria = categoria;
+    }
+
+    public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP){
+        if (!lstP.isEmpty()) {
+            while
+        } else {
+            
+        }
+    }
+    
+    public boolean isApto(Encomenda encomenda) {
+        if ((this.capCarga >= encomenda.getPeso()) && (this.categoria ^! encomenda.isCategoria()))
+
+        return false;
+    }
+
+    public double calcularDistancia(double lat1, double lgtd1, double lat2, double lgtd2){
+        int raioTerrestreKm = 6371;
+        double lat1Rad = Math.toRadians(lat1);
+        double lat2Rad = Math.toRadians(lat2);
+        
+        double deltaLgtdRad = Math.toRadians(lgtd2 - lgtd1);
+       
+        return (Math.acos(Math.cos(lat1Rad) * Math.cos(lat2Rad) *
+                Math.cos(deltaLgtdRad) + Math.sin(lat1Rad) * 
+                        Math.sin(lat2Rad)) * raioTerrestreKm);
+        
     }
 }

@@ -2,16 +2,17 @@ package Classes;
 
 public class Encomenda {
     private boolean prioridade;
+    private boolean categoria;
     private int codigo;
     private double peso;
     private long latitude, longitude;
-    private String categoria, destinatario;
+    private Casa destinatario;
 
-    public String getDestinatario() {
+    public Casa getDestinatario() {
         return destinatario;
     }
 
-    public void setDestinatario(String destinatario) {
+    public void setDestinatario(Casa destinatario) {
         this.destinatario = destinatario;
     }
 
@@ -55,11 +56,11 @@ public class Encomenda {
         this.longitude = longitude;
     }
 
-    public String getCategoria() {
+    public boolean isCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(boolean categoria) {
         this.categoria = categoria;
     }
 }

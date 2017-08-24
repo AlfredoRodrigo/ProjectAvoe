@@ -157,7 +157,7 @@ public class Cadastrados {
     }
     
     public void cadastraEncomenda(int codigo, double peso, boolean p, long latitude,
-            long longitude, String categoria, String destinatario) {
+            long longitude, String categoria, Casa destinatario) {
         
         Encomenda encomenda = new Encomenda();
         encomenda.setCodigo(codigo);
