@@ -85,15 +85,34 @@ public class Drone {
 
     public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP){
         if (!lstP.isEmpty()) {
-            while
+            ListaDinamica.No tempNo = lstP.retornaEncomenda();
+            for (int x = 0; x < lstP.getTotalNos(); x++) {
+                if (isApto(tempNo.encomenda)) {
+                    //iniciar a entrega da encomenda
+                } else {
+                    tempNo = tempNo.prox;
+                }
+            }
         } else {
-            
+            if (!lstN.isEmpty()) {
+            ListaDinamica.No tempNo = lstN.retornaEncomenda();
+                for (int x = 0; x < lstN.getTotalNos(); x++) {
+                    if (isApto(tempNo.encomenda)) {
+                        //iniciar a entrega da encomenda
+                    } else {
+                        tempNo = tempNo.prox;
+                    }
+                }
+            } else {
+                System.err.println("Sem encomendas");
+            }
         }
     }
     
     public boolean isApto(Encomenda encomenda) {
-        if ((this.capCarga >= encomenda.getPeso()) && (this.categoria ^! encomenda.isCategoria()))
-
+        if ((this.capCarga >= encomenda.getPeso()) && (this.categoria ^! encomenda.isCategoria())) {
+            return true;
+        }
         return false;
     }
 

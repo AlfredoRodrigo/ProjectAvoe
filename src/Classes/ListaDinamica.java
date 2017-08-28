@@ -42,6 +42,10 @@ public class ListaDinamica {
             }
             return false;
         }
+        
+        public No retornaEncomenda() {
+            return primeiro;
+        }
 
         public void inserirNoInicio(Encomenda encomenda) {
         /*
