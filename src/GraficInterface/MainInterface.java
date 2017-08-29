@@ -58,6 +58,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/iconSup.png"))); // NOI18N
 
         btn_Entrega.setBackground(new java.awt.Color(204, 204, 204));
+        btn_Entrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_Entrega.getBackground()));
         btn_Entrega.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_EntregaMouseClicked(evt);
@@ -95,7 +96,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
 
         btn_Drones.setBackground(new java.awt.Color(255, 255, 255));
-        btn_Drones.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        btn_Drones.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_Drones.getBackground()));
         btn_Drones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_DronesMouseClicked(evt);
@@ -133,7 +134,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
 
         btn_Usuários.setBackground(new java.awt.Color(255, 255, 255));
-        btn_Usuários.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        btn_Usuários.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_Usuários.getBackground()));
         btn_Usuários.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_UsuáriosMouseClicked(evt);
@@ -171,7 +172,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
 
         btn_LocaisdeEntrega.setBackground(new java.awt.Color(255, 255, 255));
-        btn_LocaisdeEntrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(240, 240, 240)));
+        btn_LocaisdeEntrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_LocaisdeEntrega.getBackground()));
         btn_LocaisdeEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btn_LocaisdeEntregaMouseClicked(evt);
@@ -218,7 +219,7 @@ public class MainInterface extends javax.swing.JFrame {
         );
         side_PanelLayout.setVerticalGroup(
             side_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 131, Short.MAX_VALUE)
         );
 
         WorkPanel.setBackground(new java.awt.Color(255, 255, 255));
