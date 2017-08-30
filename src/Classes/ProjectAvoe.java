@@ -12,6 +12,42 @@ public class ProjectAvoe {
 
         Cadastrados cadastro = new Cadastrados();
         
+        Drone drone1 = new Drone();
+        drone1.setCapCarga(40);
+        drone1.setCategoria(true);
+        
+        Drone drone2 = new Drone();
+        drone2.setCapCarga(40);
+        drone2.setCategoria(true);
+        
+        Drone drone3 = new Drone();
+        drone3.setCapCarga(40);
+        drone3.setCategoria(false);
+        
+        Encomenda encomenda1 = new Encomenda();
+        Encomenda encomenda2 = new Encomenda();
+        Encomenda encomenda3 = new Encomenda();
+        
+        Casa casa1 = new Casa();
+        Casa casa2 = new Casa();
+        Casa casa3 = new Casa();
+        
+        casa1.setProprietario("Alfredo");
+        casa2.setProprietario("Guilherme");
+        casa3.setProprietario("Bryan");
+        
+        cadastro.cadastraEncomenda(101, 10, false, 12345, 67891, false, casa1);
+        cadastro.cadastraEncomenda(102, 20, false, 23456, 78912, true, casa2);
+        cadastro.cadastraEncomenda(103, 30, true, 34567, 89123, true, casa3);
+        
+        drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        
+//        cadastro.getEncomendasNormais().imprimirLista();
+//        cadastro.getEncomendasPrioritarias().imprimirLista();
+//        cadastro.getEncomendasEmTransito().imprimirLista();
+        
         Usuario logado = null;
         String login, senha;
 
@@ -39,6 +75,10 @@ public class ProjectAvoe {
             }
         } while (logado == null);
 
+        cadastro.finalizarEntrega(drone1, logado);
+        cadastro.finalizarEntrega(drone2, logado);
+        cadastro.finalizarEntrega(drone3, logado);
+        
         do {
             if (menu == 0) {
                 try {

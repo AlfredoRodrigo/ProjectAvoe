@@ -117,7 +117,9 @@ public class ListaDinamica {
             ### Modificar função dependendo das variáveis de encomenda para especificala ao usuario de forma completa.
             */
             No x = this.primeiro;
-            
+            if (totalNos == 0) {
+                System.out.println("Lista vazia");
+            }
             while(x != null) {
                 System.out.println("Destinatário: " + x.encomenda.getDestinatario() +
                                    "\nPeso: " + x.encomenda.getPeso() +

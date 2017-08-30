@@ -1,7 +1,7 @@
 package Classes;
 
 public class Drone {
-    private boolean disponibilidade;
+    private boolean disponibilidade = true;
     private boolean bateriaCritica = false;
     private boolean categoria = false;
     private String marca;
@@ -9,7 +9,7 @@ public class Drone {
     private double capCarga;
     private double velocidade;
     private double durabilidadeBat = 100;
-    private Encomenda cargaAtual;
+    private Encomenda pacoteAtual;
 
     public boolean isDisponibilidade() {
         return disponibilidade;
@@ -27,12 +27,12 @@ public class Drone {
         this.bateriaCritica = bateriaCritica;
     }
     
-    public Encomenda getCargaAtual() {
-        return cargaAtual;
+    public Encomenda getPacoteAtual() {
+        return pacoteAtual;
     }
 
-    public void setCargaAtual(Encomenda cargaAtual) {
-        this.cargaAtual = cargaAtual;
+    public void setPacoteAtual(Encomenda pacoteAtual) {
+        this.pacoteAtual = pacoteAtual;
     }
 
     public String getMarca() {
@@ -83,28 +83,36 @@ public class Drone {
         this.categoria = categoria;
     }
 
-    public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP){
-        if (!lstP.isEmpty()) {
-            ListaDinamica.No tempNo = lstP.retornaEncomenda();
-            for (int x = 0; x < lstP.getTotalNos(); x++) {
-                if (isApto(tempNo.encomenda)) {
-                    //iniciar a entrega da encomenda
-                } else {
-                    tempNo = tempNo.prox;
-                }
-            }
-        } else {
-            if (!lstN.isEmpty()) {
-            ListaDinamica.No tempNo = lstN.retornaEncomenda();
-                for (int x = 0; x < lstN.getTotalNos(); x++) {
+    public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP, ListaDinamica.Lista lstT){
+        if (this.disponibilidade) {
+            if (!lstP.isEmpty()) {
+                ListaDinamica.No tempNo = lstP.retornaEncomenda();
+                for (int x = 0; x < lstP.getTotalNos(); x++) {
                     if (isApto(tempNo.encomenda)) {
-                        //iniciar a entrega da encomenda
+                        disponibilidade = false;
+                        setPacoteAtual(tempNo.encomenda);
+                        lstT.inserirNoInicio(pacoteAtual);
+                        lstP.excluirNo(pacoteAtual.getCodigo());
                     } else {
                         tempNo = tempNo.prox;
                     }
                 }
             } else {
-                System.err.println("Sem encomendas");
+                if (!lstN.isEmpty()) {
+                ListaDinamica.No tempNo = lstN.retornaEncomenda();
+                    for (int x = 0; x < lstN.getTotalNos(); x++) {
+                        if (isApto(tempNo.encomenda)) {
+                            disponibilidade = false;
+                            setPacoteAtual(tempNo.encomenda);
+                            lstT.inserirNoInicio(pacoteAtual);
+                            lstN.excluirNo(pacoteAtual.getCodigo());
+                        } else {
+                            tempNo = tempNo.prox;
+                        }
+                    }
+                } else {
+                    System.err.println("Sem encomendas");
+                }
             }
         }
     }
