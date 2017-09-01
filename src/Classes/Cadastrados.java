@@ -211,15 +211,13 @@ public class Cadastrados {
     
     public void salvarEmArquivo(Encomenda encomenda, Usuario logado) {
         try {
-//            FileInputStream historyIn = new FileInputStream("D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls");
-            FileOutputStream historyOut = new FileOutputStream("D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls");
-            
-            Workbook planilha = new HSSFWorkbook();
+            HSSFWorkbook planilha = new HSSFWorkbook(new FileInputStream("D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls"));
+            //ERRO, creio eu que seja por causa do tipo. Resolva!
             Sheet folha = planilha.getSheet("history");
-            Row linha = folha.getRow(qtdLinhasHistory);
+            Row linha = folha.createRow(qtdLinhasHistory);
             Cell celulas[] = new Cell[9];
             for (int x = 0; x < 9; x++) {
-                Cell celula = linha.getCell(x);
+                Cell celula = linha.createCell(x);
                 switch (x) {
                     case 0:
                         celula.setCellValue(qtdLinhasHistory - 1);
@@ -260,6 +258,7 @@ public class Cadastrados {
                 }
                 celulas[x] = celula;
             }
+            FileOutputStream historyOut = new FileOutputStream("D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls");
             planilha.write(historyOut);
             planilha.close();
             qtdLinhasHistory++;
