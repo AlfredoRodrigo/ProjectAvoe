@@ -1,21 +1,11 @@
 package Classes;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
 
 public class Cadastrados {
     private int usuariosCadastrados = 0;
     private int imoveisCadastrados = 0;
     private int qtdAdm = 0;
-    private int qtdLinhasHistory = 2;
     
     private static Usuario[] usuarios = new Usuario[20];
     private static Casa[] imoveis = new Casa[500];
@@ -201,78 +191,12 @@ public class Cadastrados {
         return encomendasEmTransito;
     }
     
-    public void finalizarEntrega(Drone drone, Usuario logado) {
+    public void finalizarEntrega(Drone drone, Usuario logado) throws IOException {
 //        encomendasEmTransito.excluirNo(encomenda.getCodigo());
+        SalvarEmArquivo save = new SalvarEmArquivo();
         System.out.println(drone.getPacoteAtual().getCodigo());
-        salvarEmArquivo(drone.getPacoteAtual(), logado);
+        save.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);
     }
-
-    
-    public void salvarEmArquivo(Encomenda encomenda, Usuario logado) {
-        try {
-            HSSFWorkbook planilha = new HSSFWorkbook(new FileInputStream("D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls"));
-            FileOutputStream historyOut = new FileOutputStream("D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls", true);
-            //ERRO, creio eu que seja por causa do tipo. Resolva!
-            Sheet folha = planilha.createSheet("history2");
-            Row linha = folha.createRow(qtdLinhasHistory);
-            Cell celulas[] = new Cell[9];
-            for (int x = 0; x < 9; x++) {
-                Cell celula = linha.createCell(x);
-                switch (x) {
-                    case 0:
-                        celula.setCellValue(qtdLinhasHistory - 1);
-                        break;
-                    case 1:
-                        celula.setCellValue(encomenda.getCodigo());
-                        break;
-                    case 2:
-                        celula.setCellValue(encomenda.getDestinatario().getProprietario());
-                        break;
-                    case 3:
-                        celula.setCellValue(encomenda.getPeso());
-                        break;
-                    case 4:
-                        if (encomenda.isCategoria()) {
-                            celula.setCellValue("Carta");
-                        }
-                        else {
-                            celula.setCellValue("Pacote");
-                        }
-                        break;
-                    case 5:
-                        celula.setCellValue(logado.getNome() + "(" + logado.getLogin() + ")");
-
-                        break;
-                    case 6:
-                        //colocar data de cadastro da encomenda
-                        break;
-                    case 7:
-                        //colocar hora de cadastro da encomenda
-                        break;
-                    case 8:
-                        //colocar data de entrega da encomenda
-                        break;
-                    case 9:
-                        //colocar hora de entrega da encomenda
-                        break;
-                }
-                celulas[x] = celula;
-            }
-            planilha.write(historyOut);
-            planilha.close();
-            qtdLinhasHistory++;
-        } catch (FileNotFoundException a) {
-            a.printStackTrace();
-        } catch (IOException b) {
-            b.printStackTrace();  
-        }
-    }
-    
-    //public void salvarEmArquivo() {
-        
-        
-    //}
-    
 }
