@@ -79,7 +79,7 @@ public class ListaDinamica {
             totalNos++;
         }
 
-        public void excluirNo(int codigo) {
+        public void excluirNo(String codigo) {
         /*
         Excluir No baseado no nome do destinatario da encomenda.
         ### Melhor achar algo mais eficiente para procura, pois um mesmo destinatário pode possuir diversas encomendas.
@@ -90,13 +90,13 @@ public class ListaDinamica {
             int contador = 1;
 
             if (!isEmpty()) {
-                while (contador <= getTotalNos() && (noAtual.encomenda.getCodigo() != codigo) && (noAtual != null)) {
+                while (contador <= getTotalNos() && (!(noAtual.encomenda.getCodigo().equals(codigo))) && (noAtual != null)) {
                     noAnterior = noAtual;
                     noAtual = noAtual.prox;
                     contador++;
                 }
 
-                if (noAtual.encomenda.getCodigo() == codigo) {
+                if (noAtual.encomenda.getCodigo().equals(codigo)) {
                     if (getTotalNos() == 1) {
                         primeiro = ultimo = null;
                     } else {

@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -13,7 +16,23 @@ import org.apache.poi.ss.usermodel.Row;
 
 public class SalvarEmArquivo {
     
-    private static final String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\history.xls";
+    private static final String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\history.xls";
+    
+    public static String createDate(){
+            java.util.Date data = new Date();
+            String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+            
+            return(nomedata);
+        }
+    
+    public static String createHour(){
+        String hora;
+        java.util.Date agora = new java.util.Date();
+        SimpleDateFormat formata = new SimpleDateFormat("HH:mm:ss");
+        hora = formata.format(agora);
+        
+        return(hora);
+    }
     
     public void save(Encomenda encomenda, Usuario logado) throws IOException {
         try {
@@ -23,12 +42,11 @@ public class SalvarEmArquivo {
             HSSFWorkbook planilha = new HSSFWorkbook(historyIn);
             HSSFSheet folha = planilha.getSheetAt(0);
             
-            System.out.println("AQUIIII" + folha.getLastRowNum());
-            
+            System.out.println(folha.getLastRowNum());
             Row linha = folha.createRow(folha.getLastRowNum() + 1);
             
             
-            for (int x = 0; x < 9; x++) {
+            for (int x = 0; x <= 9; x++) {
                 Cell celula = linha.createCell(x);
                 switch (x) {
                     //CONSERTAR
@@ -36,15 +54,21 @@ public class SalvarEmArquivo {
                         celula.setCellValue(folha.getLastRowNum() - 1);
                         break;
                     case 1:
-                        celula.setCellValue(encomenda.getCodigo());
+                        celula.setCellValue(createDate());
                         break;
                     case 2:
-                        celula.setCellValue(encomenda.getDestinatario().getProprietario());
+                        celula.setCellValue(createHour());
                         break;
                     case 3:
-                        celula.setCellValue(encomenda.getPeso());
+                        celula.setCellValue(encomenda.getCodigo());
                         break;
                     case 4:
+                        celula.setCellValue(encomenda.getDestinatario().getProprietario());
+                        break;
+                    case 5:
+                        celula.setCellValue(encomenda.getPeso());
+                        break;
+                    case 6:
                         if (encomenda.isCategoria()) {
                             celula.setCellValue("Carta");
                         }
@@ -52,21 +76,14 @@ public class SalvarEmArquivo {
                             celula.setCellValue("Pacote");
                         }
                         break;
-                    case 5:
-                        celula.setCellValue(logado.getNome() + "(" + logado.getLogin() + ")");
-
-                        break;
-                    case 6:
-                        //colocar data de cadastro da encomenda
-                        break;
                     case 7:
-                        //colocar hora de cadastro da encomenda
+                        celula.setCellValue(logado.getNome() + "(" + logado.getLogin() + ")");
                         break;
                     case 8:
-                        //colocar data de entrega da encomenda
+                        celula.setCellValue(createDate());
                         break;
                     case 9:
-                        //colocar hora de entrega da encomenda
+                        celula.setCellValue(createHour());
                         break;
                 }
             }

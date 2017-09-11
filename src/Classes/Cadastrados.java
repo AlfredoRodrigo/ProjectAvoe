@@ -1,6 +1,8 @@
 package Classes;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.util.Date;
 
 public class Cadastrados {
     private int usuariosCadastrados = 0;
@@ -159,11 +161,19 @@ public class Cadastrados {
         return null;
     }
     
-    public void cadastraEncomenda(int codigo, double peso, boolean p, long latitude,
+    public static String createCode(){
+            java.util.Date data = new Date();
+            String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+            String dataFinal = "" + nomedata.charAt(0) + nomedata.charAt(1) + nomedata.charAt(3) + nomedata.charAt(4) + nomedata.charAt(8) + nomedata.charAt(9) + '-';
+            
+            return(dataFinal);
+        }
+    
+    public void cadastraEncomenda(double peso, boolean p, long latitude,
             long longitude, boolean categoria, Casa destinatario) {
         
         Encomenda encomenda = new Encomenda();
-        encomenda.setCodigo(codigo);
+        encomenda.setCodigo(createCode());
         encomenda.setPeso(peso);
         encomenda.setPrioridade(p);
         encomenda.setLatitude(latitude);
@@ -194,7 +204,7 @@ public class Cadastrados {
     public void finalizarEntrega(Drone drone, Usuario logado) throws IOException {
 //        encomendasEmTransito.excluirNo(encomenda.getCodigo());
         SalvarEmArquivo save = new SalvarEmArquivo();
-        System.out.println(drone.getPacoteAtual().getCodigo());
+        System.out.println(drone.getPacoteAtual());
         save.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);

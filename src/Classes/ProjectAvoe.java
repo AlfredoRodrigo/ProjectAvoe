@@ -36,9 +36,9 @@ public class ProjectAvoe {
         casa2.setProprietario("Guilherme");
         casa3.setProprietario("Bryan");
         
-        cadastro.cadastraEncomenda(101, 10, false, 12345, 67891, false, casa1);
-        cadastro.cadastraEncomenda(102, 20, false, 23456, 78912, true, casa2);
-        cadastro.cadastraEncomenda(103, 30, true, 34567, 89123, true, casa3);
+        cadastro.cadastraEncomenda(10, false, 12345, 67891, true, casa1);
+        cadastro.cadastraEncomenda(20, false, 23456, 78912, true, casa2);
+        cadastro.cadastraEncomenda(30, true, 34567, 89123, true, casa3);
         
         drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());

@@ -3,7 +3,7 @@ package Classes;
 public class Encomenda {
     private boolean prioridade;
     private boolean categoria;
-    private int codigo;
+    private String codigo;
     private double peso;
     private long latitude, longitude;
     private Casa destinatario;
@@ -16,11 +16,11 @@ public class Encomenda {
         this.destinatario = destinatario;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
