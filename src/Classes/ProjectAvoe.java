@@ -13,14 +13,17 @@ public class ProjectAvoe {
         Cadastrados cadastro = new Cadastrados();
         
         Drone drone1 = new Drone();
+        drone1.setID("Drone 1");
         drone1.setCapCarga(40);
         drone1.setCategoria(true);
         
         Drone drone2 = new Drone();
+        drone2.setID("Drone 2");
         drone2.setCapCarga(40);
         drone2.setCategoria(true);
         
         Drone drone3 = new Drone();
+        drone3.setID("Drone 3");
         drone3.setCapCarga(40);
         drone3.setCategoria(false);
         
@@ -36,9 +39,19 @@ public class ProjectAvoe {
         casa2.setProprietario("Guilherme");
         casa3.setProprietario("Bryan");
         
-        cadastro.cadastraEncomenda(10, false, 12345, 67891, true, casa1);
-        cadastro.cadastraEncomenda(20, false, 23456, 78912, true, casa2);
-        cadastro.cadastraEncomenda(30, true, 34567, 89123, true, casa3);
+        cadastro.getEncomendasPrioritarias().imprimirLista();
+        
+        //                          prioridade          categoria
+        //                              |                   |
+        //                              v                   v
+        
+        cadastro.cadastraEncomenda(10, true, 12345, 67891, true, casa1);
+        cadastro.cadastraEncomenda(20, true, 23456, 78912, false, casa2);
+        cadastro.cadastraEncomenda(30, false, 34567, 89123, true, casa3);
+        
+        System.out.println("----------------------------------------------------------------");
+                
+        cadastro.getEncomendasPrioritarias().imprimirLista();
         
         drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());

@@ -169,19 +169,19 @@ public class Cadastrados {
             return(dataFinal);
         }
     
-    public void cadastraEncomenda(double peso, boolean p, long latitude,
+    public void cadastraEncomenda(double peso, boolean prioridade, long latitude,
             long longitude, boolean categoria, Casa destinatario) {
         
         Encomenda encomenda = new Encomenda();
         encomenda.setCodigo(createCode());
         encomenda.setPeso(peso);
-        encomenda.setPrioridade(p);
+        encomenda.setPrioridade(prioridade);
         encomenda.setLatitude(latitude);
         encomenda.setLongitude(longitude);
         encomenda.setCategoria(categoria);
         encomenda.setDestinatario(destinatario);
         
-        if (p) {
+        if (prioridade) {
             this.encomendasPrioritarias.inserirNoFim(encomenda);
         }
         else {
@@ -204,7 +204,10 @@ public class Cadastrados {
     public void finalizarEntrega(Drone drone, Usuario logado) throws IOException {
 //        encomendasEmTransito.excluirNo(encomenda.getCodigo());
         SalvarEmArquivo save = new SalvarEmArquivo();
-        System.out.println(drone.getPacoteAtual());
+        if(drone.getPacoteAtual() == null) {
+            System.err.println("O drone" + drone.getID() + " não é capaz de entregar a encomenda.");
+            return;
+        }
         save.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);

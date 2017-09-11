@@ -6,11 +6,20 @@ public class Drone {
     private boolean categoria = false;
     private String marca;
     private String modelo;
+    private String ID;
     private double capCarga;
     private double velocidade;
     private double durabilidadeBat = 100;
     private Encomenda pacoteAtual;
 
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+    
     public boolean isDisponibilidade() {
         return disponibilidade;
     }
@@ -93,26 +102,27 @@ public class Drone {
                         setPacoteAtual(tempNo.encomenda);
                         lstT.inserirNoInicio(pacoteAtual);
                         lstP.excluirNo(pacoteAtual.getCodigo());
+                        break;
+                    } else {
+                        tempNo = tempNo.prox;
+                    }
+                }
+            } 
+            if (!lstN.isEmpty() && this.disponibilidade) {
+                ListaDinamica.No tempNo = lstN.retornaEncomenda();
+                for (int x = 0; x < lstN.getTotalNos(); x++) {
+                    if (isApto(tempNo.encomenda)) {
+                        disponibilidade = false;
+                        setPacoteAtual(tempNo.encomenda);
+                        lstT.inserirNoInicio(pacoteAtual);
+                        lstN.excluirNo(pacoteAtual.getCodigo());
+                        break;
                     } else {
                         tempNo = tempNo.prox;
                     }
                 }
             } else {
-                if (!lstN.isEmpty()) {
-                ListaDinamica.No tempNo = lstN.retornaEncomenda();
-                    for (int x = 0; x < lstN.getTotalNos(); x++) {
-                        if (isApto(tempNo.encomenda)) {
-                            disponibilidade = false;
-                            setPacoteAtual(tempNo.encomenda);
-                            lstT.inserirNoInicio(pacoteAtual);
-                            lstN.excluirNo(pacoteAtual.getCodigo());
-                        } else {
-                            tempNo = tempNo.prox;
-                        }
-                    }
-                } else {
-                    System.err.println("Sem encomendas");
-                }
+                System.err.println("Sem encomendas");
             }
         }
     }
