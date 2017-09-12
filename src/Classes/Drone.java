@@ -1,6 +1,8 @@
 package Classes;
 
-public class Drone {
+import java.io.*;
+
+public class Drone implements Serializable {
     private boolean disponibilidade = true;
     private boolean bateriaCritica = false;
     private boolean categoria = false;

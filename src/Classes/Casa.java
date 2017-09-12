@@ -1,6 +1,8 @@
 package Classes;
 
-public class Casa {
+import java.io.*;
+
+public class Casa implements Serializable {
     private long latitude, longitude;
     private int numero;
     private String proprietario, rua;

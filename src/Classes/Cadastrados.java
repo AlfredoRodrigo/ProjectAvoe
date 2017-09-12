@@ -1,22 +1,26 @@
 package Classes;
 
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.util.Date;
 
-public class Cadastrados {
+public class Cadastrados implements Serializable {
     private int usuariosCadastrados = 0;
     private int imoveisCadastrados = 0;
     private int qtdAdm = 0;
     
-    private static Usuario[] usuarios = new Usuario[20];
-    private static Casa[] imoveis = new Casa[500];
+    private Usuario[] usuarios = new Usuario[20];
+    private Casa[] imoveis = new Casa[500];
     private ListaDinamica.Lista encomendasNormais = new ListaDinamica.Lista();
     private ListaDinamica.Lista encomendasPrioritarias = new ListaDinamica.Lista();
     private ListaDinamica.Lista encomendasEmTransito = new ListaDinamica.Lista();
     
     public int getQtdAdm() {
         return qtdAdm;
+    }
+
+    public Usuario[] getUsuarios() {
+        return usuarios;
     }
     
     void administradorPadrao() {
@@ -99,6 +103,13 @@ public class Cadastrados {
         return false;
     }
 
+    public void editarUsuario(Usuario usuario, String nome, String login, String senha, boolean admin) {
+        usuario.setNome(nome);
+        usuario.setLogin(login);
+        usuario.setSenha(senha);
+        usuario.setAdministrador(admin);
+    }
+    
     public void cadastrarImovel(String proprietario, String rua, int numero, long latitude, long longitude) {
         /*
         Adiciona um novo imovel ao sistema, adicionando-o ao array de imoveis no índice encontrado
@@ -147,6 +158,14 @@ public class Cadastrados {
         return false;
     }
 
+    public void editarImovel(Casa casa, long latitude, long longitude, int numero, String proprietario, String rua) {
+        casa.setLatitude(latitude);
+        casa.setLongitude(longitude);
+        casa.setNumero(numero);
+        casa.setProprietario(proprietario);
+        casa.setRua(rua);
+    }
+    
     public Usuario autentica(String login, String senha) {
         for (int i = 0; i < 20; i++) {
             if (usuarios[i] != null){
@@ -162,22 +181,19 @@ public class Cadastrados {
     }
     
     public static String createCode(){
-            java.util.Date data = new Date();
-            String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
-            String dataFinal = "" + nomedata.charAt(0) + nomedata.charAt(1) + nomedata.charAt(3) + nomedata.charAt(4) + nomedata.charAt(8) + nomedata.charAt(9) + '-';
+        java.util.Date data = new Date();
+        String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+        String dataFinal = "" + nomedata.charAt(0) + nomedata.charAt(1) + nomedata.charAt(3) + nomedata.charAt(4) + nomedata.charAt(8) + nomedata.charAt(9) + '-';
             
-            return(dataFinal);
-        }
+        return(dataFinal);
+    }
     
-    public void cadastraEncomenda(double peso, boolean prioridade, long latitude,
-            long longitude, boolean categoria, Casa destinatario) {
+    public void cadastraEncomenda(double peso, boolean prioridade, boolean categoria, Casa destinatario) {
         
         Encomenda encomenda = new Encomenda();
         encomenda.setCodigo(createCode());
         encomenda.setPeso(peso);
         encomenda.setPrioridade(prioridade);
-        encomenda.setLatitude(latitude);
-        encomenda.setLongitude(longitude);
         encomenda.setCategoria(categoria);
         encomenda.setDestinatario(destinatario);
         
@@ -189,6 +205,13 @@ public class Cadastrados {
         }
     }
 
+    public void editarEncomenda(Encomenda encomenda, boolean prioridade, boolean categoria, double peso, Casa destinatario) {
+        encomenda.setPrioridade(prioridade);
+        encomenda.setCategoria(categoria);
+        encomenda.setPeso(peso);
+        encomenda.setDestinatario(destinatario);
+    }
+    
     public ListaDinamica.Lista getEncomendasNormais() {
         return encomendasNormais;
     }

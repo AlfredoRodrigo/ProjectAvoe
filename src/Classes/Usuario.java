@@ -1,17 +1,17 @@
 package Classes;
 
-public class Usuario {
+import java.io.*;
+
+public class Usuario implements Serializable {
     private String nome, login, senha;
-    private boolean flag, administrador;
+    private boolean administrador;
 
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
-        if (!flag) {
-            this.nome = nome;
-        }
+        this.nome = nome;
     }
 
     public String getLogin() {
@@ -19,9 +19,7 @@ public class Usuario {
     }
 
     public void setLogin(String login) {
-        if (!flag) {
-            this.login = login;
-        }
+        this.login = login;
     }
 
     public String getSenha() {
@@ -29,10 +27,7 @@ public class Usuario {
     }
 
     public void setSenha(String senha) {
-        if (!flag) {
-            this.senha = senha;
-            flag = true;
-        }
+        this.senha = senha;
     }
 
     public boolean isAdministrador() {

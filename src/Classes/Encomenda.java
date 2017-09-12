@@ -1,11 +1,12 @@
 package Classes;
 
-public class Encomenda {
+import java.io.*;
+
+public class Encomenda implements Serializable {
     private boolean prioridade;
     private boolean categoria;
     private String codigo;
     private double peso;
-    private long latitude, longitude;
     private Casa destinatario;
 
     public Casa getDestinatario() {
@@ -38,22 +39,6 @@ public class Encomenda {
 
     public void setPeso(double peso) {
         this.peso = peso;
-    }
-    
-    public long getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(long latitude) {
-        this.latitude = latitude;
-    }
-
-    public long getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(long longitude) {
-        this.longitude = longitude;
     }
 
     public boolean isCategoria() {

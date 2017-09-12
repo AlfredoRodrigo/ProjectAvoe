@@ -1,7 +1,9 @@
 package Classes;
 
-public class ListaDinamica {
-    static class No{
+import java.io.*;
+
+public class ListaDinamica implements Serializable {
+    static class No implements Serializable {
         /*
         Objeto 'No', contêm a encomenda e o apontador para o próximo elemento da lista.
         */
@@ -15,7 +17,7 @@ public class ListaDinamica {
         
     }
 
-    static class Lista {
+    static class Lista implements Serializable{
         /*
         A lista de 'Nos', tendo 2 variáveis de referencia 'primeiro' e 'ultimo'.
         Possui uma variável contador 'totalNos' para facilitar a contagem de elementos na lista.

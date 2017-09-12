@@ -5,57 +5,117 @@ import com.sun.org.apache.xpath.internal.SourceTree;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 public class ProjectAvoe {
+    public static void serializa(Cadastrados cadastro, String caminho) {
+        //aqui acontece a serialização do arquivo. Tudo fica dentro de um bloco
+        //try/catch, pois como estamos lidando com entrada e saída de arquivos,
+        //tudo fica mais sucetível a erros.
+        try {
+            //cria o objeto serializável (o arquivo do objeto) no disco
+            FileOutputStream fout = new FileOutputStream(caminho);
+            
+            //instancia o objeto que escreve os dados no arquivo serializável,
+            //ou seja, a classe que serializa os objetos
+            ObjectOutputStream oos = new ObjectOutputStream(fout);
+            
+            //do objeto instanciado anteriormente, chamamos o
+            //método writeObject, que realiza a escrita do objeto
+            //no arquivo serializado
+            oos.writeObject(cadastro);
+            
+            //fecha o objeto responsável pela escrita no arquivo serializável
+            oos.close();
+            
+            //imprime uma mensagem que informa que o processo foi concluído
+            System.out.println("SALVO");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public static Cadastrados deserializa(String caminho) {
+        Cadastrados cadastro;
+        try {
+            //carrega o arquivo serializado do disco para o programa
+            FileInputStream fin = new FileInputStream(caminho);
+            
+            //lê o objeto contido no arquivo serializado
+            ObjectInputStream ois = new ObjectInputStream(fin);
+            
+            //converte os dados lidos anteriormente em um objeto do tipo
+            //Address e o instancia, alocando-o na variável address
+            cadastro = (Cadastrados) ois.readObject();
+            
+            //fecha o objeto responsável por ler o arquivo serializado
+            ois.close();
+            
+            //imprime o objeto "resgatado" do arquivo serializado
+            return cadastro;
+        } catch (Exception ex) {
+//            ex.printStackTrace();
+            return new Cadastrados();
+        }
+    }
+    
     public static void main(String[] args) throws IOException {
         int opcao, menu = 0;
+        
+        String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
 
-        Cadastrados cadastro = new Cadastrados();
+        Cadastrados cadastro = deserializa(fileName);
         
-        Drone drone1 = new Drone();
-        drone1.setID("Drone 1");
-        drone1.setCapCarga(40);
-        drone1.setCategoria(true);
+//        System.out.println(cadastro.getUsuarios()[0].getNome());
+//        System.out.println(cadastro.getUsuarios()[1].getNome());
         
-        Drone drone2 = new Drone();
-        drone2.setID("Drone 2");
-        drone2.setCapCarga(40);
-        drone2.setCategoria(true);
+//        Drone drone1 = new Drone();
+//        drone1.setID("Drone 1");
+//        drone1.setCapCarga(40);
+//        drone1.setCategoria(true);
+//        
+//        Drone drone2 = new Drone();
+//        drone2.setID("Drone 2");
+//        drone2.setCapCarga(40);
+//        drone2.setCategoria(true);
+//        
+//        Drone drone3 = new Drone();
+//        drone3.setID("Drone 3");
+//        drone3.setCapCarga(40);
+//        drone3.setCategoria(false);
+//        
+//        Encomenda encomenda1 = new Encomenda();
+//        Encomenda encomenda2 = new Encomenda();
+//        Encomenda encomenda3 = new Encomenda();
+//        
+//        Casa casa1 = new Casa();
+//        Casa casa2 = new Casa();
+//        Casa casa3 = new Casa();
+//        
+//        casa1.setProprietario("Alfredo");
+//        casa2.setProprietario("Guilherme");
+//        casa3.setProprietario("Bryan");
+//        
+//        cadastro.getEncomendasPrioritarias().imprimirLista();
         
-        Drone drone3 = new Drone();
-        drone3.setID("Drone 3");
-        drone3.setCapCarga(40);
-        drone3.setCategoria(false);
+        //                      prioridade    categoria
+        //                              |      |
+        //                              v      v
         
-        Encomenda encomenda1 = new Encomenda();
-        Encomenda encomenda2 = new Encomenda();
-        Encomenda encomenda3 = new Encomenda();
+//        cadastro.cadastraEncomenda(10, true, true, casa1);
+//        cadastro.cadastraEncomenda(20, true, false, casa2);
+//        cadastro.cadastraEncomenda(30, false, true, casa3);
         
-        Casa casa1 = new Casa();
-        Casa casa2 = new Casa();
-        Casa casa3 = new Casa();
-        
-        casa1.setProprietario("Alfredo");
-        casa2.setProprietario("Guilherme");
-        casa3.setProprietario("Bryan");
-        
-        cadastro.getEncomendasPrioritarias().imprimirLista();
-        
-        //                          prioridade          categoria
-        //                              |                   |
-        //                              v                   v
-        
-        cadastro.cadastraEncomenda(10, true, 12345, 67891, true, casa1);
-        cadastro.cadastraEncomenda(20, true, 23456, 78912, false, casa2);
-        cadastro.cadastraEncomenda(30, false, 34567, 89123, true, casa3);
-        
-        System.out.println("----------------------------------------------------------------");
-                
-        cadastro.getEncomendasPrioritarias().imprimirLista();
-        
-        drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
-        drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
-        drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+//        System.out.println("----------------------------------------------------------------");
+//                
+//        cadastro.getEncomendasPrioritarias().imprimirLista();
+//        
+//        drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+//        drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+//        drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         
 //        cadastro.getEncomendasNormais().imprimirLista();
 //        cadastro.getEncomendasPrioritarias().imprimirLista();
@@ -88,9 +148,9 @@ public class ProjectAvoe {
             }
         } while (logado == null);
 
-        cadastro.finalizarEntrega(drone1, logado);
-        cadastro.finalizarEntrega(drone2, logado);
-        cadastro.finalizarEntrega(drone3, logado);
+//        cadastro.finalizarEntrega(drone1, logado);
+//        cadastro.finalizarEntrega(drone2, logado);
+//        cadastro.finalizarEntrega(drone3, logado);
         
         do {
             if (menu == 0) {
@@ -107,6 +167,12 @@ public class ProjectAvoe {
                                             (opcao == 4) ? 4 :
                                                     (opcao == 0) ? 0 : -1;
                     if (menu == 0) {
+                        try {
+                            serializa(cadastro, fileName);
+                            System.out.println("DEU CERTO :)");
+                        } catch (Exception a){
+                            System.err.println("DEU ERRADO :(");
+                        }
                         break;
                     }
                     else if (menu == -1){
