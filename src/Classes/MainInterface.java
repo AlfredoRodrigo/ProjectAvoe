@@ -12,6 +12,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static Classes.ProjectAvoe.serializa;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,13 +22,15 @@ import java.io.File;
 public class MainInterface extends javax.swing.JFrame {
     //File fileName;
     static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-        static Cadastrados cadastro;
+    static Cadastrados cadastro;
+    static Usuario logado;
     /**
      * Creates new form MainInterface
      */
-    public MainInterface(Cadastrados cadastro) {
+    public MainInterface(Cadastrados cadastro, Usuario logado) {
         //this.fileName = new File(getClass().getResource("/saves/cadastro.ser"));
         this.cadastro = cadastro;
+        this.logado = logado;
         initComponents();
     }
     static boolean flag = true;
@@ -506,6 +510,9 @@ public class MainInterface extends javax.swing.JFrame {
         listCadastradas.setBackground(new java.awt.Color(255, 255, 255));
         listCadastradas.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         listCadastradas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listCadastradasMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 listCadastradasMouseEntered(evt);
             }
@@ -516,7 +523,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         labelListCadastradas.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
         labelListCadastradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelListCadastradas.setText("Entregas Cadastradas");
+        labelListCadastradas.setText("Despachar entregas");
 
         listCadastradasIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listCadastradasIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/indexed.png"))); // NOI18N
@@ -1901,15 +1908,6 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CadastrarLocalLayout.createSequentialGroup()
-                        .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator16, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(145, 145, 145))
-                    .addGroup(CadastrarLocalLayout.createSequentialGroup()
                         .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1933,12 +1931,23 @@ public class MainInterface extends javax.swing.JFrame {
                             .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(CadastrarLocalLayout.createSequentialGroup()
                                     .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 417, Short.MAX_VALUE)
+                                    .addGap(417, 417, 417)
                                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jTextField13, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarLocalLayout.createSequentialGroup()
+                        .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jSeparator14, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, CadastrarLocalLayout.createSequentialGroup()
+                                .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator16, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(145, 145, 145))))
         );
         CadastrarLocalLayout.setVerticalGroup(
             CadastrarLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2244,6 +2253,8 @@ public class MainInterface extends javax.swing.JFrame {
     private void btn_LocaisdeEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LocaisdeEntregaMouseClicked
         defColor(btn_LocaisdeEntrega, btn_Drones, btn_Entrega, btn_Usuários);
         defPanel(LocalPanel, EntregaPanel, DronePanel, UserPanel);
+        EntregaPanel.setVisible(false);
+        CadastrarEncomenda.setVisible(false);
         
     }//GEN-LAST:event_btn_LocaisdeEntregaMouseClicked
 
@@ -2587,18 +2598,42 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel14MouseClicked
 
     private void jPanel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseClicked
-        // Adicionar um local.
-        JOptionPane.showMessageDialog(null,"Novo local de entrega adicionado com sucesso!");
-        defPanel(LocalPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        int num = -1;
+        long lat = 0, logi = 0;
+        try {
+            num = Integer.parseInt(jTextField17.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Número com formato incorreto!");
+        }
+        try {
+            lat = Long.parseLong(jTextField15.getText());
+            logi = Long.parseLong(jTextField18.getText());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Latitude e ou longitude com formato incorreto!");
+        }
+        if (num >= 0 && lat != 0 && logi != 0) {
+            cadastro.cadastrarImovel(jTextField13.getText(), jTextField16.getText(), num, lat, logi);
+            serializa(cadastro, fileName);
+            JOptionPane.showMessageDialog(null,"Novo local de entrega adicionado com sucesso!");
+            defPanel(LocalPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"erro!");
+        }
     }//GEN-LAST:event_jPanel13MouseClicked
 
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
         String combo = jComboBox3.getActionCommand();
         Casa casa = null;
         double peso = 0;
+        int num;
         try {
-            casa = cadastro.procuraImovel(jTextField10.getText(), Integer.parseInt(jTextField14.getText()));
-        } catch (NumberFormatException e) {
+            num = Integer.parseInt(jTextField14.getText());
+            casa = cadastro.procuraImovel(jTextField10.getText(), num);
+            JOptionPane.showMessageDialog(null,jTextField10.getText());
+            JOptionPane.showMessageDialog(null,jTextField14.getText());
+            System.out.println(cadastro.getImoveis()[0]);
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Número com formato incorreto!");
         }
         try {
@@ -2608,10 +2643,13 @@ public class MainInterface extends javax.swing.JFrame {
         }
         
         if (peso >= 0 && casa != null) {
-            cadastro.cadastraEncomenda(peso, jCheckBox2.isEnabled(), true, casa, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
+            cadastro.cadastraEncomenda(peso, jCheckBox2.isEnabled(), false, casa, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
             JOptionPane.showMessageDialog(null,"Nova encomenda adicionada com sucesso!");
             serializa(cadastro, fileName);
             defPanel(EntregaPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"erro!");
         }
     }//GEN-LAST:event_jPanel9MouseClicked
 
@@ -2630,7 +2668,7 @@ public class MainInterface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"valor de capacidade de carga inválido!");
         }
         if (speed != 0 && capCag != 0){
-            cadastro.cadastrarDrone(flag, jTextField7.getText(), jTextField8.getText(), jTextField5.getText(), capCag, speed);
+            cadastro.cadastrarDrone(false, jTextField7.getText(), jTextField8.getText(), jTextField5.getText(), capCag, speed);
             JOptionPane.showMessageDialog(null,"Novo drone adicionado com sucesso!");
             serializa(cadastro, fileName);
             defPanel(DronePanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
@@ -2665,6 +2703,21 @@ public class MainInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
+    private void listCadastradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseClicked
+        Drone[] drones = cadastro.getDrones();
+        for (int i = 0; i <= cadastro.getDronesCadastrados(); i++) {
+            if (drones[i].getPacoteAtual() != null){
+                try {
+                    cadastro.finalizarEntrega(drones[i], logado);
+                } catch (IOException ex) {
+                    Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+        }
+        JOptionPane.showMessageDialog(null,cadastro.getEncomendasPrioritarias().imprimirLista());
+    }//GEN-LAST:event_listCadastradasMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -2677,7 +2730,7 @@ public class MainInterface extends javax.swing.JFrame {
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainInterface(cadastro).setVisible(true);
+                new MainInterface(cadastro, logado).setVisible(true);
             }
         });
     }
@@ -2756,8 +2809,15 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2769,6 +2829,13 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;

@@ -69,36 +69,38 @@ public class ProjectAvoe {
         String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
 
         Cadastrados cadastro = deserializa(fileName);
+//        System.out.println(cadastro.getEncomendasPrioritarias().imprimirLista());
+//        System.out.println(cadastro.getEncomendasNormais().imprimirLista());
         
 //        System.out.println(cadastro.getUsuarios()[0].getNome());
 //        System.out.println(cadastro.getUsuarios()[1].getNome());
         
-//        Drone drone1 = new Drone();
-//        drone1.setID("Drone 1");
-//        drone1.setCapCarga(40);
-//        drone1.setCategoria(true);
+        Drone drone1 = new Drone();
+        drone1.setID("Drone 1");
+        drone1.setCapCarga(40);
+        drone1.setCategoria(true);
+        
+        Drone drone2 = new Drone();
+        drone2.setID("Drone 2");
+        drone2.setCapCarga(40);
+        drone2.setCategoria(true);
+        
+        Drone drone3 = new Drone();
+        drone3.setID("Drone 3");
+        drone3.setCapCarga(40);
+        drone3.setCategoria(false);
+        
+        Encomenda encomenda1 = new Encomenda();
+        Encomenda encomenda2 = new Encomenda();
+        Encomenda encomenda3 = new Encomenda();
 //        
-//        Drone drone2 = new Drone();
-//        drone2.setID("Drone 2");
-//        drone2.setCapCarga(40);
-//        drone2.setCategoria(true);
-//        
-//        Drone drone3 = new Drone();
-//        drone3.setID("Drone 3");
-//        drone3.setCapCarga(40);
-//        drone3.setCategoria(false);
-//        
-//        Encomenda encomenda1 = new Encomenda();
-//        Encomenda encomenda2 = new Encomenda();
-//        Encomenda encomenda3 = new Encomenda();
-//        
-//        Casa casa1 = new Casa();
-//        Casa casa2 = new Casa();
-//        Casa casa3 = new Casa();
-//        
-//        casa1.setProprietario("Alfredo");
-//        casa2.setProprietario("Guilherme");
-//        casa3.setProprietario("Bryan");
+        Casa casa1 = new Casa();
+        Casa casa2 = new Casa();
+        Casa casa3 = new Casa();
+        
+        casa1.setProprietario("Alfredo");
+        casa2.setProprietario("Guilherme");
+        casa3.setProprietario("Bryan");
 //        
 //        cadastro.getEncomendasPrioritarias().imprimirLista();
         
@@ -106,21 +108,21 @@ public class ProjectAvoe {
         //                              |      |
         //                              v      v
         
-//        cadastro.cadastraEncomenda(10, true, true, casa1);
-//        cadastro.cadastraEncomenda(20, true, false, casa2);
-//        cadastro.cadastraEncomenda(30, false, true, casa3);
+        cadastro.cadastraEncomenda(10, true, true, casa1, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
+        cadastro.cadastraEncomenda(20, true, false, casa2, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
+        cadastro.cadastraEncomenda(30, false, true, casa3, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
         
 //        System.out.println("----------------------------------------------------------------");
 //                
 //        cadastro.getEncomendasPrioritarias().imprimirLista();
 //        
-//        drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
-//        drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
-//        drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         
-//        cadastro.getEncomendasNormais().imprimirLista();
-//        cadastro.getEncomendasPrioritarias().imprimirLista();
-//        cadastro.getEncomendasEmTransito().imprimirLista();
+        cadastro.getEncomendasNormais().imprimirLista();
+        cadastro.getEncomendasPrioritarias().imprimirLista();
+        cadastro.getEncomendasEmTransito().imprimirLista();
         
         Usuario logado = null;
         String login, senha;
@@ -149,9 +151,9 @@ public class ProjectAvoe {
             }
         } while (logado == null);
 
-//        cadastro.finalizarEntrega(drone1, logado);
-//        cadastro.finalizarEntrega(drone2, logado);
-//        cadastro.finalizarEntrega(drone3, logado);
+        cadastro.finalizarEntrega(drone1, logado);
+        cadastro.finalizarEntrega(drone2, logado);
+        cadastro.finalizarEntrega(drone3, logado);
         
         do {
             if (menu == 0) {

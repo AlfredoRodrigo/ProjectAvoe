@@ -112,23 +112,47 @@ public class ListaDinamica implements Serializable {
                 }
             }
         }
+           
+        public No retornarEncomenda(int i) {
+            No noAtual;
+            No noAnterior;
+            noAtual = noAnterior = primeiro;
+            int contador = 0;
 
-        public void imprimirLista(){
+            if (!isEmpty()) {
+                while (contador <= getTotalNos() && (i != contador ) && (noAtual != null)) {
+                    noAnterior = noAtual;
+                    noAtual = noAtual.prox;
+                    contador++;
+                }
+
+                if (noAtual != null) {
+                    return noAtual;
+                }
+            }
+            return null;
+        }
+        
+        public String[] imprimirLista(){
             /*
             Método para imprimir a lista informando o destinatário peso e prioridade(Nessa sequência).
             ### Modificar função dependendo das variáveis de encomenda para especificala ao usuario de forma completa.
             */
             No x = this.primeiro;
-            if (totalNos == 0) {
-                System.out.println("Lista vazia");
-            }
+//            if (totalNos == 0) {
+//                return "Lista vazia";
+//            }
             while(x != null) {
-                System.out.println("Destinatário: " + x.encomenda.getDestinatario() +
-                                   "\nPeso: " + x.encomenda.getPeso() +
-                                   "\nPrioridade: " + x.encomenda.getPrioridade() + "\n\n");
-                x = x.prox;
-
+                String[] strings = new String[500];
+                for (int h = 0; h < totalNos; h++) {
+                    String string = "Destinatário: " + x.encomenda.getDestinatario() +
+                                       "\nPeso: " + x.encomenda.getPeso() +
+                                       "\nPrioridade: " + x.encomenda.getPrioridade() + "\n\n";
+                    strings[h] = string;
+                }
+                return strings;
             }
+            return null;
         }
     }
 }

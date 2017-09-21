@@ -162,7 +162,7 @@ public class Cadastrados implements Serializable {
 
     public Casa procuraImovel(String rua, int num) {
         for (int i = 0; i < imoveisCadastrados; i++) {
-            if (imoveis[i].getRua() == rua && imoveis[i].getNumero() == num) {
+            if (imoveis[i].getRua().equalsIgnoreCase(rua) && imoveis[i].getNumero() == num) {
                 return imoveis[i];
             }
         }
@@ -287,5 +287,8 @@ public class Cadastrados implements Serializable {
         save.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);
+        Runnable runnable = drone;
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 }

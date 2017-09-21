@@ -237,7 +237,7 @@ public class LoginInterface extends javax.swing.JFrame {
         
         logado = cadastro.autentica(UserCamp.getText(), PasswordCamp.getText());
         if (logado != null) {
-            MainInterface main = new MainInterface(cadastro);
+            MainInterface main = new MainInterface(cadastro, logado);
             main.setVisible(true);
             this.dispose();
         }
