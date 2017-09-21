@@ -7,10 +7,12 @@ import java.util.Date;
 public class Cadastrados implements Serializable {
     private int usuariosCadastrados = 0;
     private int imoveisCadastrados = 0;
+    private int dronesCadastrados = 0;
     private int qtdAdm = 0;
     
     private Usuario[] usuarios = new Usuario[20];
-    private Casa[] imoveis = new Casa[500];
+    private Casa[] imoveis = new Casa[5000];
+    private Drone[] drones = new Drone[100];
     private ListaDinamica.Lista encomendasNormais = new ListaDinamica.Lista();
     private ListaDinamica.Lista encomendasPrioritarias = new ListaDinamica.Lista();
     private ListaDinamica.Lista encomendasEmTransito = new ListaDinamica.Lista();
@@ -158,6 +160,15 @@ public class Cadastrados implements Serializable {
         return false;
     }
 
+    public Casa procuraImovel(String rua, int num) {
+        for (int i = 0; i < imoveisCadastrados; i++) {
+            if (imoveis[i].getRua() == rua && imoveis[i].getNumero() == num) {
+                return imoveis[i];
+            }
+        }
+        return null;
+    }
+    
     public void editarImovel(Casa casa, long latitude, long longitude, int numero, String proprietario, String rua) {
         casa.setLatitude(latitude);
         casa.setLongitude(longitude);
@@ -223,6 +234,40 @@ public class Cadastrados implements Serializable {
     public ListaDinamica.Lista getEncomendasEmTransito() {
         return encomendasEmTransito;
     }
+    
+    public void cadastrarDrone(boolean categoria, String marca, String modelo, String ID, double capCarga, double velocidade) {
+        Drone drone = new Drone();
+        drone.setCategoria(categoria);
+        drone.setMarca(marca);
+        drone.setModelo(modelo);
+        drone.setID(ID);
+        drone.setCapCarga(capCarga);
+        drone.setVelocidade(velocidade);
+        drones[dronesCadastrados] = drone;
+        dronesCadastrados++;
+    }
+
+    public int getUsuariosCadastrados() {
+        return usuariosCadastrados;
+    }
+
+    public int getImoveisCadastrados() {
+        return imoveisCadastrados;
+    }
+
+    public int getDronesCadastrados() {
+        return dronesCadastrados;
+    }
+
+    public Casa[] getImoveis() {
+        return imoveis;
+    }
+
+    public Drone[] getDrones() {
+        return drones;
+    }
+    
+    
     
     public void finalizarEntrega(Drone drone, Usuario logado) throws IOException {
 //        encomendasEmTransito.excluirNo(encomenda.getCodigo());

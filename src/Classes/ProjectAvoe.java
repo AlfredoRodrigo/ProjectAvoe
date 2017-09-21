@@ -128,7 +128,7 @@ public class ProjectAvoe {
         if (cadastro.getQtdAdm() == 0) {
             cadastro.administradorPadrao();
         }
-        
+
         Scanner input = new Scanner(System.in);
         Scanner inputStr = new Scanner(System.in);
 

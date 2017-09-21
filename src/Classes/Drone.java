@@ -2,7 +2,7 @@ package Classes;
 
 import java.io.*;
 
-public class Drone implements Serializable {
+public class Drone implements Serializable, Runnable {
     private boolean disponibilidade = true;
     private boolean bateriaCritica = false;
     private boolean categoria = false;
@@ -13,7 +13,8 @@ public class Drone implements Serializable {
     private double velocidade;
     private double durabilidadeBat = 100;
     private Encomenda pacoteAtual;
-
+    private ListaDinamica.Lista lstN, lstP, lstT;
+    
     public String getID() {
         return ID;
     }
@@ -93,38 +94,41 @@ public class Drone implements Serializable {
     public void setCategoria(boolean categoria) {
         this.categoria = categoria;
     }
-
-    public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP, ListaDinamica.Lista lstT){
+    
+    public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP, ListaDinamica.Lista lstT) {
+        this.lstN = lstN;
+        this.lstP = lstP;
+        this.lstT = lstT;
+    }
+    public void run() {
         if (this.disponibilidade) {
-            if (!lstP.isEmpty()) {
-                ListaDinamica.No tempNo = lstP.retornaEncomenda();
-                for (int x = 0; x < lstP.getTotalNos(); x++) {
+            if (!this.lstP.isEmpty()) {
+                ListaDinamica.No tempNo = this.lstP.retornaEncomenda();
+                for (int x = 0; x < this.lstP.getTotalNos(); x++) {
                     if (isApto(tempNo.encomenda)) {
                         disponibilidade = false;
                         setPacoteAtual(tempNo.encomenda);
-                        lstT.inserirNoInicio(pacoteAtual);
-                        lstP.excluirNo(pacoteAtual.getCodigo());
+                        this.lstT.inserirNoInicio(pacoteAtual);
+                        this.lstP.excluirNo(pacoteAtual.getCodigo());
                         break;
                     } else {
                         tempNo = tempNo.prox;
                     }
                 }
             } 
-            if (!lstN.isEmpty() && this.disponibilidade) {
-                ListaDinamica.No tempNo = lstN.retornaEncomenda();
-                for (int x = 0; x < lstN.getTotalNos(); x++) {
+            if (!this.lstN.isEmpty() && this.disponibilidade) {
+                ListaDinamica.No tempNo = this.lstN.retornaEncomenda();
+                for (int x = 0; x < this.lstN.getTotalNos(); x++) {
                     if (isApto(tempNo.encomenda)) {
                         disponibilidade = false;
                         setPacoteAtual(tempNo.encomenda);
-                        lstT.inserirNoInicio(pacoteAtual);
-                        lstN.excluirNo(pacoteAtual.getCodigo());
+                        this.lstT.inserirNoInicio(pacoteAtual);
+                        this.lstN.excluirNo(pacoteAtual.getCodigo());
                         break;
                     } else {
                         tempNo = tempNo.prox;
                     }
                 }
-            } else {
-                System.err.println("Sem encomendas");
             }
         }
     }
