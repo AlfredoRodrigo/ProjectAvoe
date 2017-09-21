@@ -11,19 +11,21 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static Classes.ProjectAvoe.serializa;
+import java.io.File;
 
 /**
  *
  * @author guisi
  */
 public class MainInterface extends javax.swing.JFrame {
-
+    //File fileName;
     static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-    static Cadastrados cadastro;
+        static Cadastrados cadastro;
     /**
      * Creates new form MainInterface
      */
     public MainInterface(Cadastrados cadastro) {
+        //this.fileName = new File(getClass().getResource("/saves/cadastro.ser"));
         this.cadastro = cadastro;
         initComponents();
     }
@@ -2606,17 +2608,33 @@ public class MainInterface extends javax.swing.JFrame {
         }
         
         if (peso >= 0 && casa != null) {
-            cadastro.cadastraEncomenda(peso, jCheckBox2.isEnabled(), true, casa);
+            cadastro.cadastraEncomenda(peso, jCheckBox2.isEnabled(), true, casa, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
             JOptionPane.showMessageDialog(null,"Nova encomenda adicionada com sucesso!");
-             serializa(cadastro, fileName);
+            serializa(cadastro, fileName);
             defPanel(EntregaPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
         }
     }//GEN-LAST:event_jPanel9MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
-        // Adicionar um Drone.
-        JOptionPane.showMessageDialog(null,"Novo drone adicionado com sucesso!");
-        defPanel(DronePanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        double speed = 0, capCag = 0;
+        
+        try {
+            speed = Double.parseDouble(jTextField9.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,"Valor de velocidade máxima inválido!");
+        }
+        
+        try {
+            capCag = Double.parseDouble(jTextField6.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null,"valor de capacidade de carga inválido!");
+        }
+        if (speed != 0 && capCag != 0){
+            cadastro.cadastrarDrone(flag, jTextField7.getText(), jTextField8.getText(), jTextField5.getText(), capCag, speed);
+            JOptionPane.showMessageDialog(null,"Novo drone adicionado com sucesso!");
+            serializa(cadastro, fileName);
+            defPanel(DronePanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        }
     }//GEN-LAST:event_jPanel5MouseClicked
 
     private void jPanel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel12MouseClicked

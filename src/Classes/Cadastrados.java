@@ -199,7 +199,7 @@ public class Cadastrados implements Serializable {
         return(dataFinal);
     }
     
-    public void cadastraEncomenda(double peso, boolean prioridade, boolean categoria, Casa destinatario) {
+    public void cadastraEncomenda(double peso, boolean prioridade, boolean categoria, Casa destinatario, String data, String hora) {
         
         Encomenda encomenda = new Encomenda();
         encomenda.setCodigo(createCode());
@@ -207,6 +207,8 @@ public class Cadastrados implements Serializable {
         encomenda.setPrioridade(prioridade);
         encomenda.setCategoria(categoria);
         encomenda.setDestinatario(destinatario);
+        encomenda.setData(data);
+        encomenda.setHora(hora);
         
         if (prioridade) {
             this.encomendasPrioritarias.inserirNoFim(encomenda);
@@ -243,8 +245,14 @@ public class Cadastrados implements Serializable {
         drone.setID(ID);
         drone.setCapCarga(capCarga);
         drone.setVelocidade(velocidade);
+        drone.escolherPacote(encomendasNormais, encomendasPrioritarias, encomendasEmTransito);
         drones[dronesCadastrados] = drone;
         dronesCadastrados++;
+        
+        Runnable runnable = drone;
+        Thread thread = new Thread(runnable);
+        thread.start();
+        
     }
 
     public int getUsuariosCadastrados() {

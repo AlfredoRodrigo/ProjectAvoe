@@ -5,10 +5,26 @@ import java.io.*;
 public class Encomenda implements Serializable {
     private boolean prioridade;
     private boolean categoria;
-    private String codigo;
+    private String codigo, data, hora;
     private double peso;
     private Casa destinatario;
 
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getHora() {
+        return hora;
+    }
+
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+    
     public Casa getDestinatario() {
         return destinatario;
     }

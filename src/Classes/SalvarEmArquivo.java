@@ -22,10 +22,9 @@ public class SalvarEmArquivo implements Serializable {
         }
     
     public static String createHour(){
-        String hora;
         java.util.Date agora = new java.util.Date();
         SimpleDateFormat formata = new SimpleDateFormat("HH:mm:ss");
-        hora = formata.format(agora);
+        String hora = formata.format(agora);
         
         return(hora);
     }
@@ -50,10 +49,10 @@ public class SalvarEmArquivo implements Serializable {
                         celula.setCellValue(folha.getLastRowNum() - 1);
                         break;
                     case 1:
-                        celula.setCellValue(createDate());
+                        celula.setCellValue(encomenda.getData());
                         break;
                     case 2:
-                        celula.setCellValue(createHour());
+                        celula.setCellValue(encomenda.getHora());
                         break;
                     case 3:
                         celula.setCellValue(encomenda.getCodigo());
