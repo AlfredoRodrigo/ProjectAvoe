@@ -21,7 +21,8 @@ import java.util.logging.Logger;
  */
 public class MainInterface extends javax.swing.JFrame {
     //File fileName;
-    static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    //static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
     static Cadastrados cadastro;
     static Usuario logado;
     /**
@@ -766,6 +767,9 @@ public class MainInterface extends javax.swing.JFrame {
         listDrone.setBackground(new java.awt.Color(255, 255, 255));
         listDrone.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         listDrone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listDroneMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 listDroneMouseEntered(evt);
             }
@@ -2437,6 +2441,17 @@ public class MainInterface extends javax.swing.JFrame {
             CadastrarUsuário.setVisible(false);
             CadastrarLocal.setVisible(false);
             RemoverEncomenda.setVisible(false);
+            
+            for(int i = 0; i < cadastro.getDronesCadastrados(); i++) {
+                Runnable runnable = cadastro.getDrones()[i];
+                Thread thread = new Thread(runnable);
+                thread.start();
+            }
+        
+            for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
+                System.out.println(cadastro.getDrones()[i].getID());
+            }
+            
             flag = false;
         }
     }//GEN-LAST:event_EntregaPanelMouseEntered
@@ -2669,8 +2684,8 @@ public class MainInterface extends javax.swing.JFrame {
         }
         if (speed != 0 && capCag != 0){
             cadastro.cadastrarDrone(false, jTextField7.getText(), jTextField8.getText(), jTextField5.getText(), capCag, speed);
-            JOptionPane.showMessageDialog(null,"Novo drone adicionado com sucesso!");
             serializa(cadastro, fileName);
+            JOptionPane.showMessageDialog(null,"Novo drone adicionado com sucesso!");
             defPanel(DronePanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
         }
     }//GEN-LAST:event_jPanel5MouseClicked
@@ -2704,30 +2719,28 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void listCadastradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseClicked
-        Drone[] drones = cadastro.getDrones();
         for (int i = 0; i <= cadastro.getDronesCadastrados(); i++) {
-            if (drones[i].getPacoteAtual() != null){
+            if (cadastro.getDrones()[i].getPacoteAtual() != null){
                 try {
-                    cadastro.finalizarEntrega(drones[i], logado);
+                    cadastro.finalizarEntrega(cadastro.getDrones()[i], logado);
                 } catch (IOException ex) {
                     Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }
-            
+            }   
         }
-        JOptionPane.showMessageDialog(null,cadastro.getEncomendasPrioritarias().imprimirLista());
+        cadastro.getEncomendasPrioritarias().imprimirLista();
+        cadastro.getEncomendasNormais().imprimirLista();
     }//GEN-LAST:event_listCadastradasMouseClicked
+
+    private void listDroneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDroneMouseClicked
+        
+    }//GEN-LAST:event_listDroneMouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        Cadastrados cadastro = MainInterface.cadastro;
-        for(int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-            Runnable runnable = cadastro.getDrones()[i];
-            Thread thread = new Thread(runnable);
-            thread.start();
-        }
+//        Cadastrados cadastro = MainInterface.cadastro;
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainInterface(cadastro, logado).setVisible(true);
@@ -2809,15 +2822,8 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -2829,13 +2835,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;

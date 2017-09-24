@@ -102,6 +102,7 @@ public class Drone implements Serializable, Runnable {
     }
     public void run() {
         while (this.disponibilidade) {
+            System.out.println("O drone " + this.ID + " está funcionando.");
             if (!this.lstP.isEmpty()) {
                 ListaDinamica.No tempNo = this.lstP.retornaEncomenda();
                 for (int x = 0; x < this.lstP.getTotalNos(); x++) {
