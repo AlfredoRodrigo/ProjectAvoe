@@ -14,6 +14,7 @@ import static Classes.ProjectAvoe.serializa;
 import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTextField;
 
 /**
  *
@@ -2598,18 +2599,24 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void jPanel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel10MouseClicked
         defPanel(EntregaPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        resetCamps(jTextField14, jTextField11, jTextField12, jTextField10, jTextField12);
     }//GEN-LAST:event_jPanel10MouseClicked
 
     private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
         defPanel(DronePanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        resetCamps(jTextField7, jTextField8, jTextField5, jTextField9, jTextField6);
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void jPanel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseClicked
         defPanel(UserPanel, CadastrarEncomenda, CadastrarDrone, CadastrarUsuário);
+        resetCamps(jTextField1, jTextField3, jTextField3, jTextField1, jTextField1);
+        jPasswordField1.setText("");
+        jPasswordField2.setText("");
     }//GEN-LAST:event_jPanel11MouseClicked
 
     private void jPanel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel14MouseClicked
         defPanel(LocalPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        resetCamps(jTextField17, jTextField15, jTextField18, jTextField13, jTextField16);
     }//GEN-LAST:event_jPanel14MouseClicked
 
     private void jPanel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseClicked
@@ -2628,6 +2635,8 @@ public class MainInterface extends javax.swing.JFrame {
         }
         if (num >= 0 && lat != 0 && logi != 0) {
             cadastro.cadastrarImovel(jTextField13.getText(), jTextField16.getText(), num, lat, logi);
+            resetCamps(jTextField17, jTextField15, jTextField18, jTextField13, jTextField16);
+            
             serializa(cadastro, fileName);
             JOptionPane.showMessageDialog(null,"Novo local de entrega adicionado com sucesso!");
             defPanel(LocalPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
@@ -2639,15 +2648,19 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
         String combo = jComboBox3.getActionCommand();
+        boolean type;
+        if (combo.equals("Pacote")){
+            type = false;
+        }
+        else{
+            type = true;
+        }
         Casa casa = null;
         double peso = 0;
-        int num;
+        int num = -1;
         try {
             num = Integer.parseInt(jTextField14.getText());
-            casa = cadastro.procuraImovel(jTextField10.getText(), num);
-            JOptionPane.showMessageDialog(null,jTextField10.getText());
-            JOptionPane.showMessageDialog(null,jTextField14.getText());
-            System.out.println(cadastro.getImoveis()[0]);
+            casa = cadastro.procuraImovel(jTextField12.getText(), num);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Número com formato incorreto!");
         }
@@ -2658,18 +2671,27 @@ public class MainInterface extends javax.swing.JFrame {
         }
         
         if (peso >= 0 && casa != null) {
-            cadastro.cadastraEncomenda(peso, jCheckBox2.isEnabled(), false, casa, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
+            cadastro.cadastraEncomenda(peso, jCheckBox2.isEnabled(), type, casa, SalvarEmArquivo.createDate(), SalvarEmArquivo.createHour());
+            resetCamps(jTextField14, jTextField11, jTextField12, jTextField10, jTextField12);
             JOptionPane.showMessageDialog(null,"Nova encomenda adicionada com sucesso!");
             serializa(cadastro, fileName);
             defPanel(EntregaPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
         }
         else{
-            JOptionPane.showMessageDialog(null,"erro!");
+            JOptionPane.showMessageDialog(null,"Endereço não encontrado, verifique e informe novamente!");
         }
     }//GEN-LAST:event_jPanel9MouseClicked
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         double speed = 0, capCag = 0;
+        String combo = jComboBox2.getActionCommand();
+        boolean type;
+        if (combo.equals("Pacote")){
+            type = false;
+        }
+        else{
+            type = true;
+        }
         
         try {
             speed = Double.parseDouble(jTextField9.getText());
@@ -2683,7 +2705,8 @@ public class MainInterface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"valor de capacidade de carga inválido!");
         }
         if (speed != 0 && capCag != 0){
-            cadastro.cadastrarDrone(false, jTextField7.getText(), jTextField8.getText(), jTextField5.getText(), capCag, speed);
+            cadastro.cadastrarDrone(type, jTextField7.getText(), jTextField8.getText(), jTextField5.getText(), capCag, speed);
+            resetCamps(jTextField7, jTextField8, jTextField5, jTextField9, jTextField6);
             serializa(cadastro, fileName);
             JOptionPane.showMessageDialog(null,"Novo drone adicionado com sucesso!");
             defPanel(DronePanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
@@ -2696,6 +2719,9 @@ public class MainInterface extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Novo usuário adicionado com sucesso!");
             serializa(cadastro, fileName);
             defPanel(UserPanel, CadastrarEncomenda, CadastrarDrone, CadastrarUsuário);
+            resetCamps(jTextField1, jTextField3, jTextField3, jTextField1, jTextField1);
+            jPasswordField1.setText("");
+            jPasswordField2.setText("");
         }
         else {
             JOptionPane.showMessageDialog(null,"As senhas não coincidem.");
@@ -2719,7 +2745,7 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void listCadastradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseClicked
-        for (int i = 0; i <= cadastro.getDronesCadastrados(); i++) {
+        for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
             if (cadastro.getDrones()[i].getPacoteAtual() != null){
                 try {
                     cadastro.finalizarEntrega(cadastro.getDrones()[i], logado);
@@ -2728,6 +2754,7 @@ public class MainInterface extends javax.swing.JFrame {
                 }
             }   
         }
+        serializa(cadastro, fileName);
         cadastro.getEncomendasPrioritarias().imprimirLista();
         cadastro.getEncomendasNormais().imprimirLista();
     }//GEN-LAST:event_listCadastradasMouseClicked
@@ -2944,6 +2971,14 @@ public class MainInterface extends javax.swing.JFrame {
         panel2.setVisible(false);
         panel3.setVisible(false);
         panel4.setVisible(false);
+    }
+    
+    private void resetCamps(JTextField t1, JTextField t2, JTextField t3, JTextField t4, JTextField t5){
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
     }
 
 }

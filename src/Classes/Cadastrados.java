@@ -9,6 +9,7 @@ public class Cadastrados implements Serializable {
     private int imoveisCadastrados = 0;
     private int dronesCadastrados = 0;
     private int qtdAdm = 0;
+    private int qtdEntregas = 0;
     
     private Usuario[] usuarios = new Usuario[20];
     private Casa[] imoveis = new Casa[5000];
@@ -16,6 +17,7 @@ public class Cadastrados implements Serializable {
     private ListaDinamica.Lista encomendasNormais = new ListaDinamica.Lista();
     private ListaDinamica.Lista encomendasPrioritarias = new ListaDinamica.Lista();
     private ListaDinamica.Lista encomendasEmTransito = new ListaDinamica.Lista();
+    private String lastDate = "0";
     
     public int getQtdAdm() {
         return qtdAdm;
@@ -191,12 +193,25 @@ public class Cadastrados implements Serializable {
         return null;
     }
     
-    public static String createCode(){
-        java.util.Date data = new Date();
-        String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
-        String dataFinal = "" + nomedata.charAt(0) + nomedata.charAt(1) + nomedata.charAt(3) + nomedata.charAt(4) + nomedata.charAt(8) + nomedata.charAt(9) + '-';
+    public String createCode(){
+        if (SalvarEmArquivo.createDate().equals(lastDate)){
+            qtdEntregas++;
+            java.util.Date data = new Date();
+            String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+            String code = "" + nomedata.charAt(0) + nomedata.charAt(1) + nomedata.charAt(3) + nomedata.charAt(4) + nomedata.charAt(8) + nomedata.charAt(9) + '-' + qtdEntregas;
+            return(code);
+        }
+        else{
+            qtdEntregas = 1;
+            lastDate = SalvarEmArquivo.createDate();
+            java.util.Date data = new Date();
+            String nomedata = java.text.DateFormat.getDateInstance(DateFormat.MEDIUM).format(data);
+            String code = "" + nomedata.charAt(0) + nomedata.charAt(1) + nomedata.charAt(3) + nomedata.charAt(4) + nomedata.charAt(8) + nomedata.charAt(9) + '-' + qtdEntregas;
+            return(code);
+        }
+        
             
-        return(dataFinal);
+        
     }
     
     public void cadastraEncomenda(double peso, boolean prioridade, boolean categoria, Casa destinatario, String data, String hora) {
