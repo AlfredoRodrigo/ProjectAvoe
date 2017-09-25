@@ -39,7 +39,7 @@ public class ListaDinamica implements Serializable {
         }
 
         public boolean isEmpty() {
-            if (getTotalNos() == 0) {
+            if (primeiro == null) {
                 return true;
             }
             return false;
@@ -56,12 +56,12 @@ public class ListaDinamica implements Serializable {
             No no = new No(encomenda);
         
             if (isEmpty()) {
-                primeiro = ultimo = no;
+                this.primeiro = this.ultimo = no;
             } else {
-                no.prox = primeiro;
-                primeiro = no;
+                no.prox = this.primeiro;
+                this.primeiro = no;
             }
-            totalNos++;
+            this.totalNos++;
         }
 
         public void inserirNoFim(Encomenda encomenda) {
@@ -73,12 +73,14 @@ public class ListaDinamica implements Serializable {
             No no = new No(encomenda);
             
             if (isEmpty()) {
-                primeiro = ultimo = no;
+                this.primeiro = this.ultimo = no;
             } else {
-                ultimo.prox = no;
-                ultimo = no;
+                System.out.println(this.totalNos);
+                System.out.println(ultimo);
+                this.ultimo.prox = no;
+                this.ultimo = no;
             }
-            totalNos++;
+            this.totalNos++;
         }
 
         public void excluirNo(String codigo) {
@@ -108,7 +110,7 @@ public class ListaDinamica implements Serializable {
                             noAnterior.prox = noAtual.prox;
                         }
                     }
-                    totalNos--;
+                    this.totalNos--;
                 }
             }
         }

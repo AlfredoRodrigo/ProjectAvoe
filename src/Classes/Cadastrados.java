@@ -171,6 +171,15 @@ public class Cadastrados implements Serializable {
         return null;
     }
     
+    public void removerDrone(String ID) {
+        for (int x = 0; x < this.dronesCadastrados; x++) {
+            if (drones[x].getID().equals(ID)) {
+                drones[x] = null;
+                dronesCadastrados--;
+            }
+        }
+    }
+    
     public void editarImovel(Casa casa, long latitude, long longitude, int numero, String proprietario, String rua) {
         casa.setLatitude(latitude);
         casa.setLongitude(longitude);
@@ -294,12 +303,12 @@ public class Cadastrados implements Serializable {
     
     public void finalizarEntrega(Drone drone, Usuario logado) throws IOException {
 //        encomendasEmTransito.excluirNo(encomenda.getCodigo());
-        SalvarEmArquivo save = new SalvarEmArquivo();
+        SalvarEmArquivo salvar = new SalvarEmArquivo();
         if(drone.getPacoteAtual() == null) {
             System.err.println("O drone" + drone.getID() + " não é capaz de entregar a encomenda.");
             return;
         }
-        save.save(drone.getPacoteAtual(), logado);
+        salvar.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);
         Runnable runnable = drone;

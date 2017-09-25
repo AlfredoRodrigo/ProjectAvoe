@@ -108,10 +108,16 @@ public class Drone implements Serializable, Runnable {
                 for (int x = 0; x < this.lstP.getTotalNos(); x++) {
                     if (isApto(tempNo.encomenda)) {
                         disponibilidade = false;
-                        setPacoteAtual(tempNo.encomenda);
-                        this.lstT.inserirNoInicio(pacoteAtual);
-                        this.lstP.excluirNo(pacoteAtual.getCodigo());
-                        break;
+                        if (tempNo == this.lstP.retornarEncomenda(x)) {
+                            this.lstP.excluirNo(tempNo.encomenda.getCodigo());
+                            setPacoteAtual(tempNo.encomenda);
+                            this.lstT.inserirNoInicio(pacoteAtual);                           
+                            break;
+                        }
+                        else {
+                            tempNo = tempNo.prox;
+                        }
+                        
                     } else {
                         tempNo = tempNo.prox;
                     }

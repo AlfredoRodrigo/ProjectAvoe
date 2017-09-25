@@ -22,8 +22,8 @@ import javax.swing.JTextField;
  */
 public class MainInterface extends javax.swing.JFrame {
     //File fileName;
-    static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-    //static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    //static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
     static Cadastrados cadastro;
     static Usuario logado;
     /**
@@ -2453,6 +2453,8 @@ public class MainInterface extends javax.swing.JFrame {
                 System.out.println(cadastro.getDrones()[i].getID());
             }
             
+            
+            
             flag = false;
         }
     }//GEN-LAST:event_EntregaPanelMouseEntered
@@ -2755,8 +2757,6 @@ public class MainInterface extends javax.swing.JFrame {
             }   
         }
         serializa(cadastro, fileName);
-        cadastro.getEncomendasPrioritarias().imprimirLista();
-        cadastro.getEncomendasNormais().imprimirLista();
     }//GEN-LAST:event_listCadastradasMouseClicked
 
     private void listDroneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDroneMouseClicked
