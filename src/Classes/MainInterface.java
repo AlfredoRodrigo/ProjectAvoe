@@ -66,12 +66,6 @@ public class MainInterface extends javax.swing.JFrame {
         AddEntrega = new javax.swing.JPanel();
         addIcon = new javax.swing.JLabel();
         labelAddEntrega = new javax.swing.JLabel();
-        removeEntrega = new javax.swing.JPanel();
-        removeIcon = new javax.swing.JLabel();
-        labelRemoveEntrega = new javax.swing.JLabel();
-        editEntrega = new javax.swing.JPanel();
-        editIcon = new javax.swing.JLabel();
-        labelEditEntrega = new javax.swing.JLabel();
         listCadastradas = new javax.swing.JPanel();
         labelListCadastradas = new javax.swing.JLabel();
         listCadastradasIcon = new javax.swing.JLabel();
@@ -208,6 +202,10 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        ListarEntregas = new javax.swing.JPanel();
+        jLabel44 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
@@ -433,82 +431,6 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        removeEntrega.setBackground(new java.awt.Color(255, 255, 255));
-        removeEntrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        removeEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                removeEntregaMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                removeEntregaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                removeEntregaMouseExited(evt);
-            }
-        });
-
-        removeIcon.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
-        removeIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        removeIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/mergeDelete.png"))); // NOI18N
-
-        labelRemoveEntrega.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
-        labelRemoveEntrega.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelRemoveEntrega.setText("Remover Entrega");
-
-        javax.swing.GroupLayout removeEntregaLayout = new javax.swing.GroupLayout(removeEntrega);
-        removeEntrega.setLayout(removeEntregaLayout);
-        removeEntregaLayout.setHorizontalGroup(
-            removeEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelRemoveEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removeEntregaLayout.createSequentialGroup()
-                .addGap(0, 31, Short.MAX_VALUE)
-                .addComponent(removeIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        removeEntregaLayout.setVerticalGroup(
-            removeEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(removeEntregaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(removeIcon)
-                .addGap(18, 18, 18)
-                .addComponent(labelRemoveEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        editEntrega.setBackground(new java.awt.Color(255, 255, 255));
-        editEntrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        editEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                editEntregaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                editEntregaMouseExited(evt);
-            }
-        });
-
-        editIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        editIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/editPackage.png"))); // NOI18N
-
-        labelEditEntrega.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
-        labelEditEntrega.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelEditEntrega.setText("Editar Entrega");
-
-        javax.swing.GroupLayout editEntregaLayout = new javax.swing.GroupLayout(editEntrega);
-        editEntrega.setLayout(editEntregaLayout);
-        editEntregaLayout.setHorizontalGroup(
-            editEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelEditEntrega, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(editIcon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-        );
-        editEntregaLayout.setVerticalGroup(
-            editEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(editEntregaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(editIcon)
-                .addGap(18, 18, 18)
-                .addComponent(labelEditEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-
         listCadastradas.setBackground(new java.awt.Color(255, 255, 255));
         listCadastradas.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         listCadastradas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -525,7 +447,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         labelListCadastradas.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
         labelListCadastradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelListCadastradas.setText("Despachar entregas");
+        labelListCadastradas.setText("Listar entregas");
 
         listCadastradasIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listCadastradasIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/indexed.png"))); // NOI18N
@@ -621,34 +543,29 @@ public class MainInterface extends javax.swing.JFrame {
         EntregaPanel.setLayout(EntregaPanelLayout);
         EntregaPanelLayout.setHorizontalGroup(
             EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EntregaPanelLayout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EntregaPanelLayout.createSequentialGroup()
+                .addGroup(EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(EntregaPanelLayout.createSequentialGroup()
-                        .addComponent(listCadastradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
+                        .addGap(166, 166, 166)
                         .addComponent(listInTransit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(listDone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(EntregaPanelLayout.createSequentialGroup()
+                        .addContainerGap(165, Short.MAX_VALUE)
                         .addComponent(AddEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(removeEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(editEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addGap(115, 115, 115)
+                        .addComponent(listCadastradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(165, 165, 165))
         );
         EntregaPanelLayout.setVerticalGroup(
             EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EntregaPanelLayout.createSequentialGroup()
                 .addGap(93, 93, 93)
-                .addGroup(EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AddEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(removeEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(listCadastradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listCadastradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listDone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listInTransit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90))
@@ -2038,6 +1955,40 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap(288, Short.MAX_VALUE))
         );
 
+        ListarEntregas.setBackground(new java.awt.Color(255, 255, 255));
+        ListarEntregas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ListarEntregasMouseEntered(evt);
+            }
+        });
+
+        jLabel44.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel44.setText("Encomendas cadastradas");
+
+        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane2.setViewportView(jList2);
+
+        javax.swing.GroupLayout ListarEntregasLayout = new javax.swing.GroupLayout(ListarEntregas);
+        ListarEntregas.setLayout(ListarEntregasLayout);
+        ListarEntregasLayout.setHorizontalGroup(
+            ListarEntregasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+            .addGroup(ListarEntregasLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ListarEntregasLayout.setVerticalGroup(
+            ListarEntregasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarEntregasLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(288, Short.MAX_VALUE))
+        );
+
         jLayeredPane1.setLayer(EntregaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(DronePanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(UserPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -2047,6 +1998,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLayeredPane1.setLayer(CadastrarUsuário, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(CadastrarLocal, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(RemoverEncomenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(ListarEntregas, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -2090,6 +2042,11 @@ public class MainInterface extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RemoverEncomenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ListarEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(20, Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2113,6 +2070,11 @@ public class MainInterface extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(RemoverEncomenda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap()))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(11, 11, 11)
+                    .addComponent(ListarEntregas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(11, 11, 11)))
         );
 
         WorkPanel.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 630));
@@ -2287,54 +2249,6 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Settings_17px.png")));
     }//GEN-LAST:event_jLabel12MouseExited
 
-    private void AddEntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseEntered
-        setBorda(AddEntrega);
-    }//GEN-LAST:event_AddEntregaMouseEntered
-
-    private void AddEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseExited
-        resetBorda(AddEntrega);
-    }//GEN-LAST:event_AddEntregaMouseExited
-
-    private void removeEntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeEntregaMouseEntered
-        setBorda(removeEntrega);
-    }//GEN-LAST:event_removeEntregaMouseEntered
-
-    private void removeEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeEntregaMouseExited
-        resetBorda(removeEntrega);
-    }//GEN-LAST:event_removeEntregaMouseExited
-
-    private void editEntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editEntregaMouseEntered
-        setBorda(editEntrega);
-    }//GEN-LAST:event_editEntregaMouseEntered
-
-    private void editEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editEntregaMouseExited
-        resetBorda(editEntrega);
-    }//GEN-LAST:event_editEntregaMouseExited
-
-    private void listCadastradasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseEntered
-        setBorda(listCadastradas);
-    }//GEN-LAST:event_listCadastradasMouseEntered
-
-    private void listCadastradasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseExited
-        resetBorda(listCadastradas);
-    }//GEN-LAST:event_listCadastradasMouseExited
-
-    private void listInTransitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listInTransitMouseEntered
-        setBorda(listInTransit);
-    }//GEN-LAST:event_listInTransitMouseEntered
-
-    private void listInTransitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listInTransitMouseExited
-        resetBorda(listInTransit);
-    }//GEN-LAST:event_listInTransitMouseExited
-
-    private void listDoneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDoneMouseEntered
-        setBorda(listDone);
-    }//GEN-LAST:event_listDoneMouseEntered
-
-    private void listDoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDoneMouseExited
-        resetBorda(listDone);
-    }//GEN-LAST:event_listDoneMouseExited
-
     private void AddDroneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddDroneMouseEntered
         setBorda(AddDrone);
     }//GEN-LAST:event_AddDroneMouseEntered
@@ -2431,34 +2345,6 @@ public class MainInterface extends javax.swing.JFrame {
         resetBorda(listLocal);
     }//GEN-LAST:event_listLocalMouseExited
 
-    private void EntregaPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntregaPanelMouseEntered
-        if (flag){
-            EntregaPanel.setVisible(true);
-            DronePanel.setVisible(false);
-            UserPanel.setVisible(false);
-            LocalPanel.setVisible(false);
-            CadastrarEncomenda.setVisible(false);
-            CadastrarDrone.setVisible(false);
-            CadastrarUsuário.setVisible(false);
-            CadastrarLocal.setVisible(false);
-            RemoverEncomenda.setVisible(false);
-            
-            for(int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-                Runnable runnable = cadastro.getDrones()[i];
-                Thread thread = new Thread(runnable);
-                thread.start();
-            }
-        
-            for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-                System.out.println(cadastro.getDrones()[i].getID());
-            }
-            
-            
-            
-            flag = false;
-        }
-    }//GEN-LAST:event_EntregaPanelMouseEntered
-
     private void CadastrarUsuárioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CadastrarUsuárioMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_CadastrarUsuárioMouseEntered
@@ -2466,10 +2352,6 @@ public class MainInterface extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void AddEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseClicked
-        defPanel(CadastrarEncomenda, CadastrarDrone, CadastrarUsuário, EntregaPanel);
-    }//GEN-LAST:event_AddEntregaMouseClicked
 
     private void CadastrarDroneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CadastrarDroneMouseEntered
         // TODO add your handling code here:
@@ -2734,10 +2616,6 @@ public class MainInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoverEncomendaMouseEntered
 
-    private void removeEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removeEntregaMouseClicked
-        defPanel(removeEntrega, EntregaPanel, CadastrarEncomenda, CadastrarUsuário);
-    }//GEN-LAST:event_removeEntregaMouseClicked
-
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField2ActionPerformed
@@ -2745,6 +2623,64 @@ public class MainInterface extends javax.swing.JFrame {
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void listDroneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDroneMouseClicked
+        
+    }//GEN-LAST:event_listDroneMouseClicked
+
+    private void ListarEntregasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListarEntregasMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListarEntregasMouseEntered
+
+    private void EntregaPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntregaPanelMouseEntered
+        if (flag){
+            EntregaPanel.setVisible(true);
+            DronePanel.setVisible(false);
+            UserPanel.setVisible(false);
+            LocalPanel.setVisible(false);
+            CadastrarEncomenda.setVisible(false);
+            CadastrarDrone.setVisible(false);
+            CadastrarUsuário.setVisible(false);
+            CadastrarLocal.setVisible(false);
+            RemoverEncomenda.setVisible(false);
+
+            for(int i = 0; i < cadastro.getDronesCadastrados(); i++) {
+                Runnable runnable = cadastro.getDrones()[i];
+                Thread thread = new Thread(runnable);
+                thread.start();
+            }
+
+            for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
+                System.out.println(cadastro.getDrones()[i].getID());
+            }
+
+            flag = false;
+        }
+    }//GEN-LAST:event_EntregaPanelMouseEntered
+
+    private void listDoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDoneMouseExited
+        resetBorda(listDone);
+    }//GEN-LAST:event_listDoneMouseExited
+
+    private void listDoneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDoneMouseEntered
+        setBorda(listDone);
+    }//GEN-LAST:event_listDoneMouseEntered
+
+    private void listInTransitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listInTransitMouseExited
+        resetBorda(listInTransit);
+    }//GEN-LAST:event_listInTransitMouseExited
+
+    private void listInTransitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listInTransitMouseEntered
+        setBorda(listInTransit);
+    }//GEN-LAST:event_listInTransitMouseEntered
+
+    private void listCadastradasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseExited
+        resetBorda(listCadastradas);
+    }//GEN-LAST:event_listCadastradasMouseExited
+
+    private void listCadastradasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseEntered
+        setBorda(listCadastradas);
+    }//GEN-LAST:event_listCadastradasMouseEntered
 
     private void listCadastradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseClicked
         for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
@@ -2754,14 +2690,22 @@ public class MainInterface extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
-            }   
+            }
         }
         serializa(cadastro, fileName);
     }//GEN-LAST:event_listCadastradasMouseClicked
 
-    private void listDroneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDroneMouseClicked
-        
-    }//GEN-LAST:event_listDroneMouseClicked
+    private void AddEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseExited
+        resetBorda(AddEntrega);
+    }//GEN-LAST:event_AddEntregaMouseExited
+
+    private void AddEntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseEntered
+        setBorda(AddEntrega);
+    }//GEN-LAST:event_AddEntregaMouseEntered
+
+    private void AddEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseClicked
+        defPanel(CadastrarEncomenda, CadastrarDrone, CadastrarUsuário, EntregaPanel);
+    }//GEN-LAST:event_AddEntregaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -2787,6 +2731,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel CadastrarUsuário;
     private javax.swing.JPanel DronePanel;
     private javax.swing.JPanel EntregaPanel;
+    private javax.swing.JPanel ListarEntregas;
     private javax.swing.JPanel LocalPanel;
     private javax.swing.JPanel RemoverEncomenda;
     private javax.swing.JPanel UserPanel;
@@ -2801,8 +2746,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel btn_Usuários;
     private javax.swing.JPanel editDrone;
     private javax.swing.JLabel editDroneIcon;
-    private javax.swing.JPanel editEntrega;
-    private javax.swing.JLabel editIcon;
     private javax.swing.JPanel editLocal;
     private javax.swing.JLabel editLocalIcon;
     private javax.swing.JPanel editUser;
@@ -2849,6 +2792,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -2857,6 +2801,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -2868,6 +2813,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2908,7 +2854,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel labelAddUser;
     private javax.swing.JLabel labelDone;
     private javax.swing.JLabel labelEditDrone;
-    private javax.swing.JLabel labelEditEntrega;
     private javax.swing.JLabel labelEditLocal;
     private javax.swing.JLabel labelEditUser;
     private javax.swing.JLabel labelInTransit;
@@ -2917,7 +2862,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel labelListLocal;
     private javax.swing.JLabel labelListUser;
     private javax.swing.JLabel labelRemoveDrone;
-    private javax.swing.JLabel labelRemoveEntrega;
     private javax.swing.JLabel labelRemoveLocal;
     private javax.swing.JLabel labelRemoveUser;
     private javax.swing.JPanel listCadastradas;
@@ -2934,8 +2878,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel listUserIcon;
     private javax.swing.JPanel removeDrone;
     private javax.swing.JLabel removeDroneIcon;
-    private javax.swing.JPanel removeEntrega;
-    private javax.swing.JLabel removeIcon;
     private javax.swing.JPanel removeLocal;
     private javax.swing.JLabel removeLocalIcon;
     private javax.swing.JPanel removeUser;
