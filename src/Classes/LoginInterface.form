@@ -34,28 +34,28 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="BG_Login" max="32767" attributes="0"/>
+          <Component id="Background" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="BG_Login" alignment="0" max="32767" attributes="0"/>
+          <Component id="Background" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="BG_Login">
+    <Container class="javax.swing.JPanel" name="Background">
       <BindingProperties>
-        <BindingProperty name="background" source="BG_Login" sourcePath="${background}" target="BG_Login" targetPath="background" updateStrategy="0" immediately="false"/>
+        <BindingProperty name="background" source="Background" sourcePath="${background}" target="Background" targetPath="background" updateStrategy="0" immediately="false"/>
       </BindingProperties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
+              <Component id="AvoeLogo" alignment="1" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
-                  <Component id="Float" min="-2" max="-2" attributes="0"/>
+                  <Component id="FloatPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="149" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -66,11 +66,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="80" pref="80" max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="AvoeLogo" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                          <Component id="Float" min="-2" max="-2" attributes="0"/>
+                          <Component id="FloatPanel" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
@@ -79,7 +79,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="AvoeLogo">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
@@ -90,7 +90,7 @@
             </Property>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="Float">
+        <Container class="javax.swing.JPanel" name="FloatPanel">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -108,7 +108,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btn_entrar" max="32767" attributes="0"/>
+                          <Component id="LoginButton" max="32767" attributes="0"/>
                           <Component id="Separator2" max="32767" attributes="0"/>
                           <Component id="PasswordCamp" max="32767" attributes="0"/>
                           <Component id="Separator" max="32767" attributes="0"/>
@@ -141,7 +141,7 @@
                       <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                       <Component id="Separator2" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="btn_entrar" min="-2" max="-2" attributes="0"/>
+                      <Component id="LoginButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -151,7 +151,7 @@
             <Component class="javax.swing.JTextField" name="UserCamp">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="Float" name="getBackground" type="method"/>
+                  <Connection component="FloatPanel" name="getBackground" type="method"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="0"/>
@@ -181,17 +181,17 @@
             <Component class="javax.swing.JSeparator" name="Separator">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="Float" name="getBackground" type="method"/>
+                  <Connection component="FloatPanel" name="getBackground" type="method"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="Float" name="getForeground" type="method"/>
+                  <Connection component="FloatPanel" name="getForeground" type="method"/>
                 </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="PasswordCamp">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="Float" name="getBackground" type="method"/>
+                  <Connection component="FloatPanel" name="getBackground" type="method"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -213,23 +213,23 @@
             <Component class="javax.swing.JSeparator" name="Separator2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="Float" name="getBackground" type="method"/>
+                  <Connection component="FloatPanel" name="getBackground" type="method"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection component="Float" name="getForeground" type="method"/>
+                  <Connection component="FloatPanel" name="getForeground" type="method"/>
                 </Property>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="btn_entrar">
+            <Container class="javax.swing.JPanel" name="LoginButton">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_entrarMouseClicked"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_entrarMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_entrarMouseExited"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LoginButtonMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LoginButtonMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LoginButtonMouseExited"/>
               </Events>
 
               <Layout>
@@ -237,19 +237,19 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
-                          <Component id="mgn_Entrar" min="-2" pref="58" max="-2" attributes="0"/>
+                          <Component id="ButtonLabel" min="-2" pref="58" max="-2" attributes="0"/>
                           <EmptySpace pref="124" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="mgn_Entrar" alignment="1" pref="35" max="32767" attributes="0"/>
+                      <Component id="ButtonLabel" alignment="1" pref="35" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="mgn_Entrar">
+                <Component class="javax.swing.JLabel" name="ButtonLabel">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Swis721 WGL4 BT" size="18" style="0"/>

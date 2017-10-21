@@ -1,6 +1,7 @@
 package Classes;
 
 import java.io.*;
+import java.util.List;
 
 public class Drone implements Serializable, Runnable {
     private boolean disponibilidade = true;
@@ -13,7 +14,7 @@ public class Drone implements Serializable, Runnable {
     private double velocidade;
     private double durabilidadeBat = 100;
     private Encomenda pacoteAtual;
-    private ListaDinamica.Lista lstN, lstP, lstT;
+    private List<Encomenda> lstN, lstP, lstT;
     
     public String getID() {
         return ID;
@@ -95,7 +96,7 @@ public class Drone implements Serializable, Runnable {
         this.categoria = categoria;
     }
     
-    public void escolherPacote(ListaDinamica.Lista lstN, ListaDinamica.Lista lstP, ListaDinamica.Lista lstT) {
+    public void escolherPacote(List<Encomenda> lstN, List<Encomenda> lstP, List<Encomenda> lstT) {
         this.lstN = lstN;
         this.lstP = lstP;
         this.lstT = lstT;
@@ -104,40 +105,29 @@ public class Drone implements Serializable, Runnable {
         while (this.disponibilidade) {
             System.out.println("O drone " + this.ID + " está funcionando.");
             if (!this.lstP.isEmpty()) {
-                ListaDinamica.No tempNo = this.lstP.retornaEncomenda();
-                for (int x = 0; x < this.lstP.getTotalNos(); x++) {
-                    if (isApto(tempNo.encomenda)) {
+                for (int i = 0; i < this.lstP.size(); i++) {
+                    if (isApto(lstP.get(i))) {
                         disponibilidade = false;
-                        if (tempNo == this.lstP.retornarEncomenda(x)) {
-                            this.lstP.excluirNo(tempNo.encomenda.getCodigo());
-                            setPacoteAtual(tempNo.encomenda);
-                            this.lstT.inserirNoInicio(pacoteAtual);                           
-                            break;
-                        }
-                        else {
-                            tempNo = tempNo.prox;
-                        }
-                        
-                    } else {
-                        tempNo = tempNo.prox;
+                        setPacoteAtual(lstP.get(i));
+                        this.lstT.add(pacoteAtual);
+                        this.lstP.remove(pacoteAtual);
+                        return;
                     }
-                }
-            } 
+                } 
+            }
             if (!this.lstN.isEmpty() && this.disponibilidade) {
-                ListaDinamica.No tempNo = this.lstN.retornaEncomenda();
-                for (int x = 0; x < this.lstN.getTotalNos(); x++) {
-                    if (isApto(tempNo.encomenda)) {
+                for (int i = 0; i < this.lstP.size(); i++) {
+                    if (isApto(lstN.get(i))) {
                         disponibilidade = false;
-                        setPacoteAtual(tempNo.encomenda);
-                        this.lstT.inserirNoInicio(pacoteAtual);
-                        this.lstN.excluirNo(pacoteAtual.getCodigo());
-                        break;
-                    } else {
-                        tempNo = tempNo.prox;
+                        setPacoteAtual(lstN.get(i));
+                        this.lstT.add(pacoteAtual);    
+                        this.lstN.remove(i);
+                        return;
                     }
                 }
             }
         }
+
     }
     
     public boolean isApto(Encomenda encomenda) {

@@ -22,8 +22,8 @@ import javax.swing.JTextField;
  */
 public class MainInterface extends javax.swing.JFrame {
     //File fileName;
-    //static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-    static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    //static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
     static Cadastrados cadastro;
     static Usuario logado;
     /**
@@ -45,20 +45,20 @@ public class MainInterface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BG_Main = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        btn_Entrega = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        btn_Drones = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        btn_Usuários = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        btn_LocaisdeEntrega = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        Background = new javax.swing.JPanel();
+        AvoeLogo = new javax.swing.JLabel();
+        EntregasButton = new javax.swing.JPanel();
+        IconeEntregasButton = new javax.swing.JLabel();
+        LabelEntregasButton = new javax.swing.JLabel();
+        DronesButton = new javax.swing.JPanel();
+        IconeDronesButton = new javax.swing.JLabel();
+        LabelDronesButton = new javax.swing.JLabel();
+        UsuariosButton = new javax.swing.JPanel();
+        IconeUsuariosButton = new javax.swing.JLabel();
+        LabelUsuariosButton = new javax.swing.JLabel();
+        LocaisDeEntregaButton = new javax.swing.JPanel();
+        IconeLocaisDeEntregaButton = new javax.swing.JLabel();
+        LabelLocaisDeEntregaButton = new javax.swing.JLabel();
         side_Panel = new javax.swing.JPanel();
         WorkPanel = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
@@ -212,160 +212,160 @@ public class MainInterface extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Project Avoe");
 
-        BG_Main.setBackground(new java.awt.Color(0, 0, 0));
+        Background.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/iconSup.png"))); // NOI18N
+        AvoeLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AvoeLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/iconSup.png"))); // NOI18N
 
-        btn_Entrega.setBackground(new java.awt.Color(204, 204, 204));
-        btn_Entrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        btn_Entrega.addMouseListener(new java.awt.event.MouseAdapter() {
+        EntregasButton.setBackground(new java.awt.Color(204, 204, 204));
+        EntregasButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        EntregasButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_EntregaMouseClicked(evt);
+                EntregasButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_EntregaMouseEntered(evt);
+                EntregasButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_EntregaMouseExited(evt);
+                EntregasButtonMouseExited(evt);
             }
         });
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Package_52px.png"))); // NOI18N
+        IconeEntregasButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconeEntregasButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Package_52px.png"))); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Entregas");
+        LabelEntregasButton.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        LabelEntregasButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelEntregasButton.setText("Entregas");
 
-        javax.swing.GroupLayout btn_EntregaLayout = new javax.swing.GroupLayout(btn_Entrega);
-        btn_Entrega.setLayout(btn_EntregaLayout);
-        btn_EntregaLayout.setHorizontalGroup(
-            btn_EntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout EntregasButtonLayout = new javax.swing.GroupLayout(EntregasButton);
+        EntregasButton.setLayout(EntregasButtonLayout);
+        EntregasButtonLayout.setHorizontalGroup(
+            EntregasButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelEntregasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(IconeEntregasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        btn_EntregaLayout.setVerticalGroup(
-            btn_EntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_EntregaLayout.createSequentialGroup()
+        EntregasButtonLayout.setVerticalGroup(
+            EntregasButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EntregasButtonLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel2)
+                .addComponent(IconeEntregasButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addComponent(LabelEntregasButton, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btn_Drones.setBackground(new java.awt.Color(255, 255, 255));
-        btn_Drones.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_Drones.getBackground()));
-        btn_Drones.addMouseListener(new java.awt.event.MouseAdapter() {
+        DronesButton.setBackground(new java.awt.Color(255, 255, 255));
+        DronesButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, DronesButton.getBackground()));
+        DronesButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_DronesMouseClicked(evt);
+                DronesButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_DronesMouseEntered(evt);
+                DronesButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_DronesMouseExited(evt);
+                DronesButtonMouseExited(evt);
             }
         });
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Quadcopter_54px.png"))); // NOI18N
+        IconeDronesButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconeDronesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Quadcopter_54px.png"))); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Drones");
+        LabelDronesButton.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        LabelDronesButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelDronesButton.setText("Drones");
 
-        javax.swing.GroupLayout btn_DronesLayout = new javax.swing.GroupLayout(btn_Drones);
-        btn_Drones.setLayout(btn_DronesLayout);
-        btn_DronesLayout.setHorizontalGroup(
-            btn_DronesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout DronesButtonLayout = new javax.swing.GroupLayout(DronesButton);
+        DronesButton.setLayout(DronesButtonLayout);
+        DronesButtonLayout.setHorizontalGroup(
+            DronesButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelDronesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(IconeDronesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        btn_DronesLayout.setVerticalGroup(
-            btn_DronesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_DronesLayout.createSequentialGroup()
+        DronesButtonLayout.setVerticalGroup(
+            DronesButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(DronesButtonLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(IconeDronesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                .addComponent(LabelDronesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btn_Usuários.setBackground(new java.awt.Color(255, 255, 255));
-        btn_Usuários.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_Usuários.getBackground()));
-        btn_Usuários.addMouseListener(new java.awt.event.MouseAdapter() {
+        UsuariosButton.setBackground(new java.awt.Color(255, 255, 255));
+        UsuariosButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, UsuariosButton.getBackground()));
+        UsuariosButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_UsuáriosMouseClicked(evt);
+                UsuariosButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_UsuáriosMouseEntered(evt);
+                UsuariosButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_UsuáriosMouseExited(evt);
+                UsuariosButtonMouseExited(evt);
             }
         });
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_User_Group_Man_Man_54px.png"))); // NOI18N
+        IconeUsuariosButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconeUsuariosButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_User_Group_Man_Man_54px.png"))); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Usuários");
+        LabelUsuariosButton.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        LabelUsuariosButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelUsuariosButton.setText("Usuários");
 
-        javax.swing.GroupLayout btn_UsuáriosLayout = new javax.swing.GroupLayout(btn_Usuários);
-        btn_Usuários.setLayout(btn_UsuáriosLayout);
-        btn_UsuáriosLayout.setHorizontalGroup(
-            btn_UsuáriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout UsuariosButtonLayout = new javax.swing.GroupLayout(UsuariosButton);
+        UsuariosButton.setLayout(UsuariosButtonLayout);
+        UsuariosButtonLayout.setHorizontalGroup(
+            UsuariosButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelUsuariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(IconeUsuariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        btn_UsuáriosLayout.setVerticalGroup(
-            btn_UsuáriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_UsuáriosLayout.createSequentialGroup()
+        UsuariosButtonLayout.setVerticalGroup(
+            UsuariosButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UsuariosButtonLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel8)
+                .addComponent(IconeUsuariosButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(LabelUsuariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        btn_LocaisdeEntrega.setBackground(new java.awt.Color(255, 255, 255));
-        btn_LocaisdeEntrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, btn_LocaisdeEntrega.getBackground()));
-        btn_LocaisdeEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
+        LocaisDeEntregaButton.setBackground(new java.awt.Color(255, 255, 255));
+        LocaisDeEntregaButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, LocaisDeEntregaButton.getBackground()));
+        LocaisDeEntregaButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_LocaisdeEntregaMouseClicked(evt);
+                LocaisDeEntregaButtonMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_LocaisdeEntregaMouseEntered(evt);
+                LocaisDeEntregaButtonMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_LocaisdeEntregaMouseExited(evt);
+                LocaisDeEntregaButtonMouseExited(evt);
             }
         });
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Marker_54px.png"))); // NOI18N
+        IconeLocaisDeEntregaButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        IconeLocaisDeEntregaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Marker_54px.png"))); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Locais de Entrega");
+        LabelLocaisDeEntregaButton.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        LabelLocaisDeEntregaButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelLocaisDeEntregaButton.setText("Locais de Entrega");
 
-        javax.swing.GroupLayout btn_LocaisdeEntregaLayout = new javax.swing.GroupLayout(btn_LocaisdeEntrega);
-        btn_LocaisdeEntrega.setLayout(btn_LocaisdeEntregaLayout);
-        btn_LocaisdeEntregaLayout.setHorizontalGroup(
-            btn_LocaisdeEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout LocaisDeEntregaButtonLayout = new javax.swing.GroupLayout(LocaisDeEntregaButton);
+        LocaisDeEntregaButton.setLayout(LocaisDeEntregaButtonLayout);
+        LocaisDeEntregaButtonLayout.setHorizontalGroup(
+            LocaisDeEntregaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LabelLocaisDeEntregaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+            .addComponent(IconeLocaisDeEntregaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        btn_LocaisdeEntregaLayout.setVerticalGroup(
-            btn_LocaisdeEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btn_LocaisdeEntregaLayout.createSequentialGroup()
+        LocaisDeEntregaButtonLayout.setVerticalGroup(
+            LocaisDeEntregaButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LocaisDeEntregaButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(IconeLocaisDeEntregaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                .addComponent(LabelLocaisDeEntregaButton, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
         );
 
@@ -1127,7 +1127,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel31.setText("Categoria:");
 
         jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Pacote", "Carta", "Jornal", "Revista" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pacote", "Carta" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -1340,7 +1340,12 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel22.setText("Categoria:");
 
         jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Default", "Pacote", "Carta", "Jornal", "Revista" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pacote", "Carta" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jLabel23.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         jLabel23.setText("Velocidade máxima:");
@@ -1434,6 +1439,12 @@ public class MainInterface extends javax.swing.JFrame {
         CadastrarDroneLayout.setHorizontalGroup(
             CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarDroneLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(98, 98, 98))
             .addGroup(CadastrarDroneLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1443,11 +1454,10 @@ public class MainInterface extends javax.swing.JFrame {
                                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(191, 191, 191)
                                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CadastrarDroneLayout.createSequentialGroup()
-                                .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
-                                    .addComponent(jSeparator7))
+                                .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextField7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                                    .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
@@ -1455,6 +1465,7 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGap(51, 387, Short.MAX_VALUE))
                     .addGroup(CadastrarDroneLayout.createSequentialGroup()
                         .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(CadastrarDroneLayout.createSequentialGroup()
                                 .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1473,12 +1484,6 @@ public class MainInterface extends javax.swing.JFrame {
                                     .addComponent(jTextField9)
                                     .addComponent(jSeparator9))))
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CadastrarDroneLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
         );
         CadastrarDroneLayout.setVerticalGroup(
             CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1517,9 +1522,9 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(246, 246, 246)
+                .addGap(250, 250, 250)
                 .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -2046,7 +2051,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(ListarEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(20, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2107,21 +2112,21 @@ public class MainInterface extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout BG_MainLayout = new javax.swing.GroupLayout(BG_Main);
-        BG_Main.setLayout(BG_MainLayout);
-        BG_MainLayout.setHorizontalGroup(
-            BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BG_MainLayout.createSequentialGroup()
-                .addGroup(BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_LocaisdeEntrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
+        Background.setLayout(BackgroundLayout);
+        BackgroundLayout.setHorizontalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LocaisDeEntregaButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(side_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Usuários, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Drones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_Entrega, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(UsuariosButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DronesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EntregasButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AvoeLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BG_MainLayout.createSequentialGroup()
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGap(0, 747, Short.MAX_VALUE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2129,26 +2134,26 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(WorkPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        BG_MainLayout.setVerticalGroup(
-            BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BG_MainLayout.createSequentialGroup()
+        BackgroundLayout.setVerticalGroup(
+            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(AvoeLogo, javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(BG_MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(WorkPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(BG_MainLayout.createSequentialGroup()
-                        .addComponent(btn_Entrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(EntregasButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(btn_Drones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(DronesButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(btn_Usuários, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(UsuariosButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(btn_LocaisdeEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LocaisDeEntregaButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
                         .addComponent(side_Panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -2157,73 +2162,73 @@ public class MainInterface extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG_Main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BG_Main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_EntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EntregaMouseEntered
-        setBorda(btn_Entrega);
-    }//GEN-LAST:event_btn_EntregaMouseEntered
+    private void EntregasButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntregasButtonMouseEntered
+        setBorda(EntregasButton);
+    }//GEN-LAST:event_EntregasButtonMouseEntered
 
-    private void btn_EntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EntregaMouseExited
-        resetBorda(btn_Entrega);
-    }//GEN-LAST:event_btn_EntregaMouseExited
+    private void EntregasButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntregasButtonMouseExited
+        resetBorda(EntregasButton);
+    }//GEN-LAST:event_EntregasButtonMouseExited
 
-    private void btn_DronesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DronesMouseEntered
-        setBorda(btn_Drones);
-    }//GEN-LAST:event_btn_DronesMouseEntered
+    private void DronesButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DronesButtonMouseEntered
+        setBorda(DronesButton);
+    }//GEN-LAST:event_DronesButtonMouseEntered
 
-    private void btn_DronesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DronesMouseExited
-        resetBorda(btn_Drones);
-    }//GEN-LAST:event_btn_DronesMouseExited
+    private void DronesButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DronesButtonMouseExited
+        resetBorda(DronesButton);
+    }//GEN-LAST:event_DronesButtonMouseExited
 
-    private void btn_UsuáriosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsuáriosMouseEntered
-        setBorda(btn_Usuários);
-    }//GEN-LAST:event_btn_UsuáriosMouseEntered
+    private void UsuariosButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuariosButtonMouseEntered
+        setBorda(UsuariosButton);
+    }//GEN-LAST:event_UsuariosButtonMouseEntered
 
-    private void btn_UsuáriosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsuáriosMouseExited
-        resetBorda(btn_Usuários);
-    }//GEN-LAST:event_btn_UsuáriosMouseExited
+    private void UsuariosButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuariosButtonMouseExited
+        resetBorda(UsuariosButton);
+    }//GEN-LAST:event_UsuariosButtonMouseExited
 
-    private void btn_LocaisdeEntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LocaisdeEntregaMouseEntered
-        setBorda(btn_LocaisdeEntrega);
-    }//GEN-LAST:event_btn_LocaisdeEntregaMouseEntered
+    private void LocaisDeEntregaButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LocaisDeEntregaButtonMouseEntered
+        setBorda(LocaisDeEntregaButton);
+    }//GEN-LAST:event_LocaisDeEntregaButtonMouseEntered
 
-    private void btn_LocaisdeEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LocaisdeEntregaMouseExited
-        resetBorda(btn_LocaisdeEntrega);
-    }//GEN-LAST:event_btn_LocaisdeEntregaMouseExited
+    private void LocaisDeEntregaButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LocaisDeEntregaButtonMouseExited
+        resetBorda(LocaisDeEntregaButton);
+    }//GEN-LAST:event_LocaisDeEntregaButtonMouseExited
 
-    private void btn_EntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_EntregaMouseClicked
-        defColor(btn_Entrega, btn_Drones, btn_LocaisdeEntrega, btn_Usuários);
+    private void EntregasButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntregasButtonMouseClicked
+        defColor(EntregasButton, DronesButton, LocaisDeEntregaButton, UsuariosButton);
         defPanel(EntregaPanel, DronePanel, UserPanel, LocalPanel);
         
-    }//GEN-LAST:event_btn_EntregaMouseClicked
+    }//GEN-LAST:event_EntregasButtonMouseClicked
 
-    private void btn_DronesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_DronesMouseClicked
-        defColor(btn_Drones, btn_LocaisdeEntrega, btn_Entrega, btn_Usuários);
+    private void DronesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DronesButtonMouseClicked
+        defColor(DronesButton, LocaisDeEntregaButton, EntregasButton, UsuariosButton);
         defPanel(DronePanel, EntregaPanel, UserPanel, LocalPanel);
         
-    }//GEN-LAST:event_btn_DronesMouseClicked
+    }//GEN-LAST:event_DronesButtonMouseClicked
 
-    private void btn_UsuáriosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_UsuáriosMouseClicked
-        defColor(btn_Usuários, btn_LocaisdeEntrega, btn_Drones, btn_Entrega);
+    private void UsuariosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuariosButtonMouseClicked
+        defColor(UsuariosButton, LocaisDeEntregaButton, DronesButton, EntregasButton);
         defPanel(UserPanel, EntregaPanel, DronePanel, LocalPanel);
         
-    }//GEN-LAST:event_btn_UsuáriosMouseClicked
+    }//GEN-LAST:event_UsuariosButtonMouseClicked
 
-    private void btn_LocaisdeEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_LocaisdeEntregaMouseClicked
-        defColor(btn_LocaisdeEntrega, btn_Drones, btn_Entrega, btn_Usuários);
+    private void LocaisDeEntregaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LocaisDeEntregaButtonMouseClicked
+        defColor(LocaisDeEntregaButton, DronesButton, EntregasButton, UsuariosButton);
         defPanel(LocalPanel, EntregaPanel, DronePanel, UserPanel);
         EntregaPanel.setVisible(false);
         CadastrarEncomenda.setVisible(false);
         
-    }//GEN-LAST:event_btn_LocaisdeEntregaMouseClicked
+    }//GEN-LAST:event_LocaisDeEntregaButtonMouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
@@ -2531,7 +2536,7 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel13MouseClicked
 
     private void jPanel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel9MouseClicked
-        String combo = jComboBox3.getActionCommand();
+        String combo = (String) jComboBox3.getSelectedItem();
         boolean type;
         if (combo.equals("Pacote")){
             type = false;
@@ -2539,7 +2544,7 @@ public class MainInterface extends javax.swing.JFrame {
         else{
             type = true;
         }
-        Casa casa = null;
+        Local casa = null;
         double peso = 0;
         int num = -1;
         try {
@@ -2568,7 +2573,7 @@ public class MainInterface extends javax.swing.JFrame {
 
     private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
         double speed = 0, capCag = 0;
-        String combo = jComboBox2.getActionCommand();
+        String combo = (String) jComboBox2.getSelectedItem();
         boolean type;
         if (combo.equals("Pacote")){
             type = false;
@@ -2633,7 +2638,7 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_ListarEntregasMouseEntered
 
     private void EntregaPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EntregaPanelMouseEntered
-        if (flag){
+        if (flag) {
             EntregaPanel.setVisible(true);
             DronePanel.setVisible(false);
             UserPanel.setVisible(false);
@@ -2645,13 +2650,13 @@ public class MainInterface extends javax.swing.JFrame {
             RemoverEncomenda.setVisible(false);
 
             for(int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-                Runnable runnable = cadastro.getDrones()[i];
+                Runnable runnable = cadastro.getDrones().get(i);
                 Thread thread = new Thread(runnable);
                 thread.start();
             }
 
             for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-                System.out.println(cadastro.getDrones()[i].getID());
+                System.out.println(cadastro.getDrones().get(i).getID());
             }
 
             flag = false;
@@ -2683,16 +2688,42 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_listCadastradasMouseEntered
 
     private void listCadastradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseClicked
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
+        Antes essa ação era do botão "Despachar entregas", porém o botão foi
+        renomeado para "Listar entregas", e a ação continuou associada ao botão
+        RESOLVA!
+        */
+        
+        
+        
+        
+        
+        
+        
+        
+        
         for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-            if (cadastro.getDrones()[i].getPacoteAtual() != null){
+            if (cadastro.getDrones().get(i).getPacoteAtual() != null){
                 try {
-                    cadastro.finalizarEntrega(cadastro.getDrones()[i], logado);
+                    cadastro.finalizarEntrega(cadastro.getDrones().get(i), logado);
                 } catch (IOException ex) {
                     Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
         serializa(cadastro, fileName);
+        
+        
     }//GEN-LAST:event_listCadastradasMouseClicked
 
     private void AddEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseExited
@@ -2706,6 +2737,10 @@ public class MainInterface extends javax.swing.JFrame {
     private void AddEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEntregaMouseClicked
         defPanel(CadastrarEncomenda, CadastrarDrone, CadastrarUsuário, EntregaPanel);
     }//GEN-LAST:event_AddEntregaMouseClicked
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2724,26 +2759,35 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel AddEntrega;
     private javax.swing.JPanel AddLocal;
     private javax.swing.JPanel AddUser;
-    private javax.swing.JPanel BG_Main;
+    private javax.swing.JLabel AvoeLogo;
+    private javax.swing.JPanel Background;
     private javax.swing.JPanel CadastrarDrone;
     private javax.swing.JPanel CadastrarEncomenda;
     private javax.swing.JPanel CadastrarLocal;
     private javax.swing.JPanel CadastrarUsuário;
     private javax.swing.JPanel DronePanel;
+    private javax.swing.JPanel DronesButton;
     private javax.swing.JPanel EntregaPanel;
+    private javax.swing.JPanel EntregasButton;
+    private javax.swing.JLabel IconeDronesButton;
+    private javax.swing.JLabel IconeEntregasButton;
+    private javax.swing.JLabel IconeLocaisDeEntregaButton;
+    private javax.swing.JLabel IconeUsuariosButton;
+    private javax.swing.JLabel LabelDronesButton;
+    private javax.swing.JLabel LabelEntregasButton;
+    private javax.swing.JLabel LabelLocaisDeEntregaButton;
+    private javax.swing.JLabel LabelUsuariosButton;
     private javax.swing.JPanel ListarEntregas;
+    private javax.swing.JPanel LocaisDeEntregaButton;
     private javax.swing.JPanel LocalPanel;
     private javax.swing.JPanel RemoverEncomenda;
     private javax.swing.JPanel UserPanel;
+    private javax.swing.JPanel UsuariosButton;
     private javax.swing.JPanel WorkPanel;
     private javax.swing.JLabel addDroneIcon;
     private javax.swing.JLabel addIcon;
     private javax.swing.JLabel addLocalIcon;
     private javax.swing.JLabel addUserIcon;
-    private javax.swing.JPanel btn_Drones;
-    private javax.swing.JPanel btn_Entrega;
-    private javax.swing.JPanel btn_LocaisdeEntrega;
-    private javax.swing.JPanel btn_Usuários;
     private javax.swing.JPanel editDrone;
     private javax.swing.JLabel editDroneIcon;
     private javax.swing.JPanel editLocal;
@@ -2754,8 +2798,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2765,7 +2807,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -2776,7 +2817,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -2787,7 +2827,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -2795,10 +2834,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;

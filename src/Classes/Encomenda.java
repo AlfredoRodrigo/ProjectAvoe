@@ -7,7 +7,7 @@ public class Encomenda implements Serializable {
     private boolean categoria;
     private String codigo, data, hora;
     private double peso;
-    private Casa destinatario;
+    private Local destinatario;
 
     public String getData() {
         return data;
@@ -25,11 +25,11 @@ public class Encomenda implements Serializable {
         this.hora = hora;
     }
     
-    public Casa getDestinatario() {
+    public Local getDestinatario() {
         return destinatario;
     }
 
-    public void setDestinatario(Casa destinatario) {
+    public void setDestinatario(Local destinatario) {
         this.destinatario = destinatario;
     }
 

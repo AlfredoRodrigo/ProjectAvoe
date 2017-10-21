@@ -65,8 +65,8 @@ public class ProjectAvoe {
     public static void main(String[] args) throws IOException {
         int opcao, menu = 0;
         
-        //String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-        String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+        String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+        //String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
 
         Cadastrados cadastro = deserializa(fileName);
 //        System.out.println(cadastro.getEncomendasPrioritarias().imprimirLista());
@@ -94,9 +94,9 @@ public class ProjectAvoe {
         Encomenda encomenda2 = new Encomenda();
         Encomenda encomenda3 = new Encomenda();
 //        
-        Casa casa1 = new Casa();
-        Casa casa2 = new Casa();
-        Casa casa3 = new Casa();
+        Local casa1 = new Local();
+        Local casa2 = new Local();
+        Local casa3 = new Local();
         
         casa1.setProprietario("Alfredo");
         casa2.setProprietario("Guilherme");
@@ -120,9 +120,9 @@ public class ProjectAvoe {
         drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         
-        cadastro.getEncomendasNormais().imprimirLista();
-        cadastro.getEncomendasPrioritarias().imprimirLista();
-        cadastro.getEncomendasEmTransito().imprimirLista();
+//        cadastro.getEncomendasNormais().imprimirLista();
+//        cadastro.getEncomendasPrioritarias().imprimirLista();
+//        cadastro.getEncomendasEmTransito().imprimirLista();
         
         Usuario logado = null;
         String login, senha;

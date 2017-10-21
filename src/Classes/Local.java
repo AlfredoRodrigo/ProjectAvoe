@@ -2,7 +2,7 @@ package Classes;
 
 import java.io.*;
 
-public class Casa implements Serializable {
+public class Local implements Serializable {
     private long latitude, longitude;
     private int numero;
     private String proprietario, rua;
