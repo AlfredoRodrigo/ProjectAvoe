@@ -12,9 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import static Classes.ProjectAvoe.serializa;
 import java.io.File;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -72,7 +74,7 @@ public class MainInterface extends javax.swing.JFrame {
         listInTransit = new javax.swing.JPanel();
         labelInTransit = new javax.swing.JLabel();
         listInTransitIcon = new javax.swing.JLabel();
-        listDone = new javax.swing.JPanel();
+        removerEntrega = new javax.swing.JPanel();
         labelDone = new javax.swing.JLabel();
         listDoneIcon = new javax.swing.JLabel();
         DronePanel = new javax.swing.JPanel();
@@ -200,19 +202,34 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         RemoverEncomenda = new javax.swing.JPanel();
         jLabel40 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel49 = new javax.swing.JLabel();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel50 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jSeparator19 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
         ListarEntregas = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        jTable1 = new javax.swing.JTable();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        ListarEntregasEmTransito = new javax.swing.JPanel();
+        jLabel45 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Project Avoe");
 
-        Background.setBackground(new java.awt.Color(0, 0, 0));
+        Background.setBackground(new java.awt.Color(153, 153, 153));
 
         AvoeLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AvoeLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/iconSup.png"))); // NOI18N
@@ -447,7 +464,7 @@ public class MainInterface extends javax.swing.JFrame {
 
         labelListCadastradas.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
         labelListCadastradas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelListCadastradas.setText("Listar entregas");
+        labelListCadastradas.setText("Entregas cadastradas");
 
         listCadastradasIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listCadastradasIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/indexed.png"))); // NOI18N
@@ -472,6 +489,9 @@ public class MainInterface extends javax.swing.JFrame {
         listInTransit.setBackground(new java.awt.Color(255, 255, 255));
         listInTransit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
         listInTransit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listInTransitMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 listInTransitMouseEntered(evt);
             }
@@ -504,34 +524,37 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        listDone.setBackground(new java.awt.Color(255, 255, 255));
-        listDone.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
-        listDone.addMouseListener(new java.awt.event.MouseAdapter() {
+        removerEntrega.setBackground(new java.awt.Color(255, 255, 255));
+        removerEntrega.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 255, 255)));
+        removerEntrega.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                removerEntregaMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                listDoneMouseEntered(evt);
+                removerEntregaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                listDoneMouseExited(evt);
+                removerEntregaMouseExited(evt);
             }
         });
 
         labelDone.setFont(new java.awt.Font("Segoe UI Black", 0, 13)); // NOI18N
         labelDone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelDone.setText("Entregas Realizadas");
+        labelDone.setText("Remover entrega");
 
         listDoneIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         listDoneIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/Done.png"))); // NOI18N
 
-        javax.swing.GroupLayout listDoneLayout = new javax.swing.GroupLayout(listDone);
-        listDone.setLayout(listDoneLayout);
-        listDoneLayout.setHorizontalGroup(
-            listDoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout removerEntregaLayout = new javax.swing.GroupLayout(removerEntrega);
+        removerEntrega.setLayout(removerEntregaLayout);
+        removerEntregaLayout.setHorizontalGroup(
+            removerEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(labelDone, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
             .addComponent(listDoneIcon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        listDoneLayout.setVerticalGroup(
-            listDoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, listDoneLayout.createSequentialGroup()
+        removerEntregaLayout.setVerticalGroup(
+            removerEntregaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removerEntregaLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(listDoneIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -549,7 +572,7 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGap(166, 166, 166)
                         .addComponent(listInTransit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(listDone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(removerEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(EntregaPanelLayout.createSequentialGroup()
                         .addContainerGap(165, Short.MAX_VALUE)
                         .addComponent(AddEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -566,7 +589,7 @@ public class MainInterface extends javax.swing.JFrame {
                     .addComponent(listCadastradas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(EntregaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listDone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(removerEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listInTransit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90))
         );
@@ -746,7 +769,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(DronePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(editDrone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listDrone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         UserPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -924,7 +947,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(UserPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(editUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         LocalPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -1099,7 +1122,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(LocalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(editLocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(listLocal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         CadastrarEncomenda.setBackground(new java.awt.Color(255, 255, 255));
@@ -1307,7 +1330,7 @@ public class MainInterface extends javax.swing.JFrame {
                         .addGroup(CadastrarEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 254, Short.MAX_VALUE)
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CadastrarEncomendaLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1528,7 +1551,7 @@ public class MainInterface extends javax.swing.JFrame {
                 .addGroup(CadastrarDroneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
+                .addGap(17, 17, 17))
         );
 
         CadastrarUsuário.setBackground(new java.awt.Color(255, 255, 255));
@@ -1932,23 +1955,111 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel40.setText("Remover encomenda");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable3);
+
+        jPanel17.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(250, 250, 250)));
+        jPanel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel17MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel17MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel17MouseExited(evt);
+            }
         });
-        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jList1);
+
+        jLabel49.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setText("Cancelar");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel49)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel18.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(250, 250, 250)));
+        jPanel18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel18MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel18MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel18MouseExited(evt);
+            }
+        });
+
+        jLabel50.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setText("Remover");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel50, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel50)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTextField4.setBorder(null);
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel1.setText("Código:");
 
         javax.swing.GroupLayout RemoverEncomendaLayout = new javax.swing.GroupLayout(RemoverEncomenda);
         RemoverEncomenda.setLayout(RemoverEncomendaLayout);
         RemoverEncomendaLayout.setHorizontalGroup(
             RemoverEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
-            .addGroup(RemoverEncomendaLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoverEncomendaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(RemoverEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RemoverEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel1)
+                        .addGroup(RemoverEncomendaLayout.createSequentialGroup()
+                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(RemoverEncomendaLayout.createSequentialGroup()
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(241, 241, 241))))
+                .addGap(40, 40, 40))
         );
         RemoverEncomendaLayout.setVerticalGroup(
             RemoverEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1956,8 +2067,18 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator19, javax.swing.GroupLayout.DEFAULT_SIZE, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RemoverEncomendaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(57, 57, 57))
         );
 
         ListarEntregas.setBackground(new java.awt.Color(255, 255, 255));
@@ -1971,8 +2092,49 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("Encomendas cadastradas");
 
-        jList2.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(jList2);
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
+        jPanel15.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(250, 250, 250)));
+        jPanel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel15MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel15MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel15MouseExited(evt);
+            }
+        });
+
+        jLabel47.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("Voltar");
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel47)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout ListarEntregasLayout = new javax.swing.GroupLayout(ListarEntregas);
         ListarEntregas.setLayout(ListarEntregasLayout);
@@ -1980,8 +2142,10 @@ public class MainInterface extends javax.swing.JFrame {
             ListarEntregasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel44, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
             .addGroup(ListarEntregasLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 721, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(ListarEntregasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ListarEntregasLayout.setVerticalGroup(
@@ -1990,8 +2154,95 @@ public class MainInterface extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        ListarEntregasEmTransito.setBackground(new java.awt.Color(255, 255, 255));
+        ListarEntregasEmTransito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ListarEntregasEmTransitoMouseEntered(evt);
+            }
+        });
+
+        jLabel45.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel45.setText("Encomendas em trânsito");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable2);
+
+        jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(250, 250, 250)));
+        jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel16MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel16MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel16MouseExited(evt);
+            }
+        });
+
+        jLabel48.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("Cadastrar");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel48)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ListarEntregasEmTransitoLayout = new javax.swing.GroupLayout(ListarEntregasEmTransito);
+        ListarEntregasEmTransito.setLayout(ListarEntregasEmTransitoLayout);
+        ListarEntregasEmTransitoLayout.setHorizontalGroup(
+            ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+            .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
+                    .addGap(354, 354, 354)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(355, Short.MAX_VALUE)))
+        );
+        ListarEntregasEmTransitoLayout.setVerticalGroup(
+            ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(154, Short.MAX_VALUE))
+            .addGroup(ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
+                    .addGap(285, 285, 285)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(285, Short.MAX_VALUE)))
         );
 
         jLayeredPane1.setLayer(EntregaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -2004,6 +2255,7 @@ public class MainInterface extends javax.swing.JFrame {
         jLayeredPane1.setLayer(CadastrarLocal, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(RemoverEncomenda, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(ListarEntregas, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(ListarEntregasEmTransito, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -2011,7 +2263,7 @@ public class MainInterface extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addComponent(EntregaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 26, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addComponent(DronePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2052,6 +2304,11 @@ public class MainInterface extends javax.swing.JFrame {
                     .addContainerGap()
                     .addComponent(ListarEntregas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ListarEntregasEmTransito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2080,6 +2337,11 @@ public class MainInterface extends javax.swing.JFrame {
                     .addGap(11, 11, 11)
                     .addComponent(ListarEntregas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGap(11, 11, 11)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(21, 21, 21)
+                    .addComponent(ListarEntregasEmTransito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(1, 1, 1)))
         );
 
         WorkPanel.add(jLayeredPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 630));
@@ -2663,13 +2925,13 @@ public class MainInterface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EntregaPanelMouseEntered
 
-    private void listDoneMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDoneMouseExited
-        resetBorda(listDone);
-    }//GEN-LAST:event_listDoneMouseExited
+    private void removerEntregaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removerEntregaMouseExited
+        resetBorda(removerEntrega);
+    }//GEN-LAST:event_removerEntregaMouseExited
 
-    private void listDoneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listDoneMouseEntered
-        setBorda(listDone);
-    }//GEN-LAST:event_listDoneMouseEntered
+    private void removerEntregaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removerEntregaMouseEntered
+        setBorda(removerEntrega);
+    }//GEN-LAST:event_removerEntregaMouseEntered
 
     private void listInTransitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listInTransitMouseExited
         resetBorda(listInTransit);
@@ -2688,39 +2950,51 @@ public class MainInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_listCadastradasMouseEntered
 
     private void listCadastradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listCadastradasMouseClicked
+        defPanel(ListarEntregas, CadastrarDrone, CadastrarUsuário, EntregaPanel);
+        ListarEntregasEmTransito.setVisible(false);
         
+        List<Encomenda> lstN = cadastro.getEncomendasNormais();
+        List<Encomenda> lstP = cadastro.getEncomendasPrioritarias();
         
+        DefaultTableModel modelo1 = new DefaultTableModel();
         
+        modelo1.addColumn("Código");
+        modelo1.addColumn("Destinatário");
+        modelo1.addColumn("Data");
+        modelo1.addColumn("Hora");
+        modelo1.addColumn("Prioridade");
         
-        
-        
-        
-        
-        
-        
-        /*
-        Antes essa ação era do botão "Despachar entregas", porém o botão foi
-        renomeado para "Listar entregas", e a ação continuou associada ao botão
-        RESOLVA!
-        */
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
-            if (cadastro.getDrones().get(i).getPacoteAtual() != null){
-                try {
-                    cadastro.finalizarEntrega(cadastro.getDrones().get(i), logado);
-                } catch (IOException ex) {
-                    Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+        for (int i = 0; i < lstP.size(); i++) {
+            String codigo = lstP.get(i).getCodigo();
+            String destinatario = lstP.get(i).getDestinatario().getProprietario();
+            String data = lstP.get(i).getData();
+            String hora = lstP.get(i).getHora();
+            String prioridade = lstP.get(i).getPrioridade() ? "Sim" : "Não";
+            modelo1.addRow(new String[]{codigo, destinatario, data, hora, prioridade});
         }
+        
+        for (int i = 0; i < lstN.size(); i++) {
+            String codigo = lstN.get(i).getCodigo();
+            String destinatario = lstN.get(i).getDestinatario().getProprietario();
+            String data = lstN.get(i).getData();
+            String hora = lstN.get(i).getHora();
+            String prioridade = lstN.get(i).getPrioridade() ? "Sim" : "Não";
+            modelo1.addRow(new String[]{codigo, destinatario, data, hora, prioridade});
+        }
+        
+        jTable1.setModel(modelo1);
+       
+        
+//        for (int i = 0; i < cadastro.getDronesCadastrados(); i++) {
+//            if (cadastro.getDrones().get(i).getPacoteAtual() != null){
+//                try {
+//                    cadastro.finalizarEntrega(cadastro.getDrones().get(i), logado);
+//                } catch (IOException ex) {
+//                    Logger.getLogger(MainInterface.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//            }
+//        }
+
         serializa(cadastro, fileName);
         
         
@@ -2741,6 +3015,136 @@ public class MainInterface extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void listInTransitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listInTransitMouseClicked
+        defPanel(ListarEntregasEmTransito, CadastrarDrone, CadastrarUsuário, EntregaPanel);
+        ListarEntregas.setVisible(false);
+
+        List<Encomenda> lstT = cadastro.getEncomendasEmTransito();
+
+        DefaultTableModel modelo2 = new DefaultTableModel();
+
+        modelo2.addColumn("Código");
+        modelo2.addColumn("Destinatário");
+        modelo2.addColumn("Data");
+        modelo2.addColumn("Hora");
+        modelo2.addColumn("Prioridade");
+
+        jTable2.setModel(modelo2);
+
+        for (int i = 0; i < lstT.size(); i++) {
+            String codigo = lstT.get(i).getCodigo();
+            String destinatario = lstT.get(i).getDestinatario().getProprietario();
+            String data = lstT.get(i).getData();
+            String hora = lstT.get(i).getHora();
+            String prioridade = lstT.get(i).getPrioridade() ? "Sim" : "Não";
+            modelo2.addRow(new String[]{codigo, destinatario, data, hora, prioridade});
+        }
+    }//GEN-LAST:event_listInTransitMouseClicked
+
+    private void ListarEntregasEmTransitoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListarEntregasEmTransitoMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListarEntregasEmTransitoMouseEntered
+
+    private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
+        defPanel(EntregaPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
+        ListarEntregasEmTransito.setVisible(false);
+    }//GEN-LAST:event_jPanel15MouseClicked
+
+    private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
+        setBorda(jPanel15);
+    }//GEN-LAST:event_jPanel15MouseEntered
+
+    private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
+        resetBorda(jPanel15);
+    }//GEN-LAST:event_jPanel15MouseExited
+
+    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel16MouseClicked
+
+    private void jPanel16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel16MouseEntered
+
+    private void jPanel16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel16MouseExited
+
+    private void jPanel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseClicked
+        defPanel(EntregaPanel, CadastrarDrone, CadastrarUsuário, ListarEntregasEmTransito);
+        ListarEntregas.setVisible(false);
+        RemoverEncomenda.setVisible(false);
+    }//GEN-LAST:event_jPanel17MouseClicked
+
+    private void jPanel17MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseEntered
+        setBorda(jPanel17);
+    }//GEN-LAST:event_jPanel17MouseEntered
+
+    private void jPanel17MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseExited
+        resetBorda(jPanel17);
+    }//GEN-LAST:event_jPanel17MouseExited
+
+    private void jPanel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseClicked
+        boolean flag2 = cadastro.removerEncomenda(jTextField4.getText());
+        if (flag2) {
+            JOptionPane.showMessageDialog(null,"Encomenda removida com sucesso!");
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Não foi possível remover a encomenda solicitada.\nPor favor, verifique o código informado.");
+        }
+    }//GEN-LAST:event_jPanel18MouseClicked
+
+    private void jPanel18MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseEntered
+       setBorda(jPanel18);
+    }//GEN-LAST:event_jPanel18MouseEntered
+
+    private void jPanel18MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel18MouseExited
+        resetBorda(jPanel18);
+    }//GEN-LAST:event_jPanel18MouseExited
+
+    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void removerEntregaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_removerEntregaMouseClicked
+        defPanel(RemoverEncomenda, CadastrarDrone, CadastrarUsuário, EntregaPanel);
+        ListarEntregasEmTransito.setVisible(false);
+        
+        List<Encomenda> lstN = cadastro.getEncomendasNormais();
+        List<Encomenda> lstP = cadastro.getEncomendasPrioritarias();
+        
+        DefaultTableModel modelo3 = new DefaultTableModel();
+        
+        modelo3.addColumn("Código");
+        modelo3.addColumn("Destinatário");
+        modelo3.addColumn("Data");
+        modelo3.addColumn("Hora");
+        modelo3.addColumn("Prioridade");
+        
+        for (int i = 0; i < lstP.size(); i++) {
+            String codigo = lstP.get(i).getCodigo();
+            String destinatario = lstP.get(i).getDestinatario().getProprietario();
+            String data = lstP.get(i).getData();
+            String hora = lstP.get(i).getHora();
+            String prioridade = lstP.get(i).getPrioridade() ? "Sim" : "Não";
+            modelo3.addRow(new String[]{codigo, destinatario, data, hora, prioridade});
+        }
+        
+        for (int i = 0; i < lstN.size(); i++) {
+            String codigo = lstN.get(i).getCodigo();
+            String destinatario = lstN.get(i).getDestinatario().getProprietario();
+            String data = lstN.get(i).getData();
+            String hora = lstN.get(i).getHora();
+            String prioridade = lstN.get(i).getPrioridade() ? "Sim" : "Não";
+            modelo3.addRow(new String[]{codigo, destinatario, data, hora, prioridade});
+        }
+        
+        jTable3.setModel(modelo3);
+
+        serializa(cadastro, fileName);
+        
+    }//GEN-LAST:event_removerEntregaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -2778,6 +3182,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel LabelLocaisDeEntregaButton;
     private javax.swing.JLabel LabelUsuariosButton;
     private javax.swing.JPanel ListarEntregas;
+    private javax.swing.JPanel ListarEntregasEmTransito;
     private javax.swing.JPanel LocaisDeEntregaButton;
     private javax.swing.JPanel LocalPanel;
     private javax.swing.JPanel RemoverEncomenda;
@@ -2798,6 +3203,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2832,23 +3238,31 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2859,6 +3273,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JSeparator jSeparator17;
     private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
@@ -2867,6 +3282,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
@@ -2878,6 +3296,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
@@ -2901,7 +3320,6 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel labelRemoveUser;
     private javax.swing.JPanel listCadastradas;
     private javax.swing.JLabel listCadastradasIcon;
-    private javax.swing.JPanel listDone;
     private javax.swing.JLabel listDoneIcon;
     private javax.swing.JPanel listDrone;
     private javax.swing.JLabel listDroneIcon;
@@ -2917,6 +3335,7 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel removeLocalIcon;
     private javax.swing.JPanel removeUser;
     private javax.swing.JLabel removeUserIcon;
+    private javax.swing.JPanel removerEntrega;
     private javax.swing.JPanel side_Panel;
     // End of variables declaration//GEN-END:variables
     

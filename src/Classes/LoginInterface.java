@@ -8,6 +8,7 @@ package Classes;
 import static Classes.ProjectAvoe.deserializa;
 import java.awt.Color;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -57,6 +58,7 @@ public class LoginInterface extends javax.swing.JFrame {
         setTitle("Project Avoe - Login");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setIconImages(null);
         setLocation(new java.awt.Point(270, 40));
         setResizable(false);
 
@@ -78,6 +80,11 @@ public class LoginInterface extends javax.swing.JFrame {
                 UserCampActionPerformed(evt);
             }
         });
+        UserCamp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                UserCampKeyPressed(evt);
+            }
+        });
 
         UserIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UserIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Customer_26px.png"))); // NOI18N
@@ -90,6 +97,11 @@ public class LoginInterface extends javax.swing.JFrame {
         PasswordCamp.setBorder(null);
         PasswordCamp.setDragEnabled(true);
         PasswordCamp.setSelectionColor(new java.awt.Color(102, 102, 102));
+        PasswordCamp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                PasswordCampKeyPressed(evt);
+            }
+        });
 
         PasswordIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PasswordIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GraficInterface/icons/icons8_Lock_26px.png"))); // NOI18N
@@ -108,9 +120,15 @@ public class LoginInterface extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 LoginButtonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                LoginButtonMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                LoginButtonMouseReleased(evt);
+            }
         });
 
-        ButtonLabel.setFont(new java.awt.Font("Swis721 WGL4 BT", 0, 18)); // NOI18N
+        ButtonLabel.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
         ButtonLabel.setForeground(new java.awt.Color(255, 255, 255));
         ButtonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ButtonLabel.setText("Entrar");
@@ -129,7 +147,7 @@ public class LoginInterface extends javax.swing.JFrame {
             .addComponent(ButtonLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
         );
 
-        ClientLoginName.setFont(new java.awt.Font("Verdana", 0, 36)); // NOI18N
+        ClientLoginName.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
         ClientLoginName.setForeground(new java.awt.Color(255, 255, 255));
         ClientLoginName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ClientLoginName.setText("Client Login");
@@ -138,53 +156,57 @@ public class LoginInterface extends javax.swing.JFrame {
         FloatPanel.setLayout(FloatPanelLayout);
         FloatPanelLayout.setHorizontalGroup(
             FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FloatPanelLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(UserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PasswordIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Separator2)
-                    .addComponent(PasswordCamp)
-                    .addComponent(Separator)
-                    .addComponent(UserCamp))
-                .addContainerGap(122, Short.MAX_VALUE))
             .addComponent(ClientLoginName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(FloatPanelLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(FloatPanelLayout.createSequentialGroup()
+                        .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(UserIcon)
+                            .addComponent(PasswordIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Separator2)
+                            .addComponent(PasswordCamp)
+                            .addComponent(Separator)
+                            .addComponent(UserCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         FloatPanelLayout.setVerticalGroup(
             FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FloatPanelLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(ClientLoginName, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(UserCamp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(1, 1, 1)
-                .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FloatPanelLayout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(PasswordIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(FloatPanelLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(FloatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(UserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(UserCamp))
+                        .addGap(1, 1, 1)
                         .addComponent(Separator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(PasswordCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(PasswordIcon))
+                        .addComponent(PasswordCamp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(1, 1, 1)
                 .addComponent(Separator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(AvoeLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(AvoeLogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addGap(145, 145, 145)
                 .addComponent(FloatPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,6 +268,58 @@ public class LoginInterface extends javax.swing.JFrame {
             PasswordCamp.setText(null);
         }
     }//GEN-LAST:event_LoginButtonMouseClicked
+
+    private void UserCampKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_UserCampKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Cadastrados cadastro = deserializa(fileName);
+        
+            Usuario logado = null;
+
+            cadastro.administradorPadrao();
+
+            logado = cadastro.autentica(UserCamp.getText(), PasswordCamp.getText());
+            if (logado != null) {
+                MainInterface main = new MainInterface(cadastro, logado);
+                main.setVisible(true);
+                this.dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Usuário ou senha incorretos.");
+                UserCamp.setText(null);
+                PasswordCamp.setText(null);
+            }
+        }
+    }//GEN-LAST:event_UserCampKeyPressed
+
+    private void PasswordCampKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PasswordCampKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            Cadastrados cadastro = deserializa(fileName);
+        
+            Usuario logado = null;
+
+            cadastro.administradorPadrao();
+
+            logado = cadastro.autentica(UserCamp.getText(), PasswordCamp.getText());
+            if (logado != null) {
+                MainInterface main = new MainInterface(cadastro, logado);
+                main.setVisible(true);
+                this.dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Usuário ou senha incorretos.");
+                UserCamp.setText(null);
+                PasswordCamp.setText(null);
+            }
+        }
+    }//GEN-LAST:event_PasswordCampKeyPressed
+
+    private void LoginButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMousePressed
+        LoginButton.setBackground(new Color(10,10,10));
+    }//GEN-LAST:event_LoginButtonMousePressed
+
+    private void LoginButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginButtonMouseReleased
+        LoginButton.setBackground(new Color(51,51,51));
+    }//GEN-LAST:event_LoginButtonMouseReleased
     
     /**
      * @param args the command line arguments

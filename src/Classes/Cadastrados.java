@@ -204,6 +204,22 @@ public class Cadastrados implements Serializable {
         encomenda.setDestinatario(destinatario);
     }
     
+    public boolean removerEncomenda(String codigo) {
+        for (int i = 0; i < encomendasNormais.size(); i++) {
+            if (encomendasNormais.get(i).getCodigo().equals(codigo)) {
+                encomendasNormais.remove(encomendasNormais.get(i));
+                break;
+            }
+        }
+        for (int i = 0; i < encomendasPrioritarias.size(); i++) {
+            if (encomendasPrioritarias.get(i).getCodigo().equals(codigo)) {
+                encomendasPrioritarias.remove(encomendasPrioritarias.get(i));
+                return true;
+            }
+        }
+        return false;
+    }
+    
     public List<Encomenda> getEncomendasNormais() {
         return encomendasNormais;
     }
