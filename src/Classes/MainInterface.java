@@ -24,8 +24,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MainInterface extends javax.swing.JFrame {
     //File fileName;
-    static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-    //static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    //static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
     static Cadastrados cadastro;
     static Usuario logado;
     /**
@@ -221,8 +221,8 @@ public class MainInterface extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel48 = new javax.swing.JLabel();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel51 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
 
@@ -2056,9 +2056,7 @@ public class MainInterface extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(RemoverEncomendaLayout.createSequentialGroup()
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(241, 241, 241))))
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(40, 40, 40))
         );
         RemoverEncomendaLayout.setVerticalGroup(
@@ -2184,34 +2182,34 @@ public class MainInterface extends javax.swing.JFrame {
         ));
         jScrollPane5.setViewportView(jTable2);
 
-        jPanel16.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(250, 250, 250)));
-        jPanel16.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel19.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(250, 250, 250)));
+        jPanel19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel16MouseClicked(evt);
+                jPanel19MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanel16MouseEntered(evt);
+                jPanel19MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanel16MouseExited(evt);
+                jPanel19MouseExited(evt);
             }
         });
 
-        jLabel48.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel48.setText("Cadastrar");
+        jLabel51.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.setText("Voltar");
 
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
         );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel48)
+                .addComponent(jLabel51)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2222,13 +2220,10 @@ public class MainInterface extends javax.swing.JFrame {
             .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
             .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
-                    .addGap(354, 354, 354)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(355, Short.MAX_VALUE)))
         );
         ListarEntregasEmTransitoLayout.setVerticalGroup(
             ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2237,12 +2232,9 @@ public class MainInterface extends javax.swing.JFrame {
                 .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(154, Short.MAX_VALUE))
-            .addGroup(ListarEntregasEmTransitoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(ListarEntregasEmTransitoLayout.createSequentialGroup()
-                    .addGap(285, 285, 285)
-                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(285, Short.MAX_VALUE)))
+                .addGap(56, 56, 56)
+                .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jLayeredPane1.setLayer(EntregaPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -3049,6 +3041,7 @@ public class MainInterface extends javax.swing.JFrame {
     private void jPanel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseClicked
         defPanel(EntregaPanel, CadastrarEncomenda, CadastrarDrone, CadastrarLocal);
         ListarEntregasEmTransito.setVisible(false);
+        ListarEntregas.setVisible(false);
     }//GEN-LAST:event_jPanel15MouseClicked
 
     private void jPanel15MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseEntered
@@ -3058,18 +3051,6 @@ public class MainInterface extends javax.swing.JFrame {
     private void jPanel15MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel15MouseExited
         resetBorda(jPanel15);
     }//GEN-LAST:event_jPanel15MouseExited
-
-    private void jPanel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel16MouseClicked
-
-    private void jPanel16MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel16MouseEntered
-
-    private void jPanel16MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel16MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel16MouseExited
 
     private void jPanel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel17MouseClicked
         defPanel(EntregaPanel, CadastrarDrone, CadastrarUsuário, ListarEntregasEmTransito);
@@ -3145,6 +3126,20 @@ public class MainInterface extends javax.swing.JFrame {
         serializa(cadastro, fileName);
         
     }//GEN-LAST:event_removerEntregaMouseClicked
+
+    private void jPanel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseClicked
+        defPanel(EntregaPanel, CadastrarDrone, CadastrarUsuário, ListarEntregasEmTransito);
+        ListarEntregasEmTransito.setVisible(false);
+        RemoverEncomenda.setVisible(false);
+    }//GEN-LAST:event_jPanel19MouseClicked
+
+    private void jPanel19MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseEntered
+        setBorda(jPanel19);
+    }//GEN-LAST:event_jPanel19MouseEntered
+
+    private void jPanel19MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseExited
+        resetBorda(jPanel19);
+    }//GEN-LAST:event_jPanel19MouseExited
 
     /**
      * @param args the command line arguments
@@ -3241,10 +3236,10 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3252,9 +3247,9 @@ public class MainInterface extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
