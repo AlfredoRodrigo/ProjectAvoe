@@ -15,6 +15,7 @@ public class Drone implements Serializable, Runnable {
     private double durabilidadeBat = 100;
     private Encomenda pacoteAtual;
     private List<Encomenda> lstN, lstP, lstT;
+    private transient Thread thread;
     
     public String getID() {
         return ID;
@@ -70,6 +71,14 @@ public class Drone implements Serializable, Runnable {
 
     public void setCapCarga(double capCarga) {
         this.capCarga = capCarga;
+    }
+
+    public Thread getThread() {
+        return thread;
+    }
+
+    public void setThread(Thread thread) {
+        this.thread = thread;
     }
 
     public double getVelocidade() {

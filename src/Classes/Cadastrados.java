@@ -79,6 +79,10 @@ public class Cadastrados implements Serializable {
         return false;
     }
 
+    public void setQtdAdm(int qtdAdm) {
+        this.qtdAdm = qtdAdm;
+    }
+    
     public void editarUsuario(Usuario usuario, String nome, String login, String senha, boolean admin) {
         usuario.setNome(nome);
         usuario.setLogin(login);
@@ -247,6 +251,16 @@ public class Cadastrados implements Serializable {
         Runnable runnable = drone;
         Thread thread = new Thread(runnable);
         thread.start();
+        drone.setThread(thread);
+    }
+    
+    public void editarDrone(Drone drone, String ID, double capCarga, double velocidade, String marca, String modelo, boolean categoria) {
+        drone.setID(ID);
+        drone.setCapCarga(capCarga);
+        drone.setVelocidade(velocidade);
+        drone.setMarca(marca);
+        drone.setModelo(modelo);
+        drone.setCategoria(categoria);
     }
 
     public int getUsuariosCadastrados() {
@@ -269,8 +283,6 @@ public class Cadastrados implements Serializable {
         return drones;
     }
     
-    
-    
     public void finalizarEntrega(Drone drone, Usuario logado) throws IOException {
         SalvarEmArquivo salvar = new SalvarEmArquivo();
         if(drone.getPacoteAtual() == null) {
@@ -283,5 +295,6 @@ public class Cadastrados implements Serializable {
         Runnable runnable = drone;
         Thread thread = new Thread(runnable);
         thread.start();
+        drone.setThread(thread);
     }
 }
