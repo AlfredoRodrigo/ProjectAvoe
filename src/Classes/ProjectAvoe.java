@@ -116,9 +116,9 @@ public class ProjectAvoe {
 //                
 //        cadastro.getEncomendasPrioritarias().imprimirLista();
 //        
-        drone1.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
-        drone2.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
-        drone3.escolherPacote(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone1.defListas(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone2.defListas(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
+        drone3.defListas(cadastro.getEncomendasNormais(), cadastro.getEncomendasPrioritarias(), cadastro.getEncomendasEmTransito());
         
 //        cadastro.getEncomendasNormais().imprimirLista();
 //        cadastro.getEncomendasPrioritarias().imprimirLista();

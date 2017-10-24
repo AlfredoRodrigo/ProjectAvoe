@@ -8,7 +8,8 @@ public class Encomenda implements Serializable {
     private String codigo, data, hora;
     private double peso;
     private Local destinatario;
-
+    private Drone drone = null;
+            
     public String getData() {
         return data;
     }
@@ -63,5 +64,13 @@ public class Encomenda implements Serializable {
 
     public void setCategoria(boolean categoria) {
         this.categoria = categoria;
+    }
+
+    public Drone getDrone() {
+        return drone;
+    }
+
+    public void setDrone(Drone drone) {
+        this.drone = drone;
     }
 }

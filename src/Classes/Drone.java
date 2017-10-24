@@ -96,11 +96,12 @@ public class Drone implements Serializable, Runnable {
         this.categoria = categoria;
     }
     
-    public void escolherPacote(List<Encomenda> lstN, List<Encomenda> lstP, List<Encomenda> lstT) {
+    public void defListas(List<Encomenda> lstN, List<Encomenda> lstP, List<Encomenda> lstT) {
         this.lstN = lstN;
         this.lstP = lstP;
         this.lstT = lstT;
     }
+    
     public void run() {
         while (this.disponibilidade) {
             System.out.println("O drone " + this.ID + " está funcionando.");
@@ -109,6 +110,7 @@ public class Drone implements Serializable, Runnable {
                     if (isApto(lstP.get(i))) {
                         disponibilidade = false;
                         setPacoteAtual(lstP.get(i));
+                        pacoteAtual.setDrone(this);
                         this.lstT.add(pacoteAtual);
                         this.lstP.remove(pacoteAtual);
                         return;
@@ -116,10 +118,11 @@ public class Drone implements Serializable, Runnable {
                 } 
             }
             if (!this.lstN.isEmpty() && this.disponibilidade) {
-                for (int i = 0; i < this.lstP.size(); i++) {
+                for (int i = 0; i < this.lstN.size(); i++) {
                     if (isApto(lstN.get(i))) {
                         disponibilidade = false;
                         setPacoteAtual(lstN.get(i));
+                        pacoteAtual.setDrone(this);
                         this.lstT.add(pacoteAtual);    
                         this.lstN.remove(i);
                         return;

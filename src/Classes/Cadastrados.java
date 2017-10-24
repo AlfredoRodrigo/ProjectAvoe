@@ -240,7 +240,7 @@ public class Cadastrados implements Serializable {
         drone.setID(ID);
         drone.setCapCarga(capCarga);
         drone.setVelocidade(velocidade);
-        drone.escolherPacote(encomendasNormais, encomendasPrioritarias, encomendasEmTransito);
+        drone.defListas(encomendasNormais, encomendasPrioritarias, encomendasEmTransito);
         drones.add(drone);
         dronesCadastrados++;
         
@@ -276,6 +276,7 @@ public class Cadastrados implements Serializable {
         if(drone.getPacoteAtual() == null) {
             return;
         }
+        encomendasEmTransito.remove(drone.getPacoteAtual());
         salvar.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);
