@@ -5378,15 +5378,13 @@
                               <EmptySpace min="-2" pref="261" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel79" pref="344" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel88" max="32767" attributes="0"/>
-                                      <Component id="jLabel90" max="32767" attributes="0"/>
-                                      <Component id="meuLogin" max="32767" attributes="0"/>
-                                      <Component id="jLabel92" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel4" max="32767" attributes="0"/>
-                                      <Component id="souAdm" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="meuNome" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel88" max="32767" attributes="0"/>
+                                  <Component id="jLabel90" max="32767" attributes="0"/>
+                                  <Component id="meuLogin" max="32767" attributes="0"/>
+                                  <Component id="jLabel92" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jPanel4" max="32767" attributes="0"/>
+                                  <Component id="souAdm" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="meuNome" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="265" max="32767" attributes="0"/>
                           </Group>
@@ -5409,7 +5407,7 @@
                               <Component id="jLabel92" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="souAdm" min="-2" pref="14" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="164" max="32767" attributes="0"/>
                           </Group>
@@ -5484,25 +5482,17 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="159" max="32767" attributes="0"/>
-                                  <Component id="jLabel98" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel89" alignment="0" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel98" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel89" alignment="1" pref="36" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Component class="javax.swing.JLabel" name="jLabel98">
+                        <Component class="javax.swing.JLabel" name="jLabel89">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Segoe UI Light" size="18" style="0"/>
@@ -5513,13 +5503,6 @@
                             <Property name="horizontalAlignment" type="int" value="0"/>
                             <Property name="text" type="java.lang.String" value="Sair"/>
                           </Properties>
-                          <Events>
-                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel98MouseClicked"/>
-                            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel98MouseEntered"/>
-                            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel98MouseExited"/>
-                            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel98MousePressed"/>
-                            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel98MouseReleased"/>
-                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
