@@ -50,6 +50,11 @@ public class MainInterface extends javax.swing.JFrame {
         for (int i = 0; i < cadastro.getDrones().size(); i++) {
             System.out.println(cadastro.getDrones().get(i).getID());
         }
+        
+        Supervisorio supervisorio = new Supervisorio(cadastro, logado);
+        Runnable runnable = supervisorio;
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
     static boolean flag = true;
     /**
