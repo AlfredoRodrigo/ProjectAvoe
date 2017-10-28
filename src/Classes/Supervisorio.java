@@ -30,10 +30,11 @@ public class Supervisorio implements Runnable {
                     for (int j = 0; j < cadastro.getLocais().size(); j++) {
                         if (serial.getProtocolo().getCasa1() != null) {
                             if (serial.getProtocolo().getCasa((j + 1)).equals(String.valueOf((j + 1))) && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(j)) {
+                                JOptionPane.showMessageDialog(null, ("Encomenda entregue com sucesso!"));
+                                serial.getProtocolo().setCasa(j + 1);
                                 try {
                                     cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
                                     JOptionPane.showMessageDialog(null, ("Encomenda entregue com sucesso!"));
-                                    serial.getProtocolo().setCasa(j + 1);
                                 } catch (IOException ex) {
                                     Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
                                 }
