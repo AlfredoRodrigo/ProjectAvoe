@@ -37,6 +37,36 @@ public class Protocolo {
             casa8 = aux[7];
         }
     }
+    public void setCasa(int i) {
+        switch (i) {
+            case 1:
+                this.casa1 = "-1";
+                break;
+            case 2:
+                this.casa2 = "-2";
+                break;
+            case 3:
+                this.casa3 = "-3";
+                break;
+            case 4:
+                this.casa4 = "-4";
+                break;
+            case 5:
+                this.casa5 = "-5";
+                break;
+            case 6:
+                this.casa6 = "-6";
+                break;
+            case 7:
+                this.casa7 = "-7";
+                break;
+            case 8:
+                this.casa8 = "-8";
+                break;
+            default:
+                break;
+        }
+    }
 
     public String getCasa(int i) {
         if (i == 1) {
