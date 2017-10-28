@@ -8,6 +8,7 @@ package Classes;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,61 +26,18 @@ public class Supervisorio implements Runnable {
         SerialRxTx serial = new SerialRxTx();
         if (serial.iniciaSerial()) {
             while (true) {
-                for (int i = 0; i <= cadastro.getEncomendasEmTransito().size(); i++) {
-                    if (serial.getProtocolo().getCasa1().equals("1") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(0)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa2().equals("2") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(1)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa3().equals("3") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(2)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa4().equals("4") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(3)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa5().equals("5") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(4)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa6().equals("6") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(5)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa7().equals("7") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(6)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    if (serial.getProtocolo().getCasa8().equals("8") && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(7)) {
-                        try {
-                            cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                        } catch (IOException ex) {
-                            Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
+                for (int i = 0; i < cadastro.getEncomendasEmTransito().size(); i++) {
+                    for (int j = 0; j < cadastro.getLocais().size(); j++) {
+                        if (serial.getProtocolo().getCasa1() != null) {
+                            if (serial.getProtocolo().getCasa((j + 1)).equals(String.valueOf((j + 1))) &&
+                                    cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(j)) {
+                                JOptionPane.showMessageDialog(null, ("ENTROU NO IF: J+1 = " + (j + 1)));
+                                try {
+                                    cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
+                                } catch (IOException ex) {
+                                    Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
+                                }
+                            }
                         }
                     }
                 }

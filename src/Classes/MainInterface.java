@@ -51,6 +51,7 @@ public class MainInterface extends javax.swing.JFrame {
             System.out.println(cadastro.getDrones().get(i).getID());
         }
         
+        
         Supervisorio supervisorio = new Supervisorio(cadastro, logado);
         Runnable runnable = supervisorio;
         Thread thread = new Thread(runnable);

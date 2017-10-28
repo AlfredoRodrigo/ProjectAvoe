@@ -38,6 +38,34 @@ public class Protocolo {
         }
     }
 
+    public String getCasa(int i) {
+        if (i == 1) {
+            return casa1;
+        }
+        if (i == 2) {
+            return casa2;
+        }
+        if (i == 3) {
+            return casa3;
+        }
+        if (i == 4) {
+            return casa3;
+        }
+        if (i == 5) {
+            return casa3;
+        }
+        if (i == 6) {
+            return casa3;
+        }
+        if (i == 7) {
+            return casa3;
+        }
+        if (i == 8) {
+            return casa3;
+        }
+        return "0";
+    }
+    
     public String getCasa1() {
         return casa1;
     }
