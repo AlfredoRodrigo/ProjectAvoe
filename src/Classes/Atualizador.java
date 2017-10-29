@@ -13,16 +13,19 @@ public class Atualizador implements Runnable{
     Cadastrados cadastro;
     Usuario logado;
     Supervisorio serial;
+    boolean bool;
     
-    public Atualizador(Cadastrados cadastro, Usuario logado) {
+    public Atualizador(Cadastrados cadastro, Usuario logado, boolean bool) {
         this.cadastro = cadastro;
         this.logado = logado;
+        this.bool = bool;
         Supervisorio serial = new Supervisorio(this.cadastro, this.logado);
+        serial.iniciaSerial();
         this.serial = serial;
     }
     public void run() {
         while(true) {
-            serial.Serial();
+            serial.Serial(bool);
             for(int i = 0; i < cadastro.getDrones().size(); i++) {
                 cadastro.getDrones().get(i).procuraEncomenda();
             }

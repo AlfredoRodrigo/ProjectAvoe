@@ -25,8 +25,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MainInterface extends javax.swing.JFrame {
     //File fileName;
-    //static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
-    static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    static String fileName = "D:\\Documentos\\Documentos do Usuário\\Acadêmico\\IFPB\\E.C\\Matérias\\Laboratório de POO\\Documentos\\Programas\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
+    //static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
     static Cadastrados cadastro;
     static Usuario logado;
     static Thread thread;
@@ -42,7 +42,7 @@ public class MainInterface extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         defPanel(EntregaPanel);
 
-        Atualizador atualizador = new Atualizador(this.cadastro, this.logado);
+        Atualizador atualizador = new Atualizador(this.cadastro, this.logado, true);
         Runnable runnable = atualizador;
         Thread thread = new Thread(runnable);
         thread.start();

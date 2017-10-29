@@ -31,7 +31,7 @@ public class SerialRxTx implements SerialPortEventListener {
     private static final int TIME_OUT = 1000; //referência para tempo de espera para comunicação serial
     private static int DATA_RATE = 9600; //velocidade da comunicação serial
     
-    private String serialPortName = "COM4"; //nome da porta
+    private String serialPortName = "COM3"; //nome da porta
     
     public boolean iniciaSerial() { //ler dados do Arduino
         boolean status = false; //será o retorno da função
