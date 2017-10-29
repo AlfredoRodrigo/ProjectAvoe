@@ -20,7 +20,11 @@ public class Atualizador implements Runnable{
         this.logado = logado;
         this.bool = bool;
         Supervisorio serial = new Supervisorio(this.cadastro, this.logado);
-        serial.iniciaSerial();
+        if (bool) {
+            serial.iniciaSerial();
+        } else {
+            serial.encerraSerial();
+        }
         this.serial = serial;
     }
     public void run() {
@@ -31,5 +35,9 @@ public class Atualizador implements Runnable{
             }
                 
         }
+    }
+    
+    public void encerraSerial() {
+        this.serial.encerraSerial();
     }
 }

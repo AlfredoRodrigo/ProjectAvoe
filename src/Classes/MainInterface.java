@@ -31,6 +31,7 @@ public class MainInterface extends javax.swing.JFrame {
     static Usuario logado;
     static Thread thread;
     static SerialRxTx porta;
+    static Atualizador atualizador;
     /**
      * Creates new form MainInterface
      */
@@ -43,6 +44,7 @@ public class MainInterface extends javax.swing.JFrame {
         defPanel(EntregaPanel);
 
         Atualizador atualizador = new Atualizador(this.cadastro, this.logado, true);
+        this.atualizador = atualizador;
         Runnable runnable = atualizador;
         Thread thread = new Thread(runnable);
         thread.start();
@@ -5081,6 +5083,7 @@ public class MainInterface extends javax.swing.JFrame {
         if (logado != null) {
             serializa(cadastro, fileName);
             logado = null;
+            this.atualizador.encerraSerial();
             LoginInterface loginInterface = new LoginInterface();
             loginInterface.setVisible(true);
             this.dispose();

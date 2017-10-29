@@ -29,16 +29,18 @@ public class Supervisorio {
         this.iniciouSerial = this.serial.iniciaSerial();
     }
     
+    public void encerraSerial() {
+        this.serial.close();
+    }
     
     public void Serial(boolean bool) {
-        SerialRxTx serial = new SerialRxTx();
         if (bool) {
             if (iniciouSerial) {
                 for (int i = 0; i < cadastro.getEncomendasEmTransito().size(); i++) {
                     for (int j = 0; j < cadastro.getLocais().size(); j++) {
-                        if (serial.getProtocolo().getCasa1() != null) {
-                            if (serial.getProtocolo().getCasa((j + 1)).equals(String.valueOf((j + 1))) && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(j)) {
-                                serial.getProtocolo().setCasa(j + 1);
+                        if (this.serial.getProtocolo().getCasa1() != null) {
+                            if (this.serial.getProtocolo().getCasa((j + 1)).equals(String.valueOf((j + 1))) && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(j)) {
+                                this.serial.getProtocolo().setCasa(j + 1);
                                 try {
                                     cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
                                     JOptionPane.showMessageDialog(null, ("Encomenda entregue com sucesso!"));
@@ -51,7 +53,7 @@ public class Supervisorio {
                 }
             }
         } else {
-            serial.close();
+            this.serial.close();
         }
     }
 }
