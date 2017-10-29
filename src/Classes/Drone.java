@@ -3,7 +3,7 @@ package Classes;
 import java.io.*;
 import java.util.List;
 
-public class Drone implements Serializable, Runnable {
+public class Drone implements Serializable {
     private boolean disponibilidade = true;
     private boolean bateriaCritica = false;
     private boolean categoria = false;
@@ -111,7 +111,7 @@ public class Drone implements Serializable, Runnable {
         this.lstT = lstT;
     }
     
-    public void run() {
+    public void procuraEncomenda() {
         while (this.disponibilidade) {
             System.out.println("O drone " + this.ID + " está funcionando.");
             if (!this.lstP.isEmpty()) {

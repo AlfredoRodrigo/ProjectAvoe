@@ -247,11 +247,6 @@ public class Cadastrados implements Serializable {
         drone.defListas(encomendasNormais, encomendasPrioritarias, encomendasEmTransito);
         drones.add(drone);
         dronesCadastrados++;
-        
-        Runnable runnable = drone;
-        Thread thread = new Thread(runnable);
-        thread.start();
-        drone.setThread(thread);
     }
     
     public void editarDrone(Drone drone, String ID, double capCarga, double velocidade, String marca, String modelo, boolean categoria) {
@@ -292,9 +287,6 @@ public class Cadastrados implements Serializable {
         salvar.save(drone.getPacoteAtual(), logado);
         drone.setDisponibilidade(true);
         drone.setPacoteAtual(null);
-        Runnable runnable = drone;
-        Thread thread = new Thread(runnable);
-        thread.start();
-        drone.setThread(thread);
+        
     }
 }

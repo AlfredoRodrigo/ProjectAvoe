@@ -29,6 +29,8 @@ public class MainInterface extends javax.swing.JFrame {
     static String fileName = "C:\\Users\\guisi\\OneDrive\\Documentos\\Engenharia de Computação\\Programação Orientada a Objetos\\ProjectAvoe\\src\\Classes\\saves\\cadastro.ser";
     static Cadastrados cadastro;
     static Usuario logado;
+    static Thread thread;
+    static SerialRxTx porta;
     /**
      * Creates new form MainInterface
      */
@@ -40,22 +42,14 @@ public class MainInterface extends javax.swing.JFrame {
         setExtendedState(MAXIMIZED_BOTH);
         defPanel(EntregaPanel);
 
-        for(int i = 0; i < cadastro.getDrones().size(); i++) {
-            Runnable runnable = cadastro.getDrones().get(i);
-            Thread thread = new Thread(runnable);
-            thread.start();
-            cadastro.getDrones().get(i).setThread(thread);
-        }
-
+        Atualizador atualizador = new Atualizador(this.cadastro, this.logado);
+        Runnable runnable = atualizador;
+        Thread thread = new Thread(runnable);
+        thread.start();
+        
         for (int i = 0; i < cadastro.getDrones().size(); i++) {
             System.out.println(cadastro.getDrones().get(i).getID());
         }
-        
-        
-        Supervisorio supervisorio = new Supervisorio(cadastro, logado);
-        Runnable runnable = supervisorio;
-        Thread thread = new Thread(runnable);
-        thread.start();
     }
     static boolean flag = true;
     /**
@@ -3712,7 +3706,9 @@ public class MainInterface extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel89, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout ContaPanelLayout = new javax.swing.GroupLayout(ContaPanel);
@@ -4721,7 +4717,6 @@ public class MainInterface extends javax.swing.JFrame {
         int selectedIndex = jTable4.getSelectedRow();
         if (selectedIndex != -1){
             Drone drone = cadastro.getDrones().get(selectedIndex);
-            drone.getThread().stop();
             cadastro.getDrones().remove(drone);
             atualizaDrone(jTable4);
             serializa(cadastro, fileName);
@@ -5090,6 +5085,8 @@ public class MainInterface extends javax.swing.JFrame {
             loginInterface.setVisible(true);
             this.dispose();
         }
+        this.thread.stop();
+        this.porta.close();
     }//GEN-LAST:event_jPanel4MouseClicked
 
     private void jPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseEntered

@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author alf_r - extraído do professor André Curvello: https://www.youtube.com/channel/UCH-yNyoZficULIjce_2OzvA
  */
-public class Supervisorio implements Runnable {
+public class Supervisorio {
     Cadastrados cadastro;
     Usuario logado;
 
@@ -22,22 +22,19 @@ public class Supervisorio implements Runnable {
         this.cadastro = cadastro;
         this.logado = logado;
     }
-    public void run() {
+    public void Serial() {
         SerialRxTx serial = new SerialRxTx();
         if (serial.iniciaSerial()) {
-            while (true) {
-                for (int i = 0; i < cadastro.getEncomendasEmTransito().size(); i++) {
-                    for (int j = 0; j < cadastro.getLocais().size(); j++) {
-                        if (serial.getProtocolo().getCasa1() != null) {
-                            if (serial.getProtocolo().getCasa((j + 1)).equals(String.valueOf((j + 1))) && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(j)) {
+            for (int i = 0; i < cadastro.getEncomendasEmTransito().size(); i++) {
+                for (int j = 0; j < cadastro.getLocais().size(); j++) {
+                    if (serial.getProtocolo().getCasa1() != null) {
+                        if (serial.getProtocolo().getCasa((j + 1)).equals(String.valueOf((j + 1))) && cadastro.getEncomendasEmTransito().get(i).getDestinatario() == cadastro.getLocais().get(j)) {
+                            serial.getProtocolo().setCasa(j + 1);
+                            try {
+                                cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
                                 JOptionPane.showMessageDialog(null, ("Encomenda entregue com sucesso!"));
-                                serial.getProtocolo().setCasa(j + 1);
-                                try {
-                                    cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                                    JOptionPane.showMessageDialog(null, ("Encomenda entregue com sucesso!"));
-                                } catch (IOException ex) {
-                                    Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
-                                }
+                            } catch (IOException ex) {
+                                Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
                             }
                         }
                     }
@@ -45,5 +42,4 @@ public class Supervisorio implements Runnable {
             }
         }
     }
-    
 }
