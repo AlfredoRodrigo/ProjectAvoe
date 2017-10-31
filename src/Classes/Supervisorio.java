@@ -5,10 +5,12 @@
  */
 package Classes;
 
+import static Classes.MainInterface.fileName;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import static Classes.ProjectAvoe.serializa;
 
 /**
  *
@@ -43,7 +45,9 @@ public class Supervisorio {
                                 this.serial.getProtocolo().setCasa(j + 1);
                                 try {
                                     cadastro.finalizarEntrega(cadastro.getEncomendasEmTransito().get(i).getDrone(), logado);
-                                    JOptionPane.showMessageDialog(null, ("Encomenda entregue com sucesso!"));
+                                    JOptionPane.showMessageDialog(null, ("Encomenda para a casa " + (cadastro.getLocais().get(j).getNumero()) + " entregue com sucesso!"));
+                                    serializa(cadastro, fileName);
+                                    //MainInterface.atualizaDepoisDeEntrega();
                                 } catch (IOException ex) {
                                     Logger.getLogger(Supervisorio.class.getName()).log(Level.SEVERE, null, ex);
                                 }

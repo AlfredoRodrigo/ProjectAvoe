@@ -72,26 +72,26 @@ public class Protocolo {
         if (i == 1) {
             return casa1;
         }
-        if (i == 2) {
+        else if (i == 2) {
             return casa2;
         }
-        if (i == 3) {
+        else if (i == 3) {
             return casa3;
         }
-        if (i == 4) {
-            return casa3;
+        else if (i == 4) {
+            return casa4;
         }
-        if (i == 5) {
-            return casa3;
+        else if (i == 5) {
+            return casa5;
         }
-        if (i == 6) {
-            return casa3;
+        else if (i == 6) {
+            return casa6;
         }
-        if (i == 7) {
-            return casa3;
+        else if (i == 7) {
+            return casa7;
         }
-        if (i == 8) {
-            return casa3;
+        else if (i == 8) {
+            return casa8;
         }
         return "0";
     }

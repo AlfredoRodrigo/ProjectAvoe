@@ -112,7 +112,7 @@ public class Drone implements Serializable {
     }
     
     public void procuraEncomenda() {
-        while (this.disponibilidade) {
+        if (this.disponibilidade) {
             System.out.println("O drone " + this.ID + " está funcionando.");
             if (!this.lstP.isEmpty()) {
                 for (int i = 0; i < this.lstP.size(); i++) {
